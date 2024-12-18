@@ -117,4 +117,4 @@ Over at the [IOOS Bio Data Guide repository](https://github.com/ioos/bio_data_gu
 <img width="555" alt="ProcessingScriptScreenshot" src="{{ page.root }}/fig/processing_script_screenshot.png">{: .image-with-shadow }
 *A screenshot of the script available for aligning data to Darwin Core.
 
-{% include links.md %}
+

@@ -128,5 +128,4 @@ Other than these specific terms, work through the data that you have and try to 
 > 
 {: .challenge}
 
-{% include links.md %}
 

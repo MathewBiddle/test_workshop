@@ -422,4 +422,4 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > * For example, [`individualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) should be an integer. So, checking that column for integer values would be good.
 {: .callout}
   
-{% include links.md %}
+

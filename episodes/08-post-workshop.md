@@ -42,7 +42,5 @@ You can upload your dataset into the `/datasets/` directory so that the SMBD com
 ## Post-Workshop Survey
 If you wish to provide feedback please use [this post-workshop survey](https://forms.gle/YfaJJDSNuJWofPjy6){:target="_blank"}.
 
-{% include links.md %}
-
 ## OBIS Manual
 If you are interested in continuing to learn about data formatting and mobilization, the [OBIS Manual](https://manual.obis.org/) contains a lot of relevant content and guidelines for data standardization.

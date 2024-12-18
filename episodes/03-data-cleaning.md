@@ -579,5 +579,5 @@ Helpful packages for managing CRS and geodetic datum:
 >   ```
 {: .solution}
 
-{% include links.md %}
+
   
