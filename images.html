@@ -243,7 +243,31 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-introduction.html">1. Introduction to Darwin Core</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-break.html">2. Social Break</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-data-cleaning.html">3. Data Cleaning</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -306,12 +330,50 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="01-introduction"><h2 class="section-heading"><a href="01-introduction.html">Introduction to Darwin CoreDarwin Core - A global community of data sharing and
+integration<a class="anchor" aria-label="anchor" href="#darwin-core---a-global-community-of-data-sharing-and-integration"></a></a></h2>
+<hr class="half-width"></section><section id="02-break"><h2 class="section-heading"><a href="02-break.html">Social Break</a></h2>
 <hr class="half-width">
-<h3 id="introduction-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Blue Carpentries hex person logo with no text.’</p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><hr></section>
+<h3 id="02-break-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘xkcd 0927 (standards)’</p>
+<p><img src="https://imgs.xkcd.com/comics/standards_2x.png" alt="xkcd 0927 (standards)" class="figure"><em>Image credit: <a href="https://xkcd.com/" class="external-link">xkcd</a></em></p>
+<hr></section><section id="03-data-cleaning"><h2 class="section-heading"><a href="03-data-cleaning.html">Data CleaningGetting your dates in order<a class="anchor" aria-label="anchor" href="#getting-your-dates-in-order"></a>Matching your scientific names to WoRMS<a class="anchor" aria-label="anchor" href="#matching-your-scientific-names-to-worms"></a>Getting lat/lon to decimal degrees<a class="anchor" aria-label="anchor" href="#getting-latlon-to-decimal-degrees"></a></a></h2>
+<hr class="half-width">
+<h3 id="03-data-cleaning-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘screenshot’</p>
+<p>Create a CSV (comma separated value) file with the scientific
+name of the species of interest. Here we are showing some of the
+contents of the file <a href="%7B%7B%20page.root%20%7D%7D/data/species.csv"><code>species.csv</code></a>.
+<img src="%7B%7B%20page.root%20%7D%7D/fig/species_file_screenshot.png" alt="screenshot" class="figure">{: .image-with-shadow }</p>
+<hr>
+<h3 id="03-data-cleaning-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘screenshot’</p>
+<li>
+<strong>for the example file, make sure you select LineFeed as the
+row delimiter and Tab as the column delimiter</strong> <img src="%7B%7B%20page.root%20%7D%7D/fig/WoRMS_upload.png" alt="screenshot" class="figure">{: .image-with-shadow }</li>
+<hr>
+<h3 id="03-data-cleaning-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘screenshot’</p>
+<p>Identify which columns to match to which WoRMS term. <img src="%7B%7B%20page.root%20%7D%7D/fig/WoRMS_TaxonMatch_Preview.PNG" alt="screenshot" class="figure">{: .image-with-shadow }</p>
+<hr>
+<h3 id="03-data-cleaning-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘screenshot’</p>
+<li>Non-matched taxa will appear in red. You will have to go back to
+your source file and determine what the appropriate text should
+be.<br><img src="%7B%7B%20page.root%20%7D%7D/fig/WoRMS_TaxonMatch_MatchOutput.PNG" alt="screenshot" class="figure">{: .image-with-shadow }</li>
+<hr>
+<h3 id="03-data-cleaning-figure-5">Figure 5</h3>
+<p aria-hidden="true">Image 1 of 1: ‘screenshot’</p>
+<p>Download the response as an XLS, XLSX, or text file and use the
+information when building the Darwin Core file(s). The response from the
+example linked above can be found <a href="%7B%7B%20page.root%20%7D%7D/data/species_matched.xlsx">here</a>. A
+screenshot of the file can be seen below: <img src="%7B%7B%20page.root%20%7D%7D/fig/matched_species_screenshot.png" alt="screenshot" class="figure">{: .image-with-shadow } {: .solution}</p>
+<hr>
+<h3 id="03-data-cleaning-figure-6">Figure 6</h3>
+<p aria-hidden="true">Image 1 of 1: ‘coordinate_precision’</p>
+<p><img src="https://imgs.xkcd.com/comics/coordinate_precision.png" alt="coordinate_precision" class="figure">{: .image-with-shadow } <em>Image credit:
+<a href="https://xkcd.com/" class="external-link">xkcd</a></em></p>
+<hr></section>
 </div>
     </main>
 </div>
