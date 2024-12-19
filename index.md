@@ -44,6 +44,7 @@ The goal is that by the end of the workshop you will have a dataset in a final s
 We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. **Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time**.
 
 What this workshop will **not** cover:
+
 * What is OBIS?
 * Rationale for sharing data with OBIS.
 * Using data thatâ€™s already in OBIS.
@@ -78,14 +79,14 @@ The videos created for the Marine Biological Data Mobilization Workshop can be f
 
 April 22
 
-| 13:00 | Introduction to Darwin Core                                                                                                                                                                                                                                                          |
-|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 13:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms 1<br>            Darwin Core Terms 2<br>            Data Cleaning<br>            WoRMS lookup<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>          <br>         |
-| 14:30 | Social Break                                                                                                                                                                                                                                                                         |
-| 15:00 | Data Cleaning                                                                                                                                                                                                                                                                        |
-| 15:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms 1<br>            Darwin Core Terms 2<br>            Data Cleaning<br>            WoRMS lookup<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>          <br>         |
-| 16:30 | Return to Main Room                                                                                                                                                                                                                                                                  |
-| 17:00 | Finish                                                                                                                                                                                                                                                                               |
+| 13:00 | Introduction to Darwin Core                                                                                                                                                                                                                                                  |
+|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 13:10 | Breakout Rooms\n\t Darwin Core Terms 1\n\t Darwin Core Terms 2\n\tData Cleaning\n\tWoRMS lookup\n\tCreating the Schema\n\tQA/QC, Metadata and Publishing                                                                                       |
+| 14:30 | Social Break                                                                                                                                                                                                                                                                 |
+| 15:00 | Data Cleaning                                                                                                                                                                                                                                                                |
+| 15:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms 1<br>            Darwin Core Terms 2<br>            Data Cleaning<br>            WoRMS lookup<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>          <br> |
+| 16:30 | Return to Main Room                                                                                                                                                                                                                                                          |
+| 17:00 | Finish                                                                                                                                                                                                                                                                       |
 
 April 23
 
