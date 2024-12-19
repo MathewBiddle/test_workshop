@@ -3,14 +3,21 @@ title: Marine Biological Data Mobilization Workshop 2024
 site: sandpaper::sandpaper_site
 ---
 
+:::::::::::: callout
+
 OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS, Caribbean-OBIS, OBIS-Chile
--------------------------------------------------------------------------
+
+::::::::::::::::::::
+
+:::::::::::: callout
 
 Online
 
 April 22-23, 2024
 
 13:00 - 17:00 EDT
+
+::::::::::::::::::::
 
 **Instructors:** 
 Mathew Biddle, 
