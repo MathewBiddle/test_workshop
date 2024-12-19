@@ -27,21 +27,27 @@ The power of Darwin Core is most evident in the data aggregators that harvest da
 ### Darwin Core Archives
 Darwin Core Archives are what OBIS and GBIF harvest into their systems. Fortunately the software created and maintained by GBIF, the [Integrated Publishing Toolkit](https://www.gbif.org/ipt), produces Darwin Core Archives for us. Darwin Core Archives are pretty simple. It's a zipped folder containing the data (one or several files depending on how many extensions you use), an Ecological Metadata Language (EML) XML file, and a meta.xml file that describes what's in the zipped folder.
 
-> ## Exercise
-> 
-> Challenge: Download this [Darwin Core Archive](https://ipt-obis.gbif.us/archive.do?r=tpwd_harc_texasaransasbay_bagseine&v=2.3) and examine what's in it. Did you find anything unusual or that you don't understand what it is?
-> 
-> > ## Solution
-> > ```Folder
-> >  dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
-> >  |-- eml.xml
-> >  |-- event.txt
-> >  |-- extendedmeasurementorfact.txt
-> >  |-- meta.xml
-> >  |-- occurrence.txt
-> > ```
-> {: .solution}
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Challenge
+
+Download this [Darwin Core Archive](https://ipt-obis.gbif.us/archive.do?r=tpwd_harc_texasaransasbay_bagseine&v=2.3) and examine what's in it. Did you find anything unusual or that you don't understand what it is?
+
+:::::::::::::::::::::::: solution 
+
+## Solution
+
+```Folder
+dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
+ |-- eml.xml
+ |-- event.txt
+ |-- extendedmeasurementorfact.txt
+ |-- meta.xml
+ |-- occurrence.txt
+```
+::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::
 
 ### Darwin Core Mapping
 Now that we understand a bit more about why Darwin Core was created and how it is used today we can begin the work of mapping data to the standard. The key resource when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). This document provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. There are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset) but as you apply the standard to more datasets you'll become more familiar with the terms.
