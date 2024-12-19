@@ -1,4 +1,5 @@
 ---
+title: Workshop Home
 site: sandpaper::sandpaper_site
 ---
 
@@ -8,7 +9,7 @@ This is a new lesson built with [The Carpentries Workbench][workbench].
 [workbench]: https://carpentries.github.io/sandpaper-docs
 
       
-# Marine Biological Data Mobilization Workshop 2024
+## Marine Biological Data Mobilization Workshop 2024
 =================================================
 
 OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS, Caribbean-OBIS, OBIS-Chile
@@ -25,7 +26,7 @@ April 22-23, 2024
 **Helpers:** Pedro Pablo Aros, Caitlin Bate, Nicolás Bralic, Bruce Delo, Angela Dini, Braulio Fernandez, Pamela Fierro, Ignacio Ibanez, Brian Jones, Shannon Landovskis, YingHuan Niu, Kyla Richards, Joxmer Scott-Frias
 
 
-## General Information
+### General Information
 
 This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing marine biological observation datasets to the <a href="https://obis.org/">Ocean Biodiversity Information System (OBIS)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, â€˜omics, acoustics, telemetry).
 
@@ -72,21 +73,21 @@ anything we can do to make this workshop more accessible to you.
 **Contact:**
 Please visit <a href="https://obis.org/contact/">https://obis.org/contact/</a> for more information. 
 
-## Schedule
+### Schedule
 __Times are in EDT.__
 
 The videos created for the Marine Biological Data Mobilization Workshop can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
 
 April 22
 
-| 13:00 | Introduction to Darwin Core                                                                                                                                                                                                                                                  |
-|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 13:10 | Breakout Rooms\n\t Darwin Core Terms 1\n\t Darwin Core Terms 2\n\tData Cleaning\n\tWoRMS lookup\n\tCreating the Schema\n\tQA/QC, Metadata and Publishing                                                                                       |
-| 14:30 | Social Break                                                                                                                                                                                                                                                                 |
-| 15:00 | Data Cleaning                                                                                                                                                                                                                                                                |
-| 15:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms 1<br>            Darwin Core Terms 2<br>            Data Cleaning<br>            WoRMS lookup<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>          <br> |
-| 16:30 | Return to Main Room                                                                                                                                                                                                                                                          |
-| 17:00 | Finish                                                                                                                                                                                                                                                                       |
+| 13:00 | Introduction to Darwin Core                                                                                                                                                                                                                                                          |
+|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 13:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms 1<br>            Darwin Core Terms 2<br>            Data Cleaning<br>            WoRMS lookup<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>          <br>         |
+| 14:30 | Social Break                                                                                                                                                                                                                                                                         |
+| 15:00 | Data Cleaning                                                                                                                                                                                                                                                                        |
+| 15:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms 1<br>            Darwin Core Terms 2<br>            Data Cleaning<br>            WoRMS lookup<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>          <br>         |
+| 16:30 | Return to Main Room                                                                                                                                                                                                                                                                  |
+| 17:00 | Finish                                                                                                                                                                                                                                                                               |
 
 April 23
 
@@ -102,19 +103,19 @@ April 23
 | End   | Post-workshop help & survey                                                                                                                                                                                                                                                                 |
 
  
-## Setup
+### Setup
 
 To participate in a workshop,
 you will need access to software as described below.
 In addition, you will need an up-to-date web browser.
 
-### Install the videoconferencing client
+#### Install the videoconferencing client
 
 If you haven't used Zoom before, go to the
 <a href="https://zoom.us/download">official website</a>
 to download and install the Zoom client for your computer.
 
-#### Set up your workspace
+##### Set up your workspace
 
 Like other Carpentries workshops,
 you will be learning by "coding along" with the Instructors.
@@ -128,4 +129,4 @@ we recommend using one of the following set up options:
 * **Two devices:** If you don't have two monitors, do you have another device (tablet, smartphone) with a medium to large sized screen? If so, try using the smaller device as your video conference connection and your larger device (laptop or desktop) to follow along with the tool you will be learning about.
 * **Divide your screen:** If you only have one device and one screen, practice having two windows (the video conference program and one of the tools you will be using at the workshop) open together. How can you best fit both on your screen? Will it work better for you to toggle between them using a keyboard shortcut? Try it out in advance to decide what will work best for you.
 
-This <a href="https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/" target="_blank">blog post</a> includes detailed information on how to set up your screen to follow along during the workshop.
+This [blog post]https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/() includes detailed information on how to set up your screen to follow along during the workshop.
