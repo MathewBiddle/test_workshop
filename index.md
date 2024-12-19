@@ -3,13 +3,7 @@ title: Workshop Home
 site: sandpaper::sandpaper_site
 ---
 
-This is a new lesson built with [The Carpentries Workbench][workbench]. 
-
-
-[workbench]: https://carpentries.github.io/sandpaper-docs
-
-      
-## Marine Biological Data Mobilization Workshop 2024
+# Marine Biological Data Mobilization Workshop 2024
 =================================================
 
 OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS, Caribbean-OBIS, OBIS-Chile
@@ -26,7 +20,7 @@ April 22-23, 2024
 **Helpers:** Pedro Pablo Aros, Caitlin Bate, Nicolás Bralic, Bruce Delo, Angela Dini, Braulio Fernandez, Pamela Fierro, Ignacio Ibanez, Brian Jones, Shannon Landovskis, YingHuan Niu, Kyla Richards, Joxmer Scott-Frias
 
 
-### General Information
+## General Information
 
 This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing marine biological observation datasets to the <a href="https://obis.org/">Ocean Biodiversity Information System (OBIS)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, â€˜omics, acoustics, telemetry).
 
@@ -73,7 +67,7 @@ anything we can do to make this workshop more accessible to you.
 **Contact:**
 Please visit <a href="https://obis.org/contact/">https://obis.org/contact/</a> for more information. 
 
-### Schedule
+## Schedule
 __Times are in EDT.__
 
 The videos created for the Marine Biological Data Mobilization Workshop can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
@@ -103,19 +97,19 @@ April 23
 | End   | Post-workshop help & survey                                                                                                                                                                                                                                                                 |
 
  
-### Setup
+## Setup
 
 To participate in a workshop,
 you will need access to software as described below.
 In addition, you will need an up-to-date web browser.
 
-#### Install the videoconferencing client
+### Install the videoconferencing client
 
 If you haven't used Zoom before, go to the
 <a href="https://zoom.us/download">official website</a>
 to download and install the Zoom client for your computer.
 
-##### Set up your workspace
+#### Set up your workspace
 
 Like other Carpentries workshops,
 you will be learning by "coding along" with the Instructors.
