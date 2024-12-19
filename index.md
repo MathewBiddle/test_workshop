@@ -3,7 +3,7 @@ title: Workshop Home
 site: sandpaper::sandpaper_site
 ---
 
-# Marine Biological Data Mobilization Workshop 2024
+Marine Biological Data Mobilization Workshop 2024
 =================================================
 
 OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS, Caribbean-OBIS, OBIS-Chile
@@ -15,14 +15,39 @@ April 22-23, 2024
 
 13:00 - 17:00 EDT
 
-**Instructors:** Mathew Biddle, Laura Brenskelle, Steve Formel, Elizabeth Lawrence, Tylar Murray, Carolina Peralta, Jonathan Pye, Tim van der Stap
+**Instructors:** 
+Mathew Biddle, 
+Laura Brenskelle, 
+Steve Formel, 
+Elizabeth Lawrence, 
+Tylar Murray, 
+Carolina Peralta, 
+Jonathan Pye, 
+Tim van der Stap
 
-**Helpers:** Pedro Pablo Aros, Caitlin Bate, Nicolás Bralic, Bruce Delo, Angela Dini, Braulio Fernandez, Pamela Fierro, Ignacio Ibanez, Brian Jones, Shannon Landovskis, YingHuan Niu, Kyla Richards, Joxmer Scott-Frias
+**Helpers:** 
+Pedro Pablo Aros, 
+Caitlin Bate, 
+Nicolás Bralic, 
+Bruce Delo, 
+Angela Dini, 
+Braulio Fernandez, 
+Pamela Fierro, 
+Ignacio Ibanez, 
+Brian Jones, 
+Shannon Landovskis, 
+YingHuan Niu, 
+Kyla Richards, 
+Joxmer Scott-Frias
 
 
 ## General Information
 
-This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing marine biological observation datasets to the <a href="https://obis.org/">Ocean Biodiversity Information System (OBIS)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, â€˜omics, acoustics, telemetry).
+This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing 
+marine biological observation datasets to the [Ocean Biodiversity Information System (OBIS)](https://obis.org) 
+by helping data providers standardize their data using Darwin Core including species observations from any 
+type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, 'omics, 
+acoustics, telemetry).
 
 What this workshop will cover:
 
@@ -34,19 +59,26 @@ What this workshop will cover:
 * How to get your data into the Integrated Publishing Toolkit.
 * Tools that will help in all of the above processes.
 
-The goal is that by the end of the workshop you will have a dataset in a final standardized state and shared to OBIS. We are hoping to address some of the blockers that you identified, including: lack of time, training, and specific formatting questions.
+The goal is that by the end of the workshop you will have a dataset in a final standardized state and shared to OBIS. 
+We are hoping to address some of the blockers that you identified, including: lack of time, training, and specific 
+formatting questions.
 
-We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. **Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time**.
+We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring 
+to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large 
+portions of time for you to work on your data and ask questions when you hit a stumbling block. **Therefore, if you do 
+not have a dataset to work on you may not find this workshop a good use of your time**.
 
 What this workshop will **not** cover:
 
 * What is OBIS?
 * Rationale for sharing data with OBIS.
-* Using data thatâ€™s already in OBIS.
+* Using data that is already in OBIS.
 * Data analysis.
 * Use of programs or software.
 
-If you would like to learn more about OBIS and a short rationale for sharing data to it, please watch this [two minute video](https://youtu.be/E6NblAC-1uE) and this [two minute video](https://youtu.be/mmD-EYNOrFA) and share them with those you want to work with to share data.
+If you would like to learn more about OBIS and a short rationale for sharing data to it, please watch 
+this [two minute video](https://youtu.be/E6NblAC-1uE) and this [two minute video](https://youtu.be/mmD-EYNOrFA) and 
+share them with those you want to work with to share data.
 
 **When:**
 April 22-23, 2024.
@@ -72,7 +104,7 @@ __Times are in EDT.__
 
 The videos created for the Marine Biological Data Mobilization Workshop can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
 
-April 22
+### April 22
 
 | 13:00 | Introduction to Darwin Core                                                                                                                                                                                                                                                          |
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -83,7 +115,7 @@ April 22
 | 16:30 | Return to Main Room                                                                                                                                                                                                                                                                  |
 | 17:00 | Finish                                                                                                                                                                                                                                                                               |
 
-April 23
+### April 23
 
 | 13:00 | Darwin Core and Extension Schemas                                                                                                                                                                                                                                                           |
 |-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -106,7 +138,7 @@ In addition, you will need an up-to-date web browser.
 ### Install the videoconferencing client
 
 If you haven't used Zoom before, go to the
-<a href="https://zoom.us/download">official website</a>
+[official website](https://zoom.us/download)
 to download and install the Zoom client for your computer.
 
 #### Set up your workspace
@@ -123,4 +155,5 @@ we recommend using one of the following set up options:
 * **Two devices:** If you don't have two monitors, do you have another device (tablet, smartphone) with a medium to large sized screen? If so, try using the smaller device as your video conference connection and your larger device (laptop or desktop) to follow along with the tool you will be learning about.
 * **Divide your screen:** If you only have one device and one screen, practice having two windows (the video conference program and one of the tools you will be using at the workshop) open together. How can you best fit both on your screen? Will it work better for you to toggle between them using a keyboard shortcut? Try it out in advance to decide what will work best for you.
 
-This [blog post]https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/() includes detailed information on how to set up your screen to follow along during the workshop.
+This [blog post](https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/) includes 
+detailed information on how to set up your screen to follow along during the workshop.
