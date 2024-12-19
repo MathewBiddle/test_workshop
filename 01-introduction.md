@@ -3,11 +3,6 @@ title: "Introduction to Darwin Core"
 start: true
 teaching: 0
 exercises: 90
-keypoints:
-- "Darwin Core isn't difficult to apply, it just takes a little bit of time."
-- "Using Darwin Core allows datasets from across projects, organizations, and countries to be integrated together."
-- "Applying certain general principles to the data will make it easier to map to Darwin Core."
-- "Implementing Darwin Core makes data FAIR-er and means becoming part of a community of people working together to understand species no matter where they work or are based."
 ---
 
 :::::::::::: questions
@@ -155,3 +150,12 @@ Create some crosswalk notes for your dataset.
 Compare your data files to the table(s) above to devise a plan to crosswalk your data columns into the DwC terms. 
 
 :::::::::::::::::::::::::::::::::::::
+
+::::::::::::: keypoints
+
+- Darwin Core isn't difficult to apply, it just takes a little bit of time.
+- Using Darwin Core allows datasets from across projects, organizations, and countries to be integrated together.
+- Applying certain general principles to the data will make it easier to map to Darwin Core.
+- Implementing Darwin Core makes data FAIR-er and means becoming part of a community of people working together to understand species no matter where they work or are based.
+
+:::::::::::::::::::::::
