@@ -73,7 +73,6 @@ If you would like to learn more about OBIS and a short rationale for sharing dat
   <strong>When:</strong>
   April 22-23, 2024.
   April 24th will be an optional day to attend for Workshop Participants if they require additional help.
-  {% include workshop_calendar.html %}
 </p>
 
 <p id="requirements">
