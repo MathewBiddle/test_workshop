@@ -52,42 +52,53 @@ dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
 ### Darwin Core Mapping
 Now that we understand a bit more about why Darwin Core was created and how it is used today we can begin the work of mapping data to the standard. The key resource when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). This document provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. There are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset) but as you apply the standard to more datasets you'll become more familiar with the terms.
 
-> ## Tip 
-> If your raw column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data collection use the standard DwC term headers!
-{: .callout}
+:::::::::::: callout
 
-> ## Exercise
-> 
-> **Challenge:** Find the matching Darwin Core term for these column headers.
-> 
-> 1. SAMPLE_DATE (example data: 09-MAR-21 05.45.00.000000000 PM)
-> 2. lat (example data: 32.6560)
-> 3. depth_m (example data: 6 meters)
-> 4. COMMON_NAME (example data: staghorn coral)
-> 5. percent_cover (example data: 15)
-> 6. COUNT (example data: 2 Females)
-> 
-> > ## Solution
-> > 1. [`eventDate`](https://dwc.tdwg.org/terms/#dwc:eventDate)
-> > 2. [`decimalLatitude`](https://dwc.tdwg.org/terms/#dwc:decimalLatitude)
-> > 3. [`minimumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:minimumDepthInMeters) and [`maximumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters)
-> > 4. [`vernacularName`](https://dwc.tdwg.org/terms/#dwc:vernacularName)
-> > 5. [`organismQuantity`](https://dwc.tdwg.org/terms/#dwc:organismQuantity) and [`organismQuantityType`](https://dwc.tdwg.org/terms/#dwc:organismQuantityType)
-> > 6. This one is tricky- it's two terms combined and will need to be split. [`indvidualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) and [`sex`](https://dwc.tdwg.org/terms/#dwc:sex)
-> >
-> > {: .output}
-> {: .solution}
-{: .challenge}
+## :pushpin: Tip 
 
-> ## Tip 
-> To make the mapping step easier on yourself, we recommend starting a mapping document/spreadsheet (or document it as a comment in your script). List out all of your column headers in one column and document the appropriate Dawin Core term(s) in a second column. For example:
-> 
-> | my term | DwC term |
-> |---------|----------|
-> | lat | decimalLatitude |
-> | date | eventDate |
-> | species | scientificName |
-{: .callout}
+If your raw column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data collection use the standard DwC term headers!
+
+::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Challenge
+
+Find the matching Darwin Core term for these column headers.
+ 
+1. SAMPLE_DATE (example data: 09-MAR-21 05.45.00.000000000 PM)
+2. lat (example data: 32.6560)
+3. depth_m (example data: 6 meters)
+4. COMMON_NAME (example data: staghorn coral)
+5. percent_cover (example data: 15)
+6. COUNT (example data: 2 Females)
+
+:::::::::::::::::::::::: solution 
+
+## Solution
+1. [`eventDate`](https://dwc.tdwg.org/terms/#dwc:eventDate)
+2. [`decimalLatitude`](https://dwc.tdwg.org/terms/#dwc:decimalLatitude)
+3. [`minimumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:minimumDepthInMeters) and [`maximumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters)
+4. [`vernacularName`](https://dwc.tdwg.org/terms/#dwc:vernacularName)
+5. [`organismQuantity`](https://dwc.tdwg.org/terms/#dwc:organismQuantity) and [`organismQuantityType`](https://dwc.tdwg.org/terms/#dwc:organismQuantityType)
+6. This one is tricky- it's two terms combined and will need to be split. [`indvidualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) and [`sex`](https://dwc.tdwg.org/terms/#dwc:sex)
+
+::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::
+
+:::::::::::: callout
+## :pushpin: Tip 
+
+To make the mapping step easier on yourself, we recommend starting a mapping document/spreadsheet (or document it as a comment in your script). List out all of your column headers in one column and document the appropriate Dawin Core term(s) in a second column. For example:
+ 
+| my term | DwC term |
+|---------|----------|
+| lat | decimalLatitude |
+| date | eventDate |
+| species | scientificName |
+
+::::::::::::
 
 
 ### What are the **required** Darwin Core terms for publishing to OBIS?
@@ -126,12 +137,12 @@ While these terms are not required for publishing data to OBIS, they are extreme
 
 Other than these specific terms, work through the data that you have and try to crosswalk it to the Darwin Core terms that match best. 
 
-> ## Exercise
-> 
-> Challenge: Create some crosswalk notes for your dataset.
-> 
-> Compare your data files to the table(s) above to devise a plan to crosswalk your data columns into the DwC terms. 
-> 
-{: .challenge}
+::::::::::::::::::::::::::::::::::::: challenge
 
+## Exercise
+ 
+Create some crosswalk notes for your dataset.
+ 
+Compare your data files to the table(s) above to devise a plan to crosswalk your data columns into the DwC terms. 
 
+:::::::::::::::::::::::::::::::::::::
