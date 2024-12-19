@@ -3,21 +3,30 @@ title: "Introduction to Darwin Core"
 start: true
 teaching: 0
 exercises: 90
-questions:
-- "What is Darwin Core?"
-- "What is a Darwin Core Archive?"
-- "Why do people use Darwin Core for their data?"
-- "What are the required Darwin Core terms for sharing to OBIS?"
-objectives:
-- "Understand the purpose of Darwin Core."
-- "Understand how to map data to Darwin Core."
-- "Plan for mapping to Darwin Core."
 keypoints:
 - "Darwin Core isn't difficult to apply, it just takes a little bit of time."
 - "Using Darwin Core allows datasets from across projects, organizations, and countries to be integrated together."
 - "Applying certain general principles to the data will make it easier to map to Darwin Core."
 - "Implementing Darwin Core makes data FAIR-er and means becoming part of a community of people working together to understand species no matter where they work or are based."
 ---
+
+:::::::::::: questions
+
+- What is Darwin Core?
+- What is a Darwin Core Archive?
+- Why do people use Darwin Core for their data?
+- What are the required Darwin Core terms for sharing to OBIS?
+
+::::::::::::::::::::::
+
+::::::::::: objectives
+
+- Understand the purpose of Darwin Core.
+- Understand how to map data to Darwin Core.
+- Plan for mapping to Darwin Core.
+
+::::::::::::::::::::::
+
 # Darwin Core - A global community of data sharing and integration
 Darwin Core is a data standard to mobilize and share biodiversity data. Over the years, the Darwin Core standard has expanded to enable exchange and sharing of diverse types of biological observations from citizen scientists, ecological monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. Darwin Core is applicable to any observation of an organism (scientific name, OTU, or other methods of defining a species) at a particular place and time. In Darwin Core this is an `occurrence`. To learn more about the foundations of Darwin Core read [Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
 
