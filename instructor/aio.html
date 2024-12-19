@@ -124,6 +124,10 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 <hr>
 <li><a class="dropdown-item" href="reference.html">Reference</a></li>
+<li><a class="dropdown-item" href="about.html">About</a></li>
+<li><a class="dropdown-item" href="helpful-tutorials.html">Helpful Tutorials</a></li>
+<li><a class="dropdown-item" href="edna-extension.html">DNA-derived Data Extension</a></li>
+<li><a class="dropdown-item" href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li>
           </ul>
 </li>
       </ul>
@@ -277,6 +281,66 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-create-schema.html">4. Darwin Core and Extension Schemas</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-break.html">5. Social Break</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="06-qa-qc.html">6. QA/QC</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-validation-and-publishing.html">7. Metadata and publishing</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-post-workshop.html">8. Continuing the Conversation</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -303,6 +367,10 @@
                       </li>
                       <hr>
 <li><a class="dropdown-item" href="reference.html">Reference</a></li>
+<li><a class="dropdown-item" href="about.html">About</a></li>
+<li><a class="dropdown-item" href="helpful-tutorials.html">Helpful Tutorials</a></li>
+<li><a class="dropdown-item" href="edna-extension.html">DNA-derived Data Extension</a></li>
+<li><a class="dropdown-item" href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li>
                     </ul>
 </div>
                 </div>
@@ -394,7 +462,7 @@ or that you don’t understand what it is?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre class="folder"><code>dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
  |-- eml.xml
@@ -456,7 +524,7 @@ DwC term headers!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></li>
@@ -1767,6 +1835,1269 @@ strings for coordinates.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div></section><section id="aio-04-create-schema"><p>Content from <a href="04-create-schema.html">Darwin Core and Extension Schemas</a></p>
+<hr>
+<p>Last updated on 2024-12-19 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/04-create-schema.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="section level3">
+<h3 id="darwin-core---cores-and-extensions">Darwin Core - Cores and Extensions<a class="anchor" aria-label="anchor" href="#darwin-core---cores-and-extensions"></a>
+</h3>
+<p>Now that we have a firm basis for understanding the different terms
+in Darwin Core the next part to understand is how data tables are
+organized and the difference between cores and extensions. You will
+always have a core table (Occurrence core or Event core) with either no
+extensions or several. What you choose depends on the data you have and
+how to represent it best. The original Darwin Core core is the <a href="https://rs.gbif.org/core/dwc_occurrence_2022-02-02.xml" class="external-link">Occurrence
+core</a>. Once people started using that core they began to see that
+they needed extensions to that core to best represent the data they were
+trying to share and therefore <a href="https://rs.gbif.org/extensions.html" class="external-link">several extensions</a> have
+been developed (and are continuing to be developed). As more monitoring
+data has been shared over time, another core type called <a href="https://rs.gbif.org/core/dwc_event_2022-02-02.xml" class="external-link">Event core</a>
+was added. Without getting too far into the weeds on the cores and
+extensions, what’s most important to understand is that you need to pick
+your core type and once you do that then you pick the extensions to go
+with it. For example, if your data took place as part of an event
+(cruise, transects, etc) you will pick Event core. If there was no
+sampling event, then you will pick Occurrence core.</p>
+</div>
+<div class="section level3">
+<h3 id="different-options-for-sharing-the-data">Different options for sharing the data<a class="anchor" aria-label="anchor" href="#different-options-for-sharing-the-data"></a>
+</h3>
+<div class="section level4">
+<h4 id="occurrence-only">Occurrence only<a class="anchor" aria-label="anchor" href="#occurrence-only"></a>
+</h4>
+<p>The bare minimum for sharing data to OBIS is to use the <a href="https://rs.gbif.org/core/dwc_occurrence_2022-02-02.xml" class="external-link">Occurrence
+Core</a> with no extensions. This core type covers datasets that only
+include observations and/or specimen records where no information on
+sampling is available. <strong>Occurrence core is also used for eDNA or
+DNA derived data</strong>.</p>
+<p>The Occurrence core allows you to provide all the required Darwin
+Core terms detailed in the <a href="../%7B%7B%20page.root%20%7D%7D/01-introduction/index.html">intro
+section</a>. You can produce a fully compliant Darwin Core version of
+your data using only the Occurrence core (<a href="https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv" class="external-link">see
+this example by Tylar Murray</a>). On one hand, if the data were
+collected using some kind of sampling methodology, you will lose much of
+that information if you use this most simple form of data structuring.
+However, it is faster and easier to produce.</p>
+<blockquote>
+<h2 id="thought-experiment">Thought Experiment</h2>
+<p>Look at the <a href="https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv" class="external-link">minimum
+required fields example</a>. What is possible to do in future reuse?
+What would not be possible? For instance, note that there is no
+information about depth or the uncertainty of the coordinates. {:
+.callout}</p>
+</blockquote>
+<p>For more examples check out the <a href="https://github.com/ioos/bio_data_guide/tree/main/datasets" class="external-link">Datasets
+folder</a> in the IOOS Bio Data Guide.</p>
+</div>
+<div class="section level4">
+<h4 id="occurrence-core-extensions">Occurrence Core + extensions<a class="anchor" aria-label="anchor" href="#occurrence-core-extensions"></a>
+</h4>
+<p>Using the Occurrence core plus <a href="https://rs.gbif.org/extensions.html" class="external-link">relevant extensions</a> means
+that you can capture more of the data that’s been recorded. Let’s
+consider an environmental DNA dataset. eDNA datasets have information
+that is unique to that method and will not be represented well using
+Occurrence core only. To document eDNA using Darwin Core you should
+follow <a href="https://doi.org/10.35035/doc-vf1a-nr22" class="external-link">this guide</a>;
+you will need the Occurrence core plus the <a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2022-02-23.xml" class="external-link">DNA
+derived data extension</a>. Adding the DNA derived data extension allows
+you to capture information such as the PCR primer used, DNA sequences,
+and other information specific to this type of data.</p>
+<p>Let’s consider another example: a museum dataset that has biological
+measurements for each individual specimen (e.g. length). All information
+about each organism’s occurrence (taxonomic information, locality,
+identification, etc.) will go into the Occurrence core. You can then
+capture the biotic measurement information (type of measurement, units,
+accuracy, etc.) by using either the <a href="https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml" class="external-link">Measurement
+or Facts extension</a>, or the <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml" class="external-link">Extended
+Measurement or Fact extension</a> (we elaborate on this extension
+below). Note again here we do not have information on <em>how</em> the
+organisms were sampled.</p>
+</div>
+<div class="section level4">
+<h4 id="event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension<a class="anchor" aria-label="anchor" href="#event-core-with-extended-measurement-or-fact-extension"></a>
+</h4>
+<p>As we have indicated earlier, the Event core is for datasets that
+include known sampling events - details are known about how, when, and
+where samples were taken.</p>
+<p>An innovation that OBIS made was introducing the Extended Measurement
+or Fact extension (also sometimes referred to as OBIS-ENV-DATA, or
+eMoF). This uses the Event core with an Occurrence extension + the <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml" class="external-link">extended
+Measurement or Fact extension</a>. The eMoF extension makes it possible
+to include measurements for <strong>both</strong> the events (salinity,
+temperature, gear type, etc.) and the occurrences (weight, length,
+etc.). Prior to this you were only able to include measurements of the
+occurrence (in the Measurement or Facts extension).</p>
+<p>It is important to know that the structure of the eMoF table is
+likely quite a bit different than how the original data are recorded in
+your dataset. Rather than documenting each measurement in separate
+columns, measurements will be condensed into one column:
+<code>measurementValue</code> (e.g. 15). Then, the column
+<code>measurementType</code> allows free text describing what the
+measurement actually is (e.g. length). Finally the column
+<code>measurementUnit</code> is used to indicate the unit of the
+measurement (e.g. cm).</p>
+<p>The unconstrained nature of <code>measurementType</code> allows for
+flexibility in describing measurements, which can be quite a useful. But
+what if you wanted to obtain all OBIS records that have “length”
+measurements? Due to the inevitable heterogeneity in how different
+people document “length”, you would have to try to account for all these
+different ways! Fortunately the eMoF table can get around this challenge
+by providing a way to include Unique Resource Identifiers (URIs). These
+URIs are used to populate the <code>measurementTypeID</code> field, as
+well as <code>measurementUnitID</code> and
+<code>measurementValueID</code>. URIs mean that if you call the
+<code>measurementType</code> “abundance” but I call it “Abundance per
+square meter” and we both use the <code>measurementTypeID</code> “<a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/</a>”
+then we know this is the same measurement type even if we didn’t use the
+same words to describe it. Choosing the right URI can be difficult but
+you can read about finding codes in <a href="https://manual.obis.org/vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary" class="external-link">the
+OBIS Manual</a>. All you need to know for now is that
+<code>measurementTypeID</code> should be populated with a URI belonging
+to the NERC P01 collection, easily accessible through the <a href="https://vocab.seadatanet.org/p01-facet-search" class="external-link">SeaDataNet P01
+facet search</a>, and <code>measurementUnitID</code> should be popualted
+with a <a href="https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=" class="external-link">NERC
+P06 code</a>. OBIS is soon releasing video tutorials to help with
+choosing URIs, so stay tuned to their <a href="https://manual.obis.org/" class="external-link">manual</a> and <a href="https://www.youtube.com/@oceanbiodiversityinformati6931/playlists" class="external-link">YouTube
+list</a> for updates.</p>
+<blockquote>
+<h2 id="tip">Tip</h2>
+<p>You can search for <code>measurementTypes</code> that other OBIS data
+providers have used by using the <a href="https://mof.obis.org/" class="external-link">OBIS
+mof report</a>. BE CAREFUL though to make sure the definition in the URI
+matches exactly your measurement type if you want to reuse it for your
+data. {: .callout}</p>
+</blockquote>
+</div>
+</div>
+<div class="section level3">
+<h3 id="whats-in-an-id">What’s in an ID?<a class="anchor" aria-label="anchor" href="#whats-in-an-id"></a>
+</h3>
+<table class="table">
+<colgroup>
+<col width="42%">
+<col width="30%">
+<col width="26%">
+</colgroup>
+<thead><tr class="header">
+<th>Darwin Core Term</th>
+<th>Description</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:eventID" class="external-link">eventID</a></td>
+<td>An identifier for the set of information associated with an Event
+(something that occurs at a place and time). May be a global unique
+identifier or an identifier specific to the data set.</td>
+<td>
+<code>INBO:VIS:Ev:00009375</code><br><code>Station_95_Date_09JAN1997:14:35:00.000</code>
+<br><code>FFS-216:2007-09-21:A:replicateID1024</code>
+</td>
+</tr>
+<tr class="even">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID" class="external-link">occurrenceID</a></td>
+<td>An identifier for the Occurrence (as opposed to a particular digital
+record of the occurrence). In the absence of a persistent global unique
+identifier, construct one from a combination of identifiers in the
+record that will most closely make the occurrenceID globally
+unique.</td>
+<td>
+<code>urn:catalog:UWBM:Bird:89776</code> <br><code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>
+<br><code>FFS-216:2007-09-21:A:replicateID1024:objectID1345330</code>
+</td>
+</tr>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:measurementID" class="external-link">measurementID</a></td>
+<td>An identifier for the MeasurementOrFact (information pertaining to
+measurements, facts, characteristics, or assertions). May be a global
+unique identifier or an identifier specific to the data set.</td>
+<td><code>9c752d22-b09a-11e8-96f8-529269fb1459</code></td>
+</tr>
+</tbody>
+</table>
+<p>IDs are the keys in your data that are used to link tables together.
+For example, an <code>occurenceID</code> in the eMoF table records
+information about an organism with the same <code>occurrenceID</code>
+within the Occurrence core table. IDs are also the keys that keep track
+of each of the records, so that if you notice a mistake or missing
+information you can keep the record in place in the global aggregators
+and fix the mistake or add the missing information. For instance, let’s
+say you have a record with an <code>occurrenceID</code>
+<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>
+and after it’s published to OBIS you notice that the latitude was
+recorded incorrectly. When you fix that record in the data you would
+keep the <code>occurrenceID</code>
+<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>,
+fix the latitude, and republish the data so that the record is still
+present in OBIS but you have fixed the mistake.</p>
+<p>With that in mind what is the best way to create an
+<code>eventID</code>, <code>occurrenceID</code>, or
+<code>measurementID</code>? Until we have a system that mints Persistent
+Identififers for individual records then the best way we have seen is to
+build the ID from information in the data itself. That way if you need
+to update or fix a record you simply use the same information again to
+build the same ID for the same record. Take our example above
+<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>.
+This is a concatenation of information from the original source data of
+the Station number + Verbatim Date + Scientific name. Because this is
+unique for each row in the occurrence file and we have kept the original
+data in its original format we can always rebuild this ID by
+concatenating this same information together again.</p>
+<p><strong>It is very important that these IDs do not change over
+time</strong>. So if an ID for a museum specimen is built from e.g. the
+institution the specimen is being held at, but then the specimen changes
+institutions - its ID should <strong>not</strong> change to reflect the
+move. If the ID changes then the record will be duplicated in the global
+database and record information could be lost over time!</p>
+<p><img src="../%7B%7B%20page.root%20%7D%7D/fig/OBISsampling-schema-example.png" class="figure"><em>The Darwin Core file structure, demonstrating how an Event core
+table can be connected to extension tables through the use of
+identifiers. Image credit: <a href="https://manual.obis.org/" class="external-link">OBIS</a></em></p>
+<blockquote>
+<h2 id="event-core">Event Core</h2>
+<table class="table">
+<colgroup>
+<col width="16%">
+<col width="32%">
+<col width="35%">
+<col width="15%">
+</colgroup>
+<thead><tr class="header">
+<th>Darwin Core Term</th>
+<th>Definition</th>
+<th>Comment</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:eventID" class="external-link"><code>eventID</code></a></td>
+<td>An identifier for the set of information associated with an Event
+(something that occurs at a place and time). May be a global unique
+identifier or an identifier specific to the data set.</td>
+<td>To construct a globally unique identifier for each event (tow,
+quadrat, station, transect, etc) you can usually concatenate station +
+date but you’ll need to check this is unique for each row in your
+data.</td>
+<td>
+<code>INBO:VIS:Ev:00009375</code><br><code>Station_95_Date_09JAN1997:14:35:00.000</code>
+<br><code>FFS-216:2007-09-21:A:replicateID1024</code>
+</td>
+</tr>
+<tr class="even">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></td>
+<td>The date-time or interval during which an Event occurred. For
+occurrences, this is the date-time when the event was recorded. Not
+suitable for a time in a geological context.</td>
+<td>Must follow <a href="https://en.wikipedia.org/wiki/ISO_8601" class="external-link">ISO
+8601</a>. See more information on dates in the <a href="../%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
+Cleaning</a> section of the workshop.</td>
+<td><code>2009-02-20T08:40Z</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude" class="external-link"><code>decimalLatitude</code></a></td>
+<td>The geographic latitude (in decimal degrees, using the spatial
+reference system given in geodeticDatum) of the geographic center of a
+Location. Positive values are north of the Equator, negative values are
+south of it. Legal values lie between -90 and 90, inclusive.</td>
+<td>For OBIS and GBIF the required <code>geodeticDatum</code> is WGS84.
+Uncertainty around the geographic center of a Location (e.g. when
+sampling event was a transect) can be recorded in
+<code>coordinateUncertaintyInMeters</code>. See more information on
+coordinates in the <a href="../%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
+Cleaning</a> section of the workshop.</td>
+<td><code>-41.0983423</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude" class="external-link"><code>decimalLongitude</code></a></td>
+<td>The geographic longitude (in decimal degrees, using the spatial
+reference system given in geodeticDatum) of the geographic center of a
+Location. Positive values are east of the Greenwich Meridian, negative
+values are west of it. Legal values lie between -180 and 180,
+inclusive</td>
+<td>For OBIS and GBIF the required <code>geodeticDatum</code> is WGS84.
+See more information on coordinates in the <a href="../%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
+Cleaning</a> section of the workshop.</td>
+<td><code>-121.1761111</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:countryCode" class="external-link"><code>countryCode</code></a></td>
+<td>The standard code for the country in which the location occurs.</td>
+<td>Use an <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" class="external-link">ISO
+3166-1-alpha-2</a> country code. Not required for OBIS but GBIF needs
+this for their system.</td>
+<td><code>US</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://dwc.tdwg.org/terms/#dwciri:geodeticDatum" class="external-link"><code>geodeticDatum</code></a></td>
+<td>The ellipsoid, geodetic datum, or spatial reference system (SRS)
+upon which the geographic coordinates given in decimalLatitude and
+decimalLongitude as based.</td>
+<td>Must be <a href="https://epsg.io/4326" class="external-link">WGS84</a> for data shared to
+OBIS and GBIF but it’s best to state explicitly that it is.</td>
+<td><code>WGS84</code></td>
+</tr>
+</tbody>
+</table>
+<p>{: .solution}</p>
+</blockquote>
+<blockquote>
+<h2 id="occurrence-extension">Occurrence extension</h2>
+<table class="table">
+<colgroup>
+<col width="16%">
+<col width="32%">
+<col width="35%">
+<col width="15%">
+</colgroup>
+<thead><tr class="header">
+<th>Darwin Core Term</th>
+<th>Definition</th>
+<th>Comment</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:eventID" class="external-link"><code>eventID</code></a></td>
+<td>An identifier for the set of information associated with an Event
+(something that occurs at a place and time). May be a global unique
+identifier or an identifier specific to the data set.</td>
+<td>This will be constructed in the event core but you need to reference
+it here in the occurrence extension so the files can link to each other
+correctly.</td>
+<td>
+<code>INBO:VIS:Ev:00009375</code><br><code>Station_95_Date_09JAN1997:14:35:00.000</code>
+<br><code>FFS-216:2007-09-21:A:replicateID1024</code>
+</td>
+</tr>
+<tr class="even">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID" class="external-link"><code>occurrenceID</code></a></td>
+<td>An identifier for the Occurrence (as opposed to a particular digital
+record of the occurrence). In the absence of a persistent global unique
+identifier, construct one from a combination of identifiers in the
+record that will most closely make the occurrenceID globally
+unique.</td>
+<td>To construct a globally unique identifier for each occurrence you
+can usually concatenate station + date + scientific name (or something
+similar) but you’ll need to check this is unique for each row in your
+data.</td>
+<td><code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:basisOfRecord" class="external-link"><code>basisOfRecord</code></a></td>
+<td>The specific nature of the data record.</td>
+<td>Pick from these controlled vocabulary terms: <a href="http://rs.tdwg.org/dwc/terms/HumanObservation" class="external-link">HumanObservation</a>,
+<a href="http://rs.tdwg.org/dwc/terms/MachineObservation" class="external-link">MachineObservation</a>,
+<a href="http://rs.tdwg.org/dwc/terms/PreservedSpecimen" class="external-link">PreservedSpecimen</a>,
+<a href="http://rs.tdwg.org/dwc/terms/LivingSpecimen" class="external-link">LivingSpecimen</a>,
+<a href="http://rs.tdwg.org/dwc/terms/FossilSpecimen" class="external-link">FossilSpecimen</a>,
+<a href="http://rs.tdwg.org/dwc/dwctype/MaterialSample" class="external-link">MaterialSample</a>,
+<a href="http://rs.tdwg.org/dwc/dwctype/Occurrence" class="external-link">Occurrence</a>, <a href="http://rs.tdwg.org/dwc/dwctype/MaterialCitation" class="external-link">MaterialCitation</a>
+</td>
+<td><code>HumanObservation</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:scientificName" class="external-link"><code>scientificName</code></a></td>
+<td>The full scientific name, with authorship and date information if
+known. When forming part of an Identification, this should be the name
+in lowest level taxonomic rank that can be determined. This term should
+not contain identification qualifications, which should instead be
+supplied in the <code>identificationQualifier</code> term.</td>
+<td>Note that cf., aff., etc. need to be parsed out to the
+<code>identificationQualifier</code> term.</td>
+<td><code>Atractosteus spatula</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:scientificNameID" class="external-link"><code>scientificNameID</code></a></td>
+<td>An identifier for the nomenclatural (not taxonomic) details of a
+scientific name.</td>
+<td>Must be a WoRMS LSID for sharing to OBIS. Note that the numbers at
+the end are the AphiaID from WoRMS.</td>
+<td><code>urn:lsid:marinespecies.org:taxname:218214</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:kingdom" class="external-link"><code>kingdom</code></a></td>
+<td>The full scientific name of the kingdom in which the taxon is
+classified.</td>
+<td>Not required for OBIS but GBIF needs this to disambiguate scientific
+names that are the same but in different kingdoms.</td>
+<td><code>Animalia</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceStatus" class="external-link"><code>occurrenceStatus</code></a></td>
+<td>A statement about the presence or absence of a Taxon at a
+Location.</td>
+<td>For OBIS, only valid values are <code>present</code> and
+<code>absent</code>.</td>
+<td><code>present</code></td>
+</tr>
+</tbody>
+</table>
+<p>{: .solution}</p>
+</blockquote>
+<blockquote>
+<h2 id="extended-measurement-or-fact-extension">Extended Measurement or
+Fact Extension</h2>
+<p>Nothing is <em>required</em> from the OBIS perspective but if you are
+using this extension then <code>eventID</code> is required to be able to
+link the extension back to the Event core. You can also use
+<code>occurrenceID</code> to link to occurrence records in the
+Occurrence core or extension. See <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml" class="external-link">here</a>
+for all potential fields in the extension and what goes in them. See
+below of the most relevant terms to be included in the eMoF table.</p>
+<table class="table">
+<colgroup>
+<col width="16%">
+<col width="32%">
+<col width="35%">
+<col width="15%">
+</colgroup>
+<thead><tr class="header">
+<th>Darwin Core Term</th>
+<th>Definition</th>
+<th>Comment</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>eventID</code></td>
+<td>An identifier for the set of information associated with an Event
+(something that occurs at a place and time). May be a global unique
+identifier or an identifier specific to the data set.</td>
+<td>This will be constructed in the Event core but you need to reference
+it here in the extension so the files can link to each other
+correctly.</td>
+<td>
+<code>INBO:VIS:Ev:00009375</code><br><code>Station_95_Date_09JAN1997:14:35:00.000</code>
+<br><code>FFS-216:2007-09-21:A:replicateID1024</code>
+</td>
+</tr>
+<tr class="even">
+<td><code>occurrenceID</code></td>
+<td>The identifier of the occurrence the measurement or fact refers to.
+If not applicable, it should be left empty.</td>
+<td>Only needed if you have measurements that you need to link back to
+an occurrence like weight, length, abundance, etc.</td>
+<td>
+<code>urn:catalog:UWBM:Bird:89776</code> <br><code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>
+<br><code>FFS-216:2007-09-21:A:replicateID1024:objectID1345330</code>
+</td>
+</tr>
+<tr class="odd">
+<td><code>measurementID</code></td>
+<td>An identifier for the MeasurementOrFact (information pertaining to
+measurements, facts, characteristics, or assertions). May be a global
+unique identifier or an identifier specific to the data set.</td>
+<td>This is not necessarily required when creating the eMoF but it can
+be useful, especially if you would like a way to identify a specific
+measurement in the data</td>
+<td><code>9c752d22-b09a-11e8-96f8-529269fb1459</code></td>
+</tr>
+<tr class="even">
+<td><code>measurementType</code></td>
+<td>The nature of the measurement, fact, characteristic, or assertion.
+Recommended best practice is to use a controlled vocabulary.</td>
+<td></td>
+<td>
+<code>temperature</code><br><code>salinity</code><br><code>length</code><br><code>device type</code>
+</td>
+</tr>
+<tr class="odd">
+<td><code>measurementTypeID</code></td>
+<td>An identifier for the measurementType (global unique identifier,
+URI). The identifier should reference the measurementType in a
+vocabulary.</td>
+<td>OBIS uses NERC to provide these but you can use other vocabularies
+or ontologies like ENVO or others. When using NERC vocabulary terms, you
+must choose a term from the P01 collection.</td>
+<td>
+<code>http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/</code><br><code>http://vocab.nerc.ac.uk/collection/P01/current/ODSDM021/</code><br><code>http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/</code>
+<br>
+`<code>| |</code>measurementValue<code>| The value of the measurement, fact, characteristic, or assertion |  |</code>20<code>&lt;br/&gt;</code>61.5<code>&lt;br/&gt;</code>121<code>&lt;br/&gt;</code>Van
+Veen
+grab<code>| |</code>measurementValueID<code>| An identifier for facts stored in the column measurementValue (global unique identifier, URI). This identifier can reference a controlled vocabulary (e.g. for sampling instrument names, methodologies, life stages) or reference a methodology paper with a DOI. When the measurementValue refers to a value and not to a fact, the **measurementvalueID has no meaning and should remain empty**. |  |</code><a href="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/" class="external-link uri">http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/</a><code>| |</code>measurementAccuracy<code>| The description of the potential error associated with the measurementValue. |  |</code>0.01
+C<code>&lt;br/&gt;</code>0.03<code>&lt;br/&gt;</code>5
+mm<code>| |</code>measurementUnit<code>| The units associated with the measurementValue. Recommended best practice is to use the International System of Units (SI). |  |</code>C<code>&lt;br/&gt;</code>PPT<code>&lt;br/&gt;</code>mm<code>| |</code>measurementUnitID<code>| An identifier for the measurementUnit (global unique identifier, URI). The identifier should reference the measurementUnit in a vocabulary. | Recommended practice is populate this field with a term from NERC vocablary's P06 collection |</code><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPAA/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UPAA/</a><code>&lt;br/&gt;</code><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPPT/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UPPT/</a><code>&lt;br/&gt;</code><a href="http://vocab.nerc.ac.uk/collection/P06/current/UXMM/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UXMM/</a>`</td>
+</tr>
+</tbody>
+</table>
+<p>{: .solution}</p>
+</blockquote>
+<p>Over at the <a href="https://github.com/ioos/bio_data_guide" class="external-link">IOOS Bio
+Data Guide repository</a> you can see <a href="https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md" class="external-link">a
+script</a> that was used to take data in its original form and align it
+to Darwin Core Event Core with Extended Measurement or Fact. More
+information on how to organize data fields into Event and Measurement or
+Fact can be found in the <a href="https://manual.obis.org/" class="external-link">OBIS
+Manual</a>
+<img width="555" alt="ProcessingScriptScreenshot" src="../%7B%7B%20page.root%20%7D%7D/fig/processing_script_screenshot.png" class="figure">{:
+.image-with-shadow } *A screenshot of the script available for aligning
+data to Darwin Core.</p>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div></section><section id="aio-05-break"><p>Content from <a href="05-break.html">Social Break</a></p>
+<hr>
+<p>Last updated on 2024-12-19 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/05-break.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<p><img src="https://imgs.xkcd.com/comics/iso_8601_2x.png" alt="xkcd 1179 (iso 8601)" class="figure"><em>Image credit: <a href="https://xkcd.com/" class="external-link">xkcd</a></em></p></section><section id="aio-06-qa-qc"><p>Content from <a href="06-qa-qc.html">QA/QC</a></p>
+<hr>
+<p>Last updated on 2024-12-19 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/06-qa-qc.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 120 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="section level1">
+<h1 id="data-enhancement-and-quality-control">Data enhancement and quality control<a class="anchor" aria-label="anchor" href="#data-enhancement-and-quality-control"></a>
+</h1>
+<p>OBIS performs a number of quality checks on the data it receives. Red
+quality flags are attached to occurrence records if errors are
+encountered, and records may also be rejected if they do not meet
+minimum requirements. The checks that OBIS performs are documented <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4309024/pdf/bau125.pdf" class="external-link">here</a>
+and a python implementation is available <a href="https://github.com/iobis/obis-qc" class="external-link">here</a>. Therefore, prior to
+publishing your data to OBIS and/or GBIF, it is important to perform
+quality control on your standardized data. This can help identify any
+outliers or “faulty” data. It will also help with ensuring that your
+data is compatible and interoperable with other datasets published to
+OBIS. There are numerous functions within the <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R packages that
+can serve to identify outliers, inspect quality or ensure that the
+dataset structure fits the required format for both the Event and
+Occurrence tables.</p>
+<blockquote>
+<h2 id="recommended-initial-checks-on-your-data">Recommended initial
+checks on your data</h2>
+<ul>
+<li>Check that all the <a href="../%7B%7B%20site.baseurl%20%7D%7D/01-introduction/index.html#what-are-the-required-darwin-core-terms-for-publishing-to-obis">required
+Darwin Core terms</a> are present and contain the correct
+information.</li>
+<li>Make a map from your data to ensure the coordinates are valid and
+within your expected range.</li>
+<li>Run basic statistics on each column of numeric data (min, max, mean,
+std. dev., etc.) to identify potential issues.</li>
+<li>Look at unique values of columns containing string entries to
+identify potential issues (eg. spelling).</li>
+<li>Check for uniqueness of <code>occurrenceID</code> field.</li>
+<li>Check for uniqueness of <code>eventID</code> for each event, if
+applicable.</li>
+<li>Check that dates are following <a href="https://en.wikipedia.org/wiki/ISO_8601" class="external-link">ISO-8601</a>.</li>
+<li>Check that the <code>scientificNameID</code> is/are valid. {:
+.callout}</li>
+</ul>
+</blockquote>
+<p>One method for reviewing your data is to use the r package <a href="https://cran.r-project.org/web/packages/Hmisc/index.html" class="external-link">Hmisc</a>
+and the function <a href="https://rdrr.io/cran/Hmisc/man/describe.html" class="external-link">describe</a>. Expand
+the example below using output from <a href="https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md" class="external-link">this
+notebook</a> to see how it works.</p>
+<blockquote>
+<h2 id="hmiscdescribe">Hmisc::describe</h2>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># pull in the occurrence file from https://www.sciencebase.gov/catalog/item/53a887f4e4b075096c60cfdd</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://www.sciencebase.gov/catalog/file/get/53a887f4e4b075096c60cfdd?f=__disk__32%2F24%2F80%2F322480c9bcbad19030e29c9ec5e2caeb54cb4a08&amp;allowOpen=true"</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>occurrence <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">head</span>(occurrence,<span class="at">n=</span><span class="dv">1</span>)       </span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  vernacularName                                eventID occurrenceStatus</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="dv">1</span>  Alligator gar Station_95_Date_09JAN1997<span class="sc">:</span><span class="dv">14</span><span class="sc">:</span><span class="dv">35</span><span class="sc">:</span><span class="fl">00.000</span>           Absent</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>     basisOfRecord       scientificName</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="dv">1</span> HumanObservation Atractosteus spatula</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>                           scientificNameID  kingdom   phylum       class</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="dv">1</span> urn<span class="sc">:</span>lsid<span class="sc">:</span>marinespecies.org<span class="sc">:</span>taxname<span class="sc">:</span><span class="dv">279822</span> Animalia Chordata Actinopteri</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>             order        family        genus scientificNameAuthorship</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="dv">1</span> Lepisosteiformes Lepisosteidae <span class="fu">Atractosteus</span>        (LacepA<span class="st">"de, 1803)</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="st">  taxonRank organismQuantity organismQuantityType</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="st">1   Species                0   Relative Abundance</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="st">                                                 occurrenceID</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="st">1 Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="st">         collectionCode</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="st">1 Aransas Bay Bag Seine</span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="st">Hmisc::describe(occurrence)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>occurrence
+
+ 18  Variables      334341  Observations
+--------------------------------------------------------------------------------
+vernacularName
+       n  missing distinct
+  334341        0       61
+
+lowest : Alligator gar        Arrow shrimp         Atlantic brief squid Atlantic bumper      Atlantic croaker
+highest: Striped mullet       Thinstripe hermit    Threadfin shad       White mullet         White shrimp
+--------------------------------------------------------------------------------
+eventID
+       n  missing distinct
+  334341        0     5481
+
+lowest : Station_10_Date_04DEC1991:13:59:00.000 Station_10_Date_04SEP2002:13:17:00.000 Station_10_Date_05JUN1991:15:20:00.000 Station_10_Date_07APR1995:12:54:00.000 Station_10_Date_07APR2000:11:16:00.000
+highest: Station_99_Date_21APR1998:18:24:00.000 Station_99_Date_22OCT2001:13:12:00.000 Station_99_Date_25JUN1990:13:48:00.000 Station_99_Date_25NOV2003:11:11:00.000 Station_99_Date_27JUN1988:12:45:00.000
+--------------------------------------------------------------------------------
+occurrenceStatus
+       n  missing distinct
+  334341        0        2
+
+Value       Absent Present
+Frequency   294469   39872
+Proportion   0.881   0.119
+--------------------------------------------------------------------------------
+basisOfRecord
+               n          missing         distinct            value
+          334341                0                1 HumanObservation
+
+Value      HumanObservation
+Frequency            334341
+Proportion                1
+--------------------------------------------------------------------------------
+scientificName
+       n  missing distinct
+  334341        0       61
+
+lowest : Adinia xenica               Anchoa mitchilli            Archosargus probatocephalus Ariopsis felis              Atractosteus spatula
+highest: Stomatopoda                 Stomolophus meleagris       Syngnathus scovelli         Tozeuma carolinense         Trichiurus lepturus
+--------------------------------------------------------------------------------
+scientificNameID
+       n  missing distinct
+  334341        0       61
+
+lowest : urn:lsid:marinespecies.org:taxname:105792 urn:lsid:marinespecies.org:taxname:107034 urn:lsid:marinespecies.org:taxname:107379 urn:lsid:marinespecies.org:taxname:126983 urn:lsid:marinespecies.org:taxname:127089
+highest: urn:lsid:marinespecies.org:taxname:367528 urn:lsid:marinespecies.org:taxname:396707 urn:lsid:marinespecies.org:taxname:421784 urn:lsid:marinespecies.org:taxname:422069 urn:lsid:marinespecies.org:taxname:443955
+
+--------------------------------------------------------------------------------
+kingdom
+       n  missing distinct    value
+  334341        0        1 Animalia
+
+Value      Animalia
+Frequency    334341
+Proportion        1
+--------------------------------------------------------------------------------
+phylum
+       n  missing distinct
+  328860     5481        4
+
+Value      Arthropoda   Chordata   Cnidaria   Mollusca
+Frequency       71253     246645       5481       5481
+Proportion      0.217      0.750      0.017      0.017
+--------------------------------------------------------------------------------
+class
+       n  missing distinct
+  328860     5481        5
+
+lowest : Actinopteri    Cephalopoda    Elasmobranchii Malacostraca   Scyphozoa
+highest: Actinopteri    Cephalopoda    Elasmobranchii Malacostraca   Scyphozoa
+
+Value         Actinopteri    Cephalopoda Elasmobranchii   Malacostraca
+Frequency          235683           5481          10962          71253
+Proportion          0.717          0.017          0.033          0.217
+
+Value           Scyphozoa
+Frequency            5481
+Proportion          0.017
+--------------------------------------------------------------------------------
+order
+       n  missing distinct
+  328860     5481       22
+
+lowest : Atheriniformes            Batrachoidiformes         Carangaria incertae sedis Carangiformes             Carcharhiniformes
+highest: Rhizostomeae              Scombriformes             Siluriformes              Syngnathiformes           Tetraodontiformes
+--------------------------------------------------------------------------------
+family
+       n  missing distinct
+  328860     5481       36
+
+lowest : Ariidae        Atherinopsidae Batrachoididae Carangidae     Carcharhinidae
+highest: Stromateidae   Syngnathidae   Tetraodontidae Trichiuridae   Triglidae
+--------------------------------------------------------------------------------
+genus
+       n  missing distinct
+  328860     5481       52
+
+lowest : Adinia       Anchoa       Archosargus  Ariopsis     Atractosteus
+highest: Sphoeroides  Stomolophus  Syngnathus   Tozeuma      Trichiurus
+--------------------------------------------------------------------------------
+scientificNameAuthorship
+       n  missing distinct
+  328860     5481       52
+
+lowest : (Baird &amp; Girard, 1853)        (Baird &amp; Girard, 1855)        (Blainville, 1823)            (Bosc, 1801)                  (Burkenroad, 1939)
+highest: Rathbun, 1896                 Say, 1817 [in Say, 1817-1818] Shipp &amp; Yerger, 1969          Valenciennes, 1836            Winchell, 1864
+--------------------------------------------------------------------------------
+taxonRank
+       n  missing distinct
+  334341        0        3
+
+Value        Genus   Order Species
+Frequency     5481    5481  323379
+Proportion   0.016   0.016   0.967
+--------------------------------------------------------------------------------
+organismQuantity
+       n  missing distinct     Info     Mean      Gmd      .05      .10
+  334341        0     8696    0.317  0.01639  0.03141  0.00000  0.00000
+     .25      .50      .75      .90      .95
+ 0.00000  0.00000  0.00000  0.01005  0.07407
+
+lowest : 0.0000000000 0.0000917684 0.0001835370 0.0002136300 0.0002241650
+highest: 0.9969931270 0.9974226800 0.9981570220 0.9982300880 1.0000000000
+--------------------------------------------------------------------------------
+organismQuantityType
+                 n            missing           distinct              value
+            334341                  0                  1 Relative Abundance
+
+Value      Relative Abundance
+Frequency              334341
+                    n               missing              distinct
+              334341                     0                     1
+                value
+Aransas Bay Bag Seine
+
+Value      Aransas Bay Bag Seine
+Frequency                 334341
+Proportion                     1
+--------------------------------------------------------------------------------</code></pre>
+</div>
+<p>{: .solution}</p>
+</blockquote>
+<blockquote>
+<h2 id="exercise">Exercise</h2>
+<p><strong>Challenge:</strong> Perform the following minimal quality
+assurance and control checks:</p>
+<ol style="list-style-type: decimal">
+<li>Run a diagnostics report for the data quality.</li>
+<li>Ensure that the eventIDs are unique.</li>
+<li>Make sure that the eventDates follow ISO-8601 standards.</li>
+<li>Determine whether reported depths are accurate.</li>
+</ol>
+<p>The event core data used in the checks below can be found in <a href="../%7B%7B%20page.root%20%7D%7D/data/trawl_fish.xlsx">this Excel
+file</a>.</p>
+<blockquote>
+<h2 id="solution-in-r">Solution in R</h2>
+<p>Install <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R
+packages. Use <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> package
+to read the Excel file.</p>
+<ol style="list-style-type: decimal">
+<li>Run a diagnostics report for the data quality</li>
+</ol>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">readxl</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">obistools</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">trawl_fish</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu">read_excel</span><span class="op">(</span><span class="st">'data/trawl_fish.xlsx'</span><span class="op">)</span></span>
+<span><span class="va">report</span> <span class="op">&lt;-</span> <span class="fu">obistools</span><span class="fu">::</span><span class="fu">report</span><span class="op">(</span><span class="va">trawl_fish</span><span class="op">)</span></span>
+<span><span class="va">report</span></span></code></pre>
+</div>
+<p><img src="../%7B%7B%20page.root%20%7D%7D/fig/screenshot_obistools_report.png" alt="drawing" width="500" class="figure">{:
+.image-with-shadow }</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Check to make sure <code>eventID</code> are unique</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">eventid</span> <span class="op">&lt;-</span> <span class="fu">obistools</span><span class="fu">::</span><span class="fu">check_eventids</span><span class="op">(</span><span class="va">trawl_fish</span><span class="op">)</span></span>
+<span><span class="fu">head</span><span class="op">(</span><span class="va">eventid</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code># A tibble: 6 x 4
+ field         level   row message
+ &lt;chr&gt;         &lt;chr&gt; &lt;int&gt; &lt;chr&gt;
+ 1 eventID       error     7 eventID IYS:GoA2019:Stn6:trawl is duplicated
+ 2 eventID       error     8 eventID IYS:GoA2019:Stn6:trawl is duplicated
+ 3 parentEventID error     1 parentEventID IYS:GoA2019:Stn1 has no corresponding eventID
+ 4 parentEventID error     2 parentEventID IYS:GoA2019:Stn2 has no corresponding eventID
+ 5 parentEventID error     3 parentEventID IYS:GoA2019:Stn3 has no corresponding eventID
+ 6 parentEventID error     4 parentEventID IYS:GoA2019:Stn4 has no corresponding eventID</code></pre>
+</div>
+</li>
+<li><p>Check for proper <code>eventDate</code> to ensure they follow ISO
+8601 standards:
+<code>r     eventDate &lt;- obistools::check_eventdate(trawl_fish)     print(eventDate)</code>
+<code>output     # A tibble: 3 x 4      level   row field     message                                                             &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                                                              1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date        2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date     3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date</code></p></li>
+<li><p>From the report generated under exercise 1, you can already see
+that there’s measurements made on land. This information can also be
+gathered by plotting the map separately or using the
+<code>check_onland()</code> or <code>check_depth()</code> functions in
+the <a href="https://iobis.github.io/obistools/" class="external-link">obistools</a>
+package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.                print(depth)</code>
+<code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code><br>
+{: .output} {: .solution} ## Solution in Python Install the <a href="https://pandas.pydata.org/" class="external-link">pandas</a>, <a href="https://scitools.org.uk/cartopy/docs/latest/installing.html" class="external-link">cartopy</a>,
+and <a href="https://geopandas.org/en/stable/" class="external-link">geopandas</a> Python
+packages. Use pandas to read the Excel file.</p></li>
+</ol>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://ioos.github.io/bio_mobilization_workshop/data/trawl_fish.xlsx'</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(url) <span class="co"># might need to install openpyxl</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>df[<span class="st">'row'</span>] <span class="op">=</span> df.index.to_numpy()<span class="op">+</span><span class="dv">1</span> <span class="co"># python starts at zero</span></span></code></pre>
+</div>
+<ol style="list-style-type: decimal">
+<li>
+<p>Run a diagnostics report for the data quality. ```python import
+cartopy.io.shapereader as shpreader import geopandas as gpd import
+shapely.geometry as sgeom from shapely.ops import unary_union from
+shapely.prepared import prep import matplotlib.pyplot as plt</p>
+<p>gdf = gpd.GeoDataFrame(df,
+geometry=gpd.points_from_xy(df.decimalLongitude,
+df.decimalLatitude))</p>
+<p>land_shp_fname = shpreader.natural_earth(resolution=‘50m’,
+category=‘physical’, name=‘land’)</p>
+<p>land_geom =
+unary_union(list(shpreader.Reader(land_shp_fname).geometries())) land =
+prep(land_geom)</p>
+<p>for index, row in gdf.iterrows(): gdf.loc[index, ‘on_land’] =
+land.contains(row.geometry)</p>
+<p>fig, axs = plt.subplots(ncols=1,nrows=2) # Make a map: xlim =
+([gdf.total_bounds[0]-2, gdf.total_bounds[2]+2]) ylim =
+([gdf.total_bounds[1]-2, gdf.total_bounds[3]+2])</p>
+<p>axs[0].set_xlim(xlim) axs[0].set_ylim(ylim)</p>
+<p>gpd.read_file(land_shp_fname).plot(ax=axs[0])</p>
+<p>gdf.loc[gdf[‘on_land’]==False].plot(ax=axs[0], color=‘green’,
+markersize=1) gdf.loc[gdf[‘on_land’]==True].plot(ax=axs[0], color=‘red’,
+markersize=1)</p>
+<h1 id="collect-some-informational-material-about-potential-issues-w-data">Collect
+some informational material about potential issues w/ data:</h1>
+<p>invalid_coord = [] if len(gdf.loc[gdf[‘on_land’]==True]) &gt; 0:
+invalid_coord.append(‘Row {} coordinates on
+land.’.format(gdf.loc[gdf[‘on_land’] == True,‘row’].tolist()[0]))</p>
+<p>req_cols = [‘eventDate’, ‘decimalLongitude’, ‘decimalLatitude’,
+‘scientificName’, ‘scientificNameID’, ‘occurrenceStatus’,
+‘basisOfRecord’] missing_cols = [] for col in req_cols: if col not in
+gdf.columns: missing_cols.append(‘Column {} is
+missing.’.format(col))</p>
+<h1 id="add-the-information-to-the-figure">Add the information to the
+figure</h1>
+<p>axs[1].text(0.25,0.25,‘’.join([‘’.join(missing_cols),‘’.join(invalid_coord)]))
+axs[1].axis(‘off’) plt.show() ```
+<img src="../%7B%7B%20page.root%20%7D%7D/fig/screenshot_python_report.png" alt="drawing" width="500" class="figure">{:
+.image-with-shadow }</p>
+</li>
+<li>
+<p>Check to make sure <code>eventID</code> are unique</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>dup_events <span class="op">=</span> df.loc[df[<span class="st">'eventID'</span>].duplicated()]</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Duplicated eventID:</span><span class="ch">\n</span><span class="st">'</span>,dup_events[[<span class="st">'eventID'</span>,<span class="st">'row'</span>]])</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>parent_not_event <span class="op">=</span> df.loc[<span class="op">~</span>df[<span class="st">'eventID'</span>].isin(df[<span class="st">'parentEventID'</span>].unique())]</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">parentEventID missing corresponding eventID:</span><span class="ch">\n</span><span class="st">'</span>, parent_not_event[[<span class="st">'parentEventID'</span>,<span class="st">'row'</span>]])</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Duplicated eventID:
+                   eventID  row
+6  IYS:GoA2019:Stn6:trawl    7
+7  IYS:GoA2019:Stn6:trawl    8
+
+parentEventID missing corresponding eventID:
+         parentEventID  row
+0    IYS:GoA2019:Stn1    1
+1    IYS:GoA2019:Stn2    2
+2    IYS:GoA2019:Stn3    3
+3    IYS:GoA2019:Stn4    4
+4    IYS:GoA2019:Stn5    5
+..                ...  ...
+59  IYS:GoA2019:Stn60   60
+60  IYS:GoA2019:Stn61   61
+61  IYS:GoA2019:Stn62   62
+62  IYS:GoA2019:Stn63   63
+63  IYS:GoA2019:Stn64   64
+[64 rows x 2 columns]</code></pre>
+</div>
+</li>
+<li>
+<p>Check for proper <code>eventDate</code> to ensure they follow ISO
+8601 standards:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> df[<span class="st">'eventDate'</span>]:</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>        pd.to_datetime(date)</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Date"</span>,date,<span class="st">"might not follow ISO 8601"</span>)</span></code></pre>
+</div>
+</li>
+<li>
+<p>From the report generated under exercise 1, you can already see
+that there’s measurements made on land. Now let’s check the depths are
+within reason for the points. Let’s use the <a href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.html" class="external-link">GEBCO
+bathymetry dataset served in the coastwatch ERDDAP</a>.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>df[<span class="st">'bathy'</span>] <span class="op">=</span> np.nan <span class="co"># initialize column</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?'</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>    query_url <span class="op">=</span> <span class="st">'elevation%5B(</span><span class="sc">{}</span><span class="st">)%5D%5B(</span><span class="sc">{}</span><span class="st">)%5D'</span>.<span class="bu">format</span>(row[<span class="st">'decimalLatitude'</span>],row[<span class="st">'decimalLongitude'</span>])</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>    url <span class="op">=</span> base_url<span class="op">+</span>query_url</span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>    bathy <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>    df.at[index,<span class="st">'bathy'</span>] <span class="op">=</span> bathy[<span class="st">'elevation (m)'</span>] <span class="co"># insert bathymetry value</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>) <span class="co"># to not ping erddap too much</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co"># make new column for depth in meters as negative because GEBCO is Elevation relative to sea level</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">*</span>df[<span class="st">'maximumDepthInMeters'</span>]</span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'maximumDepthInMeters deeper than GEBCO bathymetry:'</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>( df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]] ) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>   <span class="bu">print</span>(df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]].T)</span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'None'</span>)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>maximumDepthInMeters deeper than GEBCO bathymetry:
+                                                                              4
+eventID                                                  IYS:GoA2019:Stn5:trawl
+parentEventID                                                  IYS:GoA2019:Stn5
+eventDate                             2019-02-22T09:49:00Z/2019-02-22T10:49:00Z
+year                                                                       2019
+month                                                                         2
+day                                                                          22
+decimalLatitude                                                       67.399004
+decimalLongitude                                                    -139.552501
+footprintWKT                   LINESTRING ( -139.583 67.397 , -139.522 67.401 )
+coordinateUncertaintyInMeters                                       2313.094678
+minimumDepthInMeters                                                          0
+maximumDepthInMeters                                                       33.2
+samplingProtocol                                                 midwater trawl
+locality                                                                    NaN
+locationID                                                                  NaN
+type                                                             midwater trawl
+row                                                                           5
+bathy                                                                     306.0
+neg_maximumDepthInMeters                                                  -33.2</code></pre>
+</div>
+<p>{: .solution} {: .challenge}</p>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<h2 id="tip">Tip</h2>
+<ul>
+<li>In some cases you’ll want to ensure the values are representative of
+the entity you are reporting.</li>
+<li>For example, <a href="https://dwc.tdwg.org/terms/#dwc:individualCount" class="external-link"><code>individualCount</code></a>
+should be an integer. So, checking that column for integer values would
+be good. {: .callout}</li>
+</ul>
+</blockquote>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div></section><section id="aio-07-validation-and-publishing"><p>Content from <a href="07-validation-and-publishing.html">Metadata and publishing</a></p>
+<hr>
+<p>Last updated on 2024-12-19 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/07-validation-and-publishing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 120 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="section level1">
+<h1 id="data-publishing-pipeline">Data Publishing Pipeline<a class="anchor" aria-label="anchor" href="#data-publishing-pipeline"></a>
+</h1>
+<p>After going through QAQC and being standardized to Darwin Core, the
+dataset are uploaded to an IPT. Metadata is added in the form of EML and
+the dataset published as a Darwin Core Archive (DwC-A). The data are
+then pushed to central OBIS. Each dataset also has the option of being
+pushed to GBIF by registering the resource with GBIF in the IPT.</p>
+<p><img src="../%7B%7B%20page.root%20%7D%7D/fig/DwC_workflow.jpg" alt="Image by Enrique Montes" class="figure">{: .image-with-shadow } <em>Data
+publishing pipeline. Image credit: Enrique Montes</em></p>
+</div>
+<div class="section level1">
+<h1 id="integrated-publishing-toolkit">Integrated Publishing Toolkit<a class="anchor" aria-label="anchor" href="#integrated-publishing-toolkit"></a>
+</h1>
+<p>The <a href="https://www.gbif.org/ipt" class="external-link">Integrated Publishing Toolkit
+(IPT)</a> is an open-source web application developed and maintained by
+the Global Biodiversity Information Facility (GBIF) for publishing
+biodiversity data. The IPT makes it easy to share four types of
+biodiversity-related information:</p>
+<ul>
+<li>primary taxon occurrence data</li>
+<li>sampling event data</li>
+<li>general metadata about data sources</li>
+<li>taxon checklists</li>
+</ul>
+<p>GBIF maintains a very detailed <a href="https://ipt.gbif.org/manual/en/ipt/latest/" class="external-link">IPT manual</a> and the
+<a href="https://manual.obis.org/data_publication.html" class="external-link">OBIS Manual</a>
+offers OBIS-specific details on publishing through the IPT. You can
+choose to download and install your own instance of the IPT but it might
+be complicated to register it with OBIS. Instead it’s recommended to
+work with one of the OBIS nodes to publish your data through their IPT.
+<a href="https://obis.org/contact/" class="external-link">OBIS nodes</a> publish data that are
+logical for their region or theme. After publishing the data through
+their IPT the data are harvested by central OBIS.</p>
+<p>The requirements for publishing via an OBIS node IPT are that:</p>
+<ol style="list-style-type: decimal">
+<li>you have contacted the node to ensure the data are a good fit for
+that node</li>
+<li>the data follows Darwin Core (DwC) and Ecological Metadata Language
+(EML)</li>
+<li>includes the required Darwin Core and EML metadata elements</li>
+</ol>
+</div>
+<div class="section level1">
+<h1 id="ecological-metadata-language-eml">Ecological Metadata Language (EML)<a class="anchor" aria-label="anchor" href="#ecological-metadata-language-eml"></a>
+</h1>
+<p>Both OBIS and GBIF use <a href="https://eml.ecoinformatics.org/" class="external-link">Ecological Metadata Language
+(EML)</a> as the metadata standard associated with the data. For the
+purposes of this workshop we will not dive into the world of EML.
+However, we should note that when publishing your data through the IPT,
+the IPT helps you create an EML file as part of the DwC-A. As such, if
+you publish your own data through the IPT, there is no need for innate
+knowledge on the EML format. But there are a minimum required number of
+fields that would need to be filled out in the IPT: <code>title</code>,
+<code>abstract</code>, <code>citation</code>, and several
+<code>contacts</code>.</p>
+<p>More information on EML can be found at the <a href="https://eml.ecoinformatics.org/" class="external-link">EML standard page</a>, and in the
+<a href="https://ioos.github.io/bio_data_guide/extras.html#ecological-metadata-language-eml" class="external-link">bio
+data guide</a>. There are also a number of R packages for working with
+EML, reviewed <a href="https://livingnorway.github.io/LivingNorwayR/articles/EML_R_packages_overview.html" class="external-link">here</a>.</p>
+<blockquote>
+<h2 id="tip">Tip</h2>
+<p>Try to collect as much of this information as possible before and
+during the Darwin Core alignment process. It will significantly reduce
+the amount of time it takes to load the data into the IPT. {:
+.callout}</p>
+</blockquote>
+<div class="section level2">
+<h2 id="required-eml-metadata-fields-for-sharing-to-obis">Required EML metadata fields for sharing to OBIS<a class="anchor" aria-label="anchor" href="#required-eml-metadata-fields-for-sharing-to-obis"></a>
+</h2>
+<p><em>Best practices for these fields are explained in detail in the <a href="https://manual.obis.org/eml" class="external-link">OBIS manual</a></em></p>
+<table class="table">
+<colgroup>
+<col width="37%">
+<col width="37%">
+<col width="25%">
+</colgroup>
+<thead><tr class="header">
+<th>EML Fields</th>
+<th>Definition</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>Title</code></td>
+<td>A good descriptive title is indispensable and can provide the user
+with valuable information, making the discovery of data easier.</td>
+<td>The IPT also requires you to provide a Shortname. Shortnames serve
+as an identifier for the resource within the IPT installation and should
+be unique, descriptive and short (max. 100 characters). Spell out
+acronyms in Title but they are ok to use in the shortname.</td>
+</tr>
+<tr class="even">
+<td><code>Abstract</code></td>
+<td>The abstract or description of a dataset provides basic information
+on the content of the dataset. The information in the abstract should
+improve understanding and interpretation of the data.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>Data License</code></td>
+<td>The license that you apply to the resource. The license provides a
+standardized way to define appropriate uses of your work.</td>
+<td>Must use CC-0, CC-BY, or CC-BY-NC. Description of the licenses can
+be found <a href="https://manual.obis.org/policy.html#data-sharing-agreement" class="external-link">here</a>.</td>
+</tr>
+<tr class="even">
+<td><code>Resource Contact(s)</code></td>
+<td>The list of people and organizations that should be contacted to get
+more information about the resource, that curate the resource or to whom
+putative problems with the resource or its data should be
+addressed.</td>
+<td>Last name, Position, and Organization are required, helpful to
+include an ORCID and a contact method like email or phone number.</td>
+</tr>
+<tr class="odd">
+<td><code>Resource Creator(s)</code></td>
+<td>The people and organizations who created the resource, in priority
+order. The list will be used to auto-generate the resource citation (if
+auto-generation is turned on).</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>Metadata Provider(s)</code></td>
+<td>the people and organizations responsible for producing the resource
+metadata.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>Citation</code></td>
+<td>The dataset citation allows users to properly cite the datasets in
+further publications or other uses of the data. The OBIS download
+function provides a list of the dataset citations packaged with the data
+in a zipped file.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level2">
+<h2 id="other-eml-fields-to-consider">Other EML fields to consider<a class="anchor" aria-label="anchor" href="#other-eml-fields-to-consider"></a>
+</h2>
+<table class="table">
+<colgroup>
+<col width="55%">
+<col width="25%">
+<col width="19%">
+</colgroup>
+<thead><tr class="header">
+<th>EML Fields</th>
+<th>Definition</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>Bounding Box</code></td>
+<td>Farthest North, South, East, and West coordinate.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>Geographic Description</code></td>
+<td>A textual description of the geographic coverage.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>Temporal Coverage</code></td>
+<td>This can either be a Single Date, Date Range, Formation Period, or
+Living Time Period.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>Study Extent</code></td>
+<td>This field represents both a specific sampling area and the sampling
+frequency (temporal boundaries, frequency of occurrence) of the
+project.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>Sampling Description</code></td>
+<td>This field allows for a text-based/human readable description of the
+sampling procedures used in the research project.</td>
+<td>The content of this element would be similar to a description of
+sampling procedures found in the methods section of a journal
+article.</td>
+</tr>
+<tr class="even">
+<td><code>Step Description</code></td>
+<td>This field allows for repeated sets of elements that document a
+series of methods and procedures used in the study, and the processing
+steps leading to the production of the data files. These include
+e.g. text descriptions of the procedures, relevant literature, software,
+instrumentation and any quality control measurements taken.</td>
+<td>Each method should be described in enough detail to allow other
+researchers to interpret and repeat the study, if required.</td>
+</tr>
+</tbody>
+</table>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</div></section><section id="aio-08-post-workshop"><p>Content from <a href="08-post-workshop.html">Continuing the Conversation</a></p>
+<hr>
+<p>Last updated on 2024-12-19 |
+
+        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/08-post-workshop.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 120 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="section level1">
+<h1 id="thank-you-for-attending-the-workshop">Thank you for attending the workshop!<a class="anchor" aria-label="anchor" href="#thank-you-for-attending-the-workshop"></a>
+</h1>
+<p>Our hope is that you were already able to submit your data to OBIS
+but often work needs to continue beyond the workshop. This page lists
+some resources to help get your data the rest of the way into OBIS.</p>
+<div class="section level2">
+<h2 id="the-standardizing-marine-bio-data-group">The Standardizing Marine Bio Data Group<a class="anchor" aria-label="anchor" href="#the-standardizing-marine-bio-data-group"></a>
+</h2>
+<p>One of the primary goals of the “Standardizing Marine Bio Data”
+(SMBD) exists to provide a space for individuals to help each other put
+data into OBIS. Many from this workshop meet monthly at the SMBD and
+interact asynchronously to offer help for those aligning to DwC. There
+are two primary ways to interact with the SMBD:</p>
+<div class="section level3">
+<h3 id="monthly-smbd-meetings">Monthly SMBD Meetings<a class="anchor" aria-label="anchor" href="#monthly-smbd-meetings"></a>
+</h3>
+<p>Information about monthly SMBD meetings can be found on the SMBD
+github page <a href="https://github.com/ioos/bio_data_guide#-how-to-participate" class="external-link">here</a>{:target=“_blank”}.
+Anyone is welcome to attend - we are a small community of individuals
+who are passionate about getting data into OBIS, DwC, other standard
+forms.</p>
+</div>
+<div class="section level3">
+<h3 id="smbd-github-issue-tracker">SMBD GitHub Issue Tracker<a class="anchor" aria-label="anchor" href="#smbd-github-issue-tracker"></a>
+</h3>
+<p>You are also welcome to open an “issue” in the <a href="https://github.com/ioos/bio_data_guide/issues" class="external-link">SMBD GitHub Issue
+tracker</a>{:target=“_blank”}. This issue tracker is not just for “issue
+reporting” - please use it to ask questions or start discussions about
+your data.</p>
+</div>
+<div class="section level3">
+<h3 id="add-your-dataset-as-an-example">Add Your Dataset as an Example<a class="anchor" aria-label="anchor" href="#add-your-dataset-as-an-example"></a>
+</h3>
+<p>You can upload your dataset into the <code>/datasets/</code>
+directory so that the SMBD community can learn from your work and help
+finish up any remaining work.</p>
+<blockquote>
+<h2 id="tip">Tip</h2>
+<p>More information about the SMBD group can be found at <a href="https://github.com/ioos/bio_data_guide" class="external-link">https://github.com/ioos/bio_data_guide</a>{:target=“_blank”}.
+{: .callout}</p>
+</blockquote>
+</div>
+</div>
+<div class="section level2">
+<h2 id="post-workshop-survey">Post-Workshop Survey<a class="anchor" aria-label="anchor" href="#post-workshop-survey"></a>
+</h2>
+<p>If you wish to provide feedback please use <a href="https://forms.gle/YfaJJDSNuJWofPjy6" class="external-link">this post-workshop
+survey</a>{:target=“_blank”}.</p>
+</div>
+<div class="section level2">
+<h2 id="obis-manual">OBIS Manual<a class="anchor" aria-label="anchor" href="#obis-manual"></a>
+</h2>
+<p>If you are interested in continuing to learn about data formatting
+and mobilization, the <a href="https://manual.obis.org/" class="external-link">OBIS Manual</a>
+contains a lot of relevant content and guidelines for data
+standardization.</p>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
 </div></section>
 </div>
     </main>

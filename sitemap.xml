@@ -10,6 +10,21 @@
     <loc>https://carpentries.github.io/workbench-template-md/03-data-cleaning.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/04-create-schema.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/05-break.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/06-qa-qc.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/07-validation-and-publishing.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/08-post-workshop.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
   </url>
   <url>
@@ -19,7 +34,19 @@
     <loc>https://carpentries.github.io/workbench-template-md/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/about.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/acoustic-telemetry.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/edna-extension.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/helpful-tutorials.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/images.html</loc>
@@ -37,6 +64,21 @@
     <loc>https://carpentries.github.io/workbench-template-md/instructor/03-data-cleaning.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/04-create-schema.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/05-break.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/06-qa-qc.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/07-validation-and-publishing.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/08-post-workshop.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
   </url>
   <url>
@@ -46,7 +88,19 @@
     <loc>https://carpentries.github.io/workbench-template-md/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/about.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/acoustic-telemetry.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/edna-extension.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries.github.io/workbench-template-md/instructor/helpful-tutorials.html</loc>
   </url>
   <url>
     <loc>https://carpentries.github.io/workbench-template-md/instructor/images.html</loc>
