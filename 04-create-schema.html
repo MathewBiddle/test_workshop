@@ -337,7 +337,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Darwin Core and Extension Schemas</h1>
-        <p>Last updated on 2024-12-19 |
+        <p>Last updated on 2024-12-20 |
 
         <a href="https://github.com/MathewBiddle/test_workshop/edit/main/episodes/04-create-schema.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -349,6 +349,31 @@
 
         
 
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul><li>What is a core and what is an extension in Darwin Core?</li>
+<li>What is OBIS-ENV-DATA aka (Event Core with Extended Measurement or
+Fact)?</li>
+<li>How do I create Darwin Core files?</li>
+</ul></div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul><li>Creating IDs.</li>
+<li>Creating event file, occurrence file, eMOF file.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section level3">
 <h3 id="darwin-core---cores-and-extensions">Darwin Core - Cores and Extensions<a class="anchor" aria-label="anchor" href="#darwin-core---cores-and-extensions"></a></h3>
 <p>Now that we have a firm basis for understanding the different terms
@@ -379,21 +404,27 @@ include observations and/or specimen records where no information on
 sampling is available. <strong>Occurrence core is also used for eDNA or
 DNA derived data</strong>.</p>
 <p>The Occurrence core allows you to provide all the required Darwin
-Core terms detailed in the <a href="%7B%7B%20page.root%20%7D%7D/01-introduction/index.html">intro
+Core terms detailed in the <a href="01-introduction/index.html">intro
 section</a>. You can produce a fully compliant Darwin Core version of
 your data using only the Occurrence core (<a href="https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv" class="external-link">see
 this example by Tylar Murray</a>). On one hand, if the data were
 collected using some kind of sampling methodology, you will lose much of
 that information if you use this most simple form of data structuring.
 However, it is faster and easier to produce.</p>
-<blockquote>
-<h2 id="thought-experiment">Thought Experiment</h2>
+<div id="thought-experiment" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="thought-experiment" class="callout-inner">
+<h3 class="callout-title">Thought Experiment</h3>
+<div class="callout-content">
 <p>Look at the <a href="https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv" class="external-link">minimum
 required fields example</a>. What is possible to do in future reuse?
 What would not be possible? For instance, note that there is no
-information about depth or the uncertainty of the coordinates. {:
-.callout}</p>
-</blockquote>
+information about depth or the uncertainty of the coordinates.</p>
+</div>
+</div>
+</div>
 <p>For more examples check out the <a href="https://github.com/ioos/bio_data_guide/tree/main/datasets" class="external-link">Datasets
 folder</a> in the IOOS Bio Data Guide.</p>
 </div>
@@ -410,11 +441,11 @@ derived data extension</a>. Adding the DNA derived data extension allows
 you to capture information such as the PCR primer used, DNA sequences,
 and other information specific to this type of data.</p>
 <p>Let’s consider another example: a museum dataset that has biological
-measurements for each individual specimen (e.g. length). All information
-about each organism’s occurrence (taxonomic information, locality,
-identification, etc.) will go into the Occurrence core. You can then
-capture the biotic measurement information (type of measurement, units,
-accuracy, etc.) by using either the <a href="https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml" class="external-link">Measurement
+measurements for each individual specimen (e.g.  length). All
+information about each organism’s occurrence (taxonomic information,
+locality, identification, etc.) will go into the Occurrence core. You
+can then capture the biotic measurement information (type of
+measurement, units, accuracy, etc.) by using either the <a href="https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml" class="external-link">Measurement
 or Facts extension</a>, or the <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml" class="external-link">Extended
 Measurement or Fact extension</a> (we elaborate on this extension
 below). Note again here we do not have information on <em>how</em> the
@@ -465,14 +496,22 @@ with a <a href="https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&amp;options=
 P06 code</a>. OBIS is soon releasing video tutorials to help with
 choosing URIs, so stay tuned to their <a href="https://manual.obis.org/" class="external-link">manual</a> and <a href="https://www.youtube.com/@oceanbiodiversityinformati6931/playlists" class="external-link">YouTube
 list</a> for updates.</p>
-<blockquote>
-<h2 id="tip">Tip</h2>
+<div id="tip" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="tip" class="callout-inner">
+<h3 class="callout-title">
+<span class="emoji" data-emoji="pushpin">📌</span> Tip</h3>
+<div class="callout-content">
 <p>You can search for <code>measurementTypes</code> that other OBIS data
 providers have used by using the <a href="https://mof.obis.org/" class="external-link">OBIS
 mof report</a>. BE CAREFUL though to make sure the definition in the URI
 matches exactly your measurement type if you want to reuse it for your
-data. {: .callout}</p>
-</blockquote>
+data.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section level3">
@@ -537,11 +576,19 @@ institution the specimen is being held at, but then the specimen changes
 institutions - its ID should <strong>not</strong> change to reflect the
 move. If the ID changes then the record will be duplicated in the global
 database and record information could be lost over time!</p>
-<p><img src="%7B%7B%20page.root%20%7D%7D/fig/OBISsampling-schema-example.png" class="figure"><em>The Darwin Core file structure, demonstrating how an Event core
+<figure><img src="fig/OBISsampling-schema-example.png" class="figure mx-auto d-block"></figure><p><em>The Darwin Core file structure, demonstrating how an Event core
 table can be connected to extension tables through the use of
 identifiers. Image credit: <a href="https://manual.obis.org/" class="external-link">OBIS</a></em></p>
-<blockquote>
-<h2 id="event-core">Event Core</h2>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Event Core
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
@@ -563,8 +610,8 @@ data.</td>
 occurrences, this is the date-time when the event was recorded. Not
 suitable for a time in a geological context.</td>
 <td>Must follow <a href="https://en.wikipedia.org/wiki/ISO_8601" class="external-link">ISO
-8601</a>. See more information on dates in the <a href="%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
-Cleaning</a> section of the workshop.</td>
+8601</a>. See more information on dates in the <a href="03-data-cleaning/index.html">Data Cleaning</a> section of the
+workshop.</td>
 <td><code>2009-02-20T08:40Z</code></td>
 </tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude" class="external-link"><code>decimalLatitude</code></a></td>
 <td>The geographic latitude (in decimal degrees, using the spatial
@@ -575,7 +622,7 @@ south of it. Legal values lie between -90 and 90, inclusive.</td>
 Uncertainty around the geographic center of a Location (e.g. when
 sampling event was a transect) can be recorded in
 <code>coordinateUncertaintyInMeters</code>. See more information on
-coordinates in the <a href="%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
+coordinates in the <a href="03-data-cleaning/index.html">Data
 Cleaning</a> section of the workshop.</td>
 <td><code>-41.0983423</code></td>
 </tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude" class="external-link"><code>decimalLongitude</code></a></td>
@@ -585,8 +632,8 @@ Location. Positive values are east of the Greenwich Meridian, negative
 values are west of it. Legal values lie between -180 and 180,
 inclusive</td>
 <td>For OBIS and GBIF the required <code>geodeticDatum</code> is WGS84.
-See more information on coordinates in the <a href="%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
-Cleaning</a> section of the workshop.</td>
+See more information on coordinates in the <a href="03-data-cleaning/index.html">Data Cleaning</a> section of the
+workshop.</td>
 <td><code>-121.1761111</code></td>
 </tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:countryCode" class="external-link"><code>countryCode</code></a></td>
 <td>The standard code for the country in which the location occurs.</td>
@@ -601,10 +648,20 @@ decimalLongitude as based.</td>
 <td>Must be <a href="https://epsg.io/4326" class="external-link">WGS84</a> for data shared to
 OBIS and GBIF but it’s best to state explicitly that it is.</td>
 <td><code>WGS84</code></td>
-</tr></tbody></table><p>{: .solution}</p>
-</blockquote>
-<blockquote>
-<h2 id="occurrence-extension">Occurrence extension</h2>
+</tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Occurrence extension
+  </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div class="accordion-body">
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
@@ -669,11 +726,20 @@ Location.</td>
 <td>For OBIS, only valid values are <code>present</code> and
 <code>absent</code>.</td>
 <td><code>present</code></td>
-</tr></tbody></table><p>{: .solution}</p>
-</blockquote>
-<blockquote>
-<h2 id="extended-measurement-or-fact-extension">Extended Measurement or
-Fact Extension</h2>
+</tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Extended Measurement or Fact Extension
+  </h3>
+</button>
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div class="accordion-body">
 <p>Nothing is <em>required</em> from the OBIS perspective but if you are
 using this extension then <code>eventID</code> is required to be able to
 link the extension back to the Event core. You can also use
@@ -735,18 +801,37 @@ Veen
 grab<code>| |</code>measurementValueID<code>| An identifier for facts stored in the column measurementValue (global unique identifier, URI). This identifier can reference a controlled vocabulary (e.g. for sampling instrument names, methodologies, life stages) or reference a methodology paper with a DOI. When the measurementValue refers to a value and not to a fact, the **measurementvalueID has no meaning and should remain empty**. |  |</code><a href="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/" class="external-link uri">http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/</a><code>| |</code>measurementAccuracy<code>| The description of the potential error associated with the measurementValue. |  |</code>0.01
 C<code>&lt;br/&gt;</code>0.03<code>&lt;br/&gt;</code>5
 mm<code>| |</code>measurementUnit<code>| The units associated with the measurementValue. Recommended best practice is to use the International System of Units (SI). |  |</code>C<code>&lt;br/&gt;</code>PPT<code>&lt;br/&gt;</code>mm<code>| |</code>measurementUnitID<code>| An identifier for the measurementUnit (global unique identifier, URI). The identifier should reference the measurementUnit in a vocabulary. | Recommended practice is populate this field with a term from NERC vocablary's P06 collection |</code><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPAA/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UPAA/</a><code>&lt;br/&gt;</code><a href="http://vocab.nerc.ac.uk/collection/P06/current/UPPT/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UPPT/</a><code>&lt;br/&gt;</code><a href="http://vocab.nerc.ac.uk/collection/P06/current/UXMM/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UXMM/</a>`</td>
-</tr></tbody></table><p>{: .solution}</p>
-</blockquote>
+</tr></tbody></table></div>
+</div>
+</div>
+</div>
 <p>Over at the <a href="https://github.com/ioos/bio_data_guide" class="external-link">IOOS Bio
 Data Guide repository</a> you can see <a href="https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md" class="external-link">a
 script</a> that was used to take data in its original form and align it
 to Darwin Core Event Core with Extended Measurement or Fact. More
 information on how to organize data fields into Event and Measurement or
 Fact can be found in the <a href="https://manual.obis.org/" class="external-link">OBIS
-Manual</a>
-<img width="555" alt="ProcessingScriptScreenshot" src="%7B%7B%20page.root%20%7D%7D/fig/processing_script_screenshot.png" class="figure">{:
-.image-with-shadow } *A screenshot of the script available for aligning
-data to Darwin Core.</p>
+Manual</a></p>
+<figure><img src="fig/processing_script_screenshot.png" class="figure mx-auto d-block"></figure><p>*A screenshot of the script available for aligning data to Darwin
+Core.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li>Darwin Core uses cores and extensions to model the multitude of
+biological observation data that exists.</li>
+<li>OBIS uses the Event (or Occurrence) Core with the Extended
+Measurement or Fact extension to make sure no information is lost.</li>
+<li>Additional fields are required and put into different files when
+using a Core with the Extended Measurement or Fact extension.</li>
+<li>ID fields are important keys in your data and we recommend building
+them from the information in your data.</li>
+</ul></div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -813,7 +898,7 @@ any links that you are not going to use.
   "url": "https://MathewBiddle.github.io/test_workshop/04-create-schema.html",
   "identifier": "https://MathewBiddle.github.io/test_workshop/04-create-schema.html",
   "dateCreated": "2024-04-19",
-  "dateModified": "2024-12-19",
+  "dateModified": "2024-12-20",
   "datePublished": "2024-12-20"
 }
 
