@@ -72,7 +72,7 @@ Below are a few examples in R and Python for converting commonly represented dat
 
 ::::::::::::::::: tab
 
-#### Python
+### Python
 
 When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
 datatype. Then, when writing your file(s) using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
@@ -171,7 +171,7 @@ function to read various date formats. The process can be applied to entire colu
       2021-01-30  2021-01-31  2021-01-30/2021-01-31
    ```
 
-#### R
+### R
 
 When dealing with dates using R, there are a few base functions that are useful to wrangle your dates in the correct format. An R package that is useful is [lubridate](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf), which is part of the `tidyverse`. It is recommended to bookmark this [lubridate cheatsheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_lubridate.pdf).
 The examples below show how to use the `lubridate` package and format your data to the ISO-8601 standard.
@@ -337,7 +337,7 @@ Below are a few example tools that can be used to match scientific names to WoRM
 
 ::::::::::::::::: tab
 
-#### Taxon Match Tool
+### Taxon Match Tool
 1. Create a CSV (comma separated value) file with the scientific name of the species of interest. Here we are showing 
    some of the contents of the file [`species.csv`](data/species.csv).
 
@@ -364,7 +364,7 @@ Below are a few example tools that can be used to match scientific names to WoRM
    can be seen below:
    ![screenshot](fig/matched_species_screenshot.png)
 
-#### worrms
+### worrms
  
 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838) (White shark)
    ```r
@@ -378,7 +378,7 @@ Below are a few example tools that can be used to match scientific names to WoRM
    [1] "Animalia"
    ```
 
-#### pyworms
+### pyworms
 
 1. Bringing in [`species.csv`](data/species.csv) and collecting appropriate information from WoRMS using the pyworms package.
 
@@ -479,7 +479,7 @@ Below are a few examples in R and Python to convert some common coordinate pairs
 
 ::::::::::::::::: tab
 
-#### Python
+### Python
 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
    * This example assumes you have already split the two strings into discrete components (as shown in the table). An 
      example converting the full strings `17° 51' 57.96" S` `149° 39' 13.32" W` to decimal degrees can be found [here](https://github.com/MathewBiddle/misc/blob/07d643da831255069fd1f6e936ca0902e21c0d0c/data302_DON_Oxidation_working_hollibaugh_20190514_process.py#L24-L62).
@@ -544,7 +544,7 @@ Below are a few examples in R and Python to convert some common coordinate pairs
    0        33.382783       -117.588683
    ```
  
-#### R
+### R
 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
 
    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
