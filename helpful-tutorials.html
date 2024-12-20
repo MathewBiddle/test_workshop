@@ -333,7 +333,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Helpful Tutorials</h1>
-        <p>Last updated on 2024-12-19 |
+        <p>Last updated on 2024-12-20 |
 
         <a href="https://github.com/MathewBiddle/test_workshop/edit/main/learners/helpful-tutorials.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -345,8 +345,7 @@
 
         
 
-<ul><li>Table of contents {:toc}</li>
-</ul><div class="section level1">
+<div class="section level1">
 <h1 id="searching-nerc-vocabulary-server-nvs">Searching NERC Vocabulary Server (NVS)<a class="anchor" aria-label="anchor" href="#searching-nerc-vocabulary-server-nvs"></a></h1>
 <p><strong>From the NERC Vocabulary Server <a href="https://vocab.nerc.ac.uk/" class="external-link">website</a>:</strong> The NVS gives
 access to standardised and hierarchically-organized vocabularies. It is
@@ -370,15 +369,16 @@ reuse.</p>
 oceanographic and associated domains. It is used by the marine science
 community in the UK (<a href="https://www.medin.org.uk/" class="external-link">MEDIN</a>),
 Europe (<a href="https://www.seadatanet.org/" class="external-link">SeaDataNet</a>), and
-globally, by a variety of organisations and networks. ## Using the NVS
-Vocab Search The NERC vocabulary server can be found at <a href="https://vocab.nerc.ac.uk/search_nvs/" class="external-link">https://vocab.nerc.ac.uk/search_nvs/</a>.
-<a href="https://vocab.nerc.ac.uk/search_nvs/" class="external-link"><img src="%7B%7B%20page.root%20%7D%7D/fig/nerc_search_page.png" class="figure">{:
-.image-with-shadow width=“500” }</a>{:target=“_blank”}</p>
+globally, by a variety of organisations and networks.</p>
+<div class="section level2">
+<h2 id="using-the-nvs-vocab-search">Using the NVS Vocab Search<a class="anchor" aria-label="anchor" href="#using-the-nvs-vocab-search"></a></h2>
+<p>The NERC vocabulary server can be found at <a href="https://vocab.nerc.ac.uk/search_nvs/" class="external-link">https://vocab.nerc.ac.uk/search_nvs/</a>.
+<a href="https://vocab.nerc.ac.uk/search_nvs/" class="external-link"><img src="fig/nerc_search_page.png" class="figure"></a></p>
 <hr></div>
+</div>
 <div class="section level1">
 <h1 id="using-gbif-validator">Using GBIF Validator<a class="anchor" aria-label="anchor" href="#using-gbif-validator"></a></h1>
-<p><a href="https://www.gbif.org/tools/data-validator" class="external-link"><img src="/fig/gbif_validator_homepage.png" class="figure">{: .image-with-shadow
-width=“500”}</a>{:target=“_blank”}</p>
+<p><a href="https://www.gbif.org/tools/data-validator" class="external-link"><img src="fig/gbif_validator_homepage.png" class="figure"></a></p>
 <p>Once you’ve determined that there are no crazy outliers or flags
 raised with your dataset, and your dataset has been standardized to the
 DwC-A format, you can run the <a href="https://www.gbif.org/tools/data-validator" class="external-link">GBIF Data
@@ -402,23 +402,41 @@ metadata. You will be able to view the metadata as a draft version of
 the dataset page as it would appear when the dataset is published and
 registered with GBIF. It is typically the final step to be done prior to
 going through the IPT and publish your dataset.</p>
-<blockquote>
-<h2 id="example-using-the-gbif-dwc-validator">Example : Using the GBIF
-DwC Validator</h2>
+<div id="example-using-the-gbif-dwc-validator" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="example-using-the-gbif-dwc-validator" class="callout-inner">
+<h3 class="callout-title">Example : Using the GBIF DwC Validator</h3>
+<div class="callout-content">
 <p>The GBIF data validator can be used to check a DwC archive
 <code>.zip</code>. The validator will highlight issues with the archive
 like bad rows, missing columns, and much more.</p>
-<p>You can try using the validator with <a href="/data/dwca-sfmbon_zooplankton-v1.4-borked.zip">this example DwC
+<p>You can try using the validator with <a href="data/dwca-sfmbon_zooplankton-v1.4-borked.zip">this example DwC
 <code>.zip</code> file</a> and see the issues with it.</p>
-<blockquote>
-<h2 id="solution">Solution</h2>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
 <p>The following are issues with the provided DwC archive reported by
-the GBIF validator (as of 2022-01): 1. Country derived from coordinates
-2. Taxon match fuzzy 3. Taxon match higherrank 4. Taxon match none 5.
-Basis of record invalid 6. Coordinate rounded 7. Geodetic datum assumed
-WGS84 {: .output} {: .solution} {: .challenge}</p>
-</blockquote>
-</blockquote>
+the GBIF validator (as of 2022-01):</p>
+<ol style="list-style-type: decimal"><li>Country derived from coordinates</li>
+<li>Taxon match fuzzy</li>
+<li>Taxon match higherrank</li>
+<li>Taxon match none</li>
+<li>Basis of record invalid</li>
+<li>Coordinate rounded</li>
+<li>Geodetic datum assumed WGS84</li>
+</ol></div>
+</div>
+</div>
+</div>
 <p>If you are at this stage with your own DwC-standardized dataset, run
 the GBIF validation tool to determine if there are any issues with your
 dataset!</p>
@@ -488,7 +506,7 @@ any links that you are not going to use.
   "url": "https://MathewBiddle.github.io/test_workshop/helpful-tutorials.html",
   "identifier": "https://MathewBiddle.github.io/test_workshop/helpful-tutorials.html",
   "dateCreated": "2024-04-19",
-  "dateModified": "2024-12-19",
+  "dateModified": "2024-12-20",
   "datePublished": "2024-12-20"
 }
 
