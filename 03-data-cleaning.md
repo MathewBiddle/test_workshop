@@ -329,22 +329,24 @@ The other way to get the taxonomic information you need is to use [worrms](https
 ::::::::::::::::::::::::::::::::: challenge
 ## Examples
 
+Below are a few example tools that can be used to match scientific names to WoRMS.
+
 ::::::::::::::::: solution
 
 ::::::::::::::::: tab
 
-### Using the WoRMS Taxon Match Tool
+### Taxon Match Tool
 1. Create a CSV (comma separated value) file with the scientific name of the species of interest. Here we are showing 
-   some of the contents of the file [`species.csv`]({{ page.root }}/data/species.csv).
-   ![screenshot]({{ page.root }}/fig/species_file_screenshot.png){: .image-with-shadow }
+   some of the contents of the file [`species.csv`](data/species.csv).
+   ![screenshot](fig/species_file_screenshot.png)
 
 2. Upload that file to the [WoRMS Taxon match service](https://www.marinespecies.org/aphia.php?p=match)
    * **make sure the option LSID is checked**
    * **for the example file, make sure you select LineFeed as the row delimiter and Tab as the column delimiter**
- ![screenshot]({{ page.root }}/fig/WoRMS_upload.png){: .image-with-shadow }
+ ![screenshot](fig/WoRMS_upload.png)
  
 3. Identify which columns to match to which WoRMS term.
- ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_Preview.PNG){: .image-with-shadow }
+ ![screenshot](fig/WoRMS_TaxonMatch_Preview.PNG)
  
 4. Click `Match` 
 
@@ -352,14 +354,14 @@ The other way to get the taxonomic information you need is to use [worrms](https
 
    1. In some cases you will have ambiguous matches. Resolve these rows by using the pull down menu to select the appropriate match.
    2. Non-matched taxa will appear in red. You will have to go back to your source file and determine what the appropriate text should be.      
-   ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
+   ![screenshot](fig/WoRMS_TaxonMatch_MatchOutput.PNG)
     
 6. Download the response as an XLS, XLSX, or text file and use the information when building the Darwin Core file(s).
-   The response from the example linked above can be found [here]({{ page.root }}/data/species_matched.xlsx). A screenshot of the file
+   The response from the example linked above can be found [here](data/species_matched.xlsx). A screenshot of the file
    can be seen below:
-   ![screenshot]({{ page.root }}/fig/matched_species_screenshot.png){: .image-with-shadow }
+   ![screenshot](fig/matched_species_screenshot.png)
 
-### Using the worrms R package
+### worrms
  
 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838) (White shark)
    ```r
@@ -373,8 +375,9 @@ The other way to get the taxonomic information you need is to use [worrms](https
    [1] "Animalia"
    ```
 
-### Using the pyworms python package
-1. Bringing in [`species.csv`]({{ page.root }}/data/species.csv) and collecting appropriate information from WoRMS using the pyworms package.
+### pyworms
+
+1. Bringing in [`species.csv`](data/species.csv) and collecting appropriate information from WoRMS using the pyworms package.
 
    __Note__ some of the responses have multiple matches, so the user needs to evaluate which match is appropriate.
    ```python
@@ -457,7 +460,7 @@ Helpful packages for managing CRS and geodetic datum:
 | [decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | `-121.1761111` |
 | [geodeticDatum](https://dwc.tdwg.org/list/#dwc_geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | `WGS84` |
 
-![coordinate_precision](https://imgs.xkcd.com/comics/coordinate_precision.png){: .image-with-shadow }
+![coordinate_precision](https://imgs.xkcd.com/comics/coordinate_precision.png)
 *Image credit: [xkcd](https://xkcd.com/)*
 
 > ## Examples in Python
