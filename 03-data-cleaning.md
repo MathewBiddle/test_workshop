@@ -338,6 +338,7 @@ Below are a few example tools that can be used to match scientific names to WoRM
 ### Taxon Match Tool
 1. Create a CSV (comma separated value) file with the scientific name of the species of interest. Here we are showing 
    some of the contents of the file [`species.csv`](data/species.csv).
+
    ![screenshot](fig/species_file_screenshot.png)
 
 2. Upload that file to the [WoRMS Taxon match service](https://www.marinespecies.org/aphia.php?p=match)
@@ -447,12 +448,15 @@ Helpful packages for managing CRS and geodetic datum:
 * python: [GeoPandas](https://geopandas.org/en/stable/getting_started.html) has a [utility](https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting).
 * R: [terra](https://cran.r-project.org/web/packages/terra/index.html) and [sf](https://cran.r-project.org/web/packages/sf/index.html).
 
-> ## Tip 
-> If at all possible, it's best to extract out the components of the information you have in order to compile the 
-> appropriate field. For example, if you have the coordinates as one lone string `17° 51' 57.96" S 149° 39' 13.32" W`, 
-> try to split it out into its component pieces: `17`, `51`, `57.96`, `S`, `149`, `39`, `13.32`, and `W` just be sure to 
-> track which values are latitude and which are longitude.
-{: .callout}
+:::::::::::: callout
+
+If at all possible, it's best to extract out the components of the information you have in order to compile the 
+appropriate field. For example, if you have the coordinates as one lone string `17° 51' 57.96" S 149° 39' 13.32" W`, 
+try to split it out into its component pieces: `17`, `51`, `57.96`, `S`, `149`, `39`, `13.32`, and `W` just be sure to 
+track which values are latitude and which are longitude.
+
+::::::::::::::::::::
+
 
 | Darwin Core Term | Description | Example        |
 |------------------|-------------|----------------|
@@ -463,158 +467,171 @@ Helpful packages for managing CRS and geodetic datum:
 ![coordinate_precision](https://imgs.xkcd.com/comics/coordinate_precision.png)
 *Image credit: [xkcd](https://xkcd.com/)*
 
-> ## Examples in Python
-> 
-> 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
->    * This example assumes you have already split the two strings into discrete components (as shown in the table). An 
->      example converting the full strings `17° 51' 57.96" S` `149° 39' 13.32" W` to decimal degrees can be found [here](https://github.com/MathewBiddle/misc/blob/07d643da831255069fd1f6e936ca0902e21c0d0c/data302_DON_Oxidation_working_hollibaugh_20190514_process.py#L24-L62).
-> 
->    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
->    ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
->    17 | 51 | 57.96 | S | 149 | 39 | 13.32 | W
-> 
->    ```python
->    df = pd.DataFrame({'lat_degrees':[17],
->                       'lat_minutes':[51],
->                       'lat_seconds':[57.96],
->                       'lat_hemisphere':['S'],
->                       'lon_degrees': [149], 
->                       'lon_minutes': [39], 
->                       'lon_seconds':[13.32], 
->                       'lon_hemisphere': ['W'],
->                      })
->    
->    df['decimalLatitude'] = df['lat_degrees'] + ( (df['lat_minutes'] + (df['lat_seconds']/60) )/60)
->    df['decimalLongitude'] = df['lon_degrees'] + ( (df['lon_minutes'] + (df['lon_seconds']/60) )/60)
-> 
->    # Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`
->    df.loc[df['lat_hemisphere']=='S','decimalLatitude'] = df.loc[df['lat_hemisphere']=='S','decimalLatitude']*-1
->    df.loc[df['lon_hemisphere']=='W','decimalLongitude'] = df.loc[df['lon_hemisphere']=='W','decimalLongitude']*-1
->       
->    df[['decimalLatitude','decimalLongitude']]
->    ```
->    ```output
->       decimalLatitude  decimalLongitude
->              -17.8661         -149.6537
->    ```
->
-> 2. `33° 22.967' N` `117° 35.321' W`
->    * Similar to above, this example assumes you have already split the two strings into discrete components (as shown 
->      in the table).
->  
->    lat_degrees | lat_dec_minutes | lat_hemisphere | lon_degrees | lon_dec_minutes | lon_hemisphere
->    ------------|-----------------|----------------|-------------|-----------------|---------------
->    33 | 22.967 | N | 117 | 35.321 | W
-> 
->    ```python
->    df = pd.DataFrame({'lat_degrees':[33],
->                       'lat_dec_minutes':[22.967],
->                       'lat_hemisphere':['N'],
->                       'lon_degrees': [117], 
->                       'lon_dec_minutes': [35.321], 
->                       'lon_hemisphere': ['W'],
->                      })
->    
->    df['decimalLatitude'] = df['lat_degrees'] + (df['lat_dec_minutes']/60)
->    df['decimalLongitude'] = df['lon_degrees'] + (df['lon_dec_minutes']/60)
->    
->    # Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`
->    df.loc[df['lat_hemisphere']=='S','decimalLatitude'] = df.loc[df['lat_hemisphere']=='S','decimalLatitude']*-1
->    df.loc[df['lon_hemisphere']=='W','decimalLongitude'] = df.loc[df['lon_hemisphere']=='W','decimalLongitude']*-1
->    
->    df[['decimalLatitude','decimalLongitude']]
->    ```
->    ```output
->    decimalLatitude  decimalLongitude
->    0        33.382783       -117.588683
->    ```
-> 
-{: .solution}
+::::::::::::::::::::::::::::::::: challenge
+## Examples
 
-> ## Examples in R
-> 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
->
->    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
->    ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
->    17 | 51 | 57.96 | S | 149 | 39 | 13.32 | W
-> 
->    ```r
->    library(tibble)
->    tbl <- tibble(lat_degrees = 17,
->                  lat_minutes = 51,
->                  lat_seconds = 57.96,
->                  lat_hemisphere = "S",
->                  lon_degrees = 149,
->                  lon_minutes = 39, 
->                  lon_seconds = 13.32, 
->                  lon_hemisphere = "W")
->    
->    tbl$decimalLatitude <- tbl$lat_degrees + ( (tbl$lat_minutes + (tbl$lat_seconds/60)) / 60 )
->    tbl$decimalLongitude <- tbl$lon_degrees + ( (tbl$lon_minutes + (tbl$lon_seconds/60)) / 60 )
->    
->    tbl$decimalLatitude = as.numeric(as.character(tbl$decimalLatitude))*(-1)
->    tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
->    ```
->    ```output
->    > tbl$decimalLatitude
->    [1] -17.8661
->    > tbl$decimalLongitude
->    [1] -149.6537
->   ```
->    
->    
-> 2. `33° 22.967' N` `117° 35.321' W` 
->
->    lat_degrees | lat_dec_minutes | lat_hemisphere | lon_degrees | lon_dec_minutes | lon_hemisphere
->    ------------|-----------------|----------------|-------------|-----------------|---------------
->    33 | 22.967 | N | 117 | 35.321 | W
->
->    ```r
->    library(tibble)
->    tbl <- tibble(lat_degrees = 33,
->                  lat_dec_minutes = 22.967,
->                  lat_hemisphere = "N",
->                  lon_degrees = 117, 
->                  lon_dec_minutes = 35.321, 
->                  lon_hemisphere = "W")
->    
->    tbl$decimalLatitude <- tbl$lat_degrees + ( tbl$lat_dec_minutes/60 )
->    tbl$decimalLongitude <- tbl$lon_degrees + ( tbl$lon_dec_minutes/60 )
->    
->    tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
->    ```
->    ```output
->    > tbl$decimalLatitude
->    [1] 33.38278
->    > tbl$decimalLongitude
->    [1] -117.5887
->    ```
-> 
-> 3. `33° 22.967' N` `117° 35.321' W`
->    * Using the [measurements package](https://cran.r-project.org/web/packages/measurements/measurements.pdf) the `conv_unit()` can work with space separated strings for coordinates.
->
->    lat | lat_hemisphere | lon | lon_hemisphere
->    ----|----------------|-----|---------------
->    33 22.967 | N | 117 35.321 | W
->    
->   ```r
->    tbl <- tibble(lat = "33 22.967",
->                  lat_hemisphere = "N",
->                  lon = "117 35.321", 
->                  lon_hemisphere = "W")
->   
->   tbl$decimalLongitude = measurements::conv_unit(tbl$lon, from = 'deg_dec_min', to = 'dec_deg')
->   tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
->   
->   tbl$decimalLatitude = measurements::conv_unit(tbl$lat, from = 'deg_dec_min', to = 'dec_deg')
->   ``` 
->   ```output
->    > tbl$decimalLatitude
->    [1] 33.38278
->    > tbl$decimalLongitude
->    [1] -117.5887
->   ```
-{: .solution}
+Below are a few examples in R and Python to convert some common coordinate pairs.
+
+::::::::::::::::: solution
+
+::::::::::::::::: tab
+
+### Python
+ 
+1. `17° 51' 57.96" S` `149° 39' 13.32" W`
+   * This example assumes you have already split the two strings into discrete components (as shown in the table). An 
+     example converting the full strings `17° 51' 57.96" S` `149° 39' 13.32" W` to decimal degrees can be found [here](https://github.com/MathewBiddle/misc/blob/07d643da831255069fd1f6e936ca0902e21c0d0c/data302_DON_Oxidation_working_hollibaugh_20190514_process.py#L24-L62).
+
+   lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
+   ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
+   17 | 51 | 57.96 | S | 149 | 39 | 13.32 | W
+
+   ```python
+   df = pd.DataFrame({'lat_degrees':[17],
+                      'lat_minutes':[51],
+                      'lat_seconds':[57.96],
+                      'lat_hemisphere':['S'],
+                      'lon_degrees': [149], 
+                      'lon_minutes': [39], 
+                      'lon_seconds':[13.32], 
+                      'lon_hemisphere': ['W'],
+                     })
+    
+   df['decimalLatitude'] = df['lat_degrees'] + ( (df['lat_minutes'] + (df['lat_seconds']/60) )/60)
+   df['decimalLongitude'] = df['lon_degrees'] + ( (df['lon_minutes'] + (df['lon_seconds']/60) )/60)
+ 
+   # Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`
+   df.loc[df['lat_hemisphere']=='S','decimalLatitude'] = df.loc[df['lat_hemisphere']=='S','decimalLatitude']*-1
+   df.loc[df['lon_hemisphere']=='W','decimalLongitude'] = df.loc[df['lon_hemisphere']=='W','decimalLongitude']*-1
+       
+   df[['decimalLatitude','decimalLongitude']]
+   ```
+   ```output
+      decimalLatitude  decimalLongitude
+             -17.8661         -149.6537
+   ```
+
+2. `33° 22.967' N` `117° 35.321' W`
+   * Similar to above, this example assumes you have already split the two strings into discrete components (as shown 
+     in the table).
+  
+   lat_degrees | lat_dec_minutes | lat_hemisphere | lon_degrees | lon_dec_minutes | lon_hemisphere
+   ------------|-----------------|----------------|-------------|-----------------|---------------
+   33 | 22.967 | N | 117 | 35.321 | W
+
+   ```python
+   df = pd.DataFrame({'lat_degrees':[33],
+                      'lat_dec_minutes':[22.967],
+                      'lat_hemisphere':['N'],
+                      'lon_degrees': [117], 
+                      'lon_dec_minutes': [35.321], 
+                      'lon_hemisphere': ['W'],
+                     })
+   
+   df['decimalLatitude'] = df['lat_degrees'] + (df['lat_dec_minutes']/60)
+   df['decimalLongitude'] = df['lon_degrees'] + (df['lon_dec_minutes']/60)
+    
+   # Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`
+   df.loc[df['lat_hemisphere']=='S','decimalLatitude'] = df.loc[df['lat_hemisphere']=='S','decimalLatitude']*-1
+   df.loc[df['lon_hemisphere']=='W','decimalLongitude'] = df.loc[df['lon_hemisphere']=='W','decimalLongitude']*-1
+    
+   df[['decimalLatitude','decimalLongitude']]
+   ```
+   ```output
+   decimalLatitude  decimalLongitude
+   0        33.382783       -117.588683
+   ```
+ 
+### R
+1. `17° 51' 57.96" S` `149° 39' 13.32" W`
+
+   lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
+   ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
+   17 | 51 | 57.96 | S | 149 | 39 | 13.32 | W
+
+   ```r
+   library(tibble)
+   tbl <- tibble(lat_degrees = 17,
+                 lat_minutes = 51,
+                 lat_seconds = 57.96,
+                 lat_hemisphere = "S",
+                 lon_degrees = 149,
+                 lon_minutes = 39, 
+                 lon_seconds = 13.32, 
+                 lon_hemisphere = "W")
+   
+   tbl$decimalLatitude <- tbl$lat_degrees + ( (tbl$lat_minutes + (tbl$lat_seconds/60)) / 60 )
+   tbl$decimalLongitude <- tbl$lon_degrees + ( (tbl$lon_minutes + (tbl$lon_seconds/60)) / 60 )
+   
+   tbl$decimalLatitude = as.numeric(as.character(tbl$decimalLatitude))*(-1)
+   tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
+   ```
+   ```output
+   > tbl$decimalLatitude
+   [1] -17.8661
+   > tbl$decimalLongitude
+   [1] -149.6537
+  ```
+   
+   
+2. `33° 22.967' N` `117° 35.321' W` 
+
+   lat_degrees | lat_dec_minutes | lat_hemisphere | lon_degrees | lon_dec_minutes | lon_hemisphere
+   ------------|-----------------|----------------|-------------|-----------------|---------------
+   33 | 22.967 | N | 117 | 35.321 | W
+   
+   ```r
+   library(tibble)
+   tbl <- tibble(lat_degrees = 33,
+                 lat_dec_minutes = 22.967,
+                 lat_hemisphere = "N",
+                 lon_degrees = 117, 
+                 lon_dec_minutes = 35.321, 
+                 lon_hemisphere = "W")
+   
+   tbl$decimalLatitude <- tbl$lat_degrees + ( tbl$lat_dec_minutes/60 )
+   tbl$decimalLongitude <- tbl$lon_degrees + ( tbl$lon_dec_minutes/60 )
+   
+   tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
+   ```
+   ```output
+   > tbl$decimalLatitude
+   [1] 33.38278
+   > tbl$decimalLongitude
+   [1] -117.5887
+   ```
+ 
+3. `33° 22.967' N` `117° 35.321' W`
+   * Using the [measurements package](https://cran.r-project.org/web/packages/measurements/measurements.pdf) the `conv_unit()` can work with space separated strings for coordinates.
+
+   lat | lat_hemisphere | lon | lon_hemisphere
+   ----|----------------|-----|---------------
+   33 22.967 | N | 117 35.321 | W
+    
+  ```r
+   tbl <- tibble(lat = "33 22.967",
+                 lat_hemisphere = "N",
+                 lon = "117 35.321", 
+                 lon_hemisphere = "W")
+  
+  tbl$decimalLongitude = measurements::conv_unit(tbl$lon, from = 'deg_dec_min', to = 'dec_deg')
+  tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
+  
+  tbl$decimalLatitude = measurements::conv_unit(tbl$lat, from = 'deg_dec_min', to = 'dec_deg')
+  ``` 
+  ```output
+   > tbl$decimalLatitude
+   [1] 33.38278
+   > tbl$decimalLongitude
+   [1] -117.5887
+  ```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::
+
 
 ::::::::::::: keypoints
 
