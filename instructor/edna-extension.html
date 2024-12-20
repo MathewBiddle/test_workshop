@@ -333,7 +333,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>DNA-derived Data Extension</h1>
-        <p>Last updated on 2024-12-19 |
+        <p>Last updated on 2024-12-20 |
 
         <a href="https://github.com/MathewBiddle/test_workshop/edit/main/learners/edna-extension.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -347,10 +347,35 @@
 
         
 
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul><li>How should people use the DNA-derived data extension?</li>
+<li>Why should people the DNA-derived data extension?</li>
+<li>What are the required or highly recommended Darwin Core terms for
+sharing to OBIS?</li>
+</ul></div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul><li>Understand the purpose of the DNA-derived data extension.</li>
+<li>Understand required or (highly) recommended fields needed in the
+extension, depending on analytical approach taken.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
 <figure><img align="center" src="../bio_mobilization_workshop/assets/img/DwC-A_closeup.png" alt="DNA-derived extension in Darwin Core" class="figure"><figcaption class="figure-caption text-center">
 Source: GBIF DNA-derived Data Extension Manual
-</figcaption></figure><ul><li>Table of contents {:toc}</li>
-</ul><section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
+</figcaption></figure><section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>DNA-derived biological occurrence data allow us to observe
 inconspicuous and cryptic taxa. DNA-derived data may come from sampling
 the environment (e.g. water, sediment), bulk organisms, or individual
@@ -557,9 +582,16 @@ result of metabarcode or qPCR analysis. The tables below only indicate
 the highly recommended or required fields - additional field should be
 included if applicable (see <a href="https://docs.gbif.org/publishing-dna-derived-data/1.0/en/" class="external-link">GBIF
 DNA-derived Data Extension Manual</a>).</p>
-<blockquote>
-<h2 id="dna-derived-data-extension-terms-for-metabarcoding-data">DNA-derived
-Data Extension Terms for Metabarcoding Data</h2>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  DNA-derived Data Extension Terms for Metabarcoding Data
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
 <table class="table"><colgroup><col width="19%"><col width="38%"><col width="41%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Required</th>
@@ -596,11 +628,20 @@ targeted gene, locus or subfragment.</td>
 </tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference" class="external-link"><code>pcr_primer_reference</code></a></td>
 <td>Reference for the primers</td>
 <td>Highly recommended</td>
-</tr></tbody></table><p>{: .solution}</p>
-</blockquote>
-<blockquote>
-<h2 id="dna-derived-data-extension-terms-for-qpcr-data">DNA-derived Data
-Extension Terms for qPCR Data</h2>
+</tr></tbody></table></div>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  DNA-derived Data Extension Terms for qPCR Data
+  </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div class="accordion-body">
 <table class="table"><colgroup><col width="19%"><col width="38%"><col width="41%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Required</th>
@@ -643,8 +684,10 @@ quenching inhibits any fluorescence signals.</td>
 amplification is below background fluorescence not originated from the
 real target amplification.</td>
 <td>qPCR: Highly recommended</td>
-</tr></tbody></table><p>{: .solution}</p>
-</blockquote>
+</tr></tbody></table></div>
+</div>
+</div>
+</div>
 <p>It is recommended that if ASVs are provided, MD5s should be generated
 by the biodiversity discovery platforms. If ASVs are not provided, the
 MD5s need to be mandatory. This will help data platform index actual
@@ -675,6 +718,19 @@ sequences to ASVs and more</a> - <a href="https://joey711.github.io/phyloseq/" c
 store, analyze, and graphically display complex phylogenetic sequencing
 data after clustering</a></p>
 <p>Python: - <a href="https://github.com/biocore/biom-format" class="external-link uri">https://github.com/biocore/biom-format</a> - <a href="https://entrezpy.readthedocs.io/en/master/" class="external-link uri">https://entrezpy.readthedocs.io/en/master/</a></p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li>“Ensure you know the objective of your study.”</li>
+<li>“Define whether you have used metabarcoding or qPCR to determine
+(highly) recommended fields in the DNA-derived data extension.”</li>
+</ul></div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -737,7 +793,7 @@ any links that you are not going to use.
   "url": "https://MathewBiddle.github.io/test_workshop/instructor/edna-extension.html",
   "identifier": "https://MathewBiddle.github.io/test_workshop/instructor/edna-extension.html",
   "dateCreated": "2024-04-19",
-  "dateModified": "2024-12-19",
+  "dateModified": "2024-12-20",
   "datePublished": "2024-12-20"
 }
 
