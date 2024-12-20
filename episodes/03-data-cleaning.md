@@ -36,7 +36,7 @@ those are not the only options for dealing with these conversions but simply the
 experiences. 
 
 
-# Getting your dates in order
+## Getting your dates in order
 Dates can be surprisingly tricky because people record them in many different ways. For our purposes we must follow 
 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) which means using a four digit year, two digit month, and two digit 
 day with dashes as separators (i.e. `YYYY-MM-DD`). You can also record time in ISO 8601 but make sure to include the time 
@@ -50,7 +50,7 @@ for them.
 ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use "/" as a separator. Date and time are separated by "T". Timestamps can have a time zone indicator at the end. If not, then they are assumed to be local time. When a time is UTC, the letter "Z" is added at the end (e.g. 2009-02-20T08:40Z, which is the equivalent of 2009-02-20T08:40+00:00). 
 
 :::::::::::: callout
-## :pushpin: Tip 
+### :pushpin: Tip 
 
 Focus on getting your package of choice to read the dates appropriately. While you can use 
 [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
@@ -64,7 +64,7 @@ your package of choice to translate the dates.
 | [eventDate](https://dwc.tdwg.org/list/#dwc_eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC).<br/>`2009-02-20T08:40Z` (20 February 2009 8:40am UTC).<br/>`2018-08-29T15:19` (3:19pm local time on 29 August 2018).<br/>`1809-02-12` (some time during 12 February 1809).<br/>`1906-06` (some time in June 1906).<br/>`1971` (some time in the year 1971).<br/>`2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC).<br/>`1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909).<br/>`2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007). |
 
 ::::::::::::::::::::::::::::::::: challenge
-## Examples
+### Examples
 
 Below are a few examples in R and Python for converting commonly represented dates to ISO-8601.
 
@@ -72,7 +72,7 @@ Below are a few examples in R and Python for converting commonly represented dat
 
 ::::::::::::::::: tab
 
-### Python
+#### Python
 
 When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
 datatype. Then, when writing your file(s) using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
@@ -171,7 +171,7 @@ function to read various date formats. The process can be applied to entire colu
       2021-01-30  2021-01-31  2021-01-30/2021-01-31
    ```
 
-### R
+#### R
 
 When dealing with dates using R, there are a few base functions that are useful to wrangle your dates in the correct format. An R package that is useful is [lubridate](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf), which is part of the `tidyverse`. It is recommended to bookmark this [lubridate cheatsheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_lubridate.pdf).
 The examples below show how to use the `lubridate` package and format your data to the ISO-8601 standard.
@@ -295,14 +295,14 @@ The examples below show how to use the `lubridate` package and format your data 
 
 :::::::::::: callout
 
-## :pushpin: Tip 
+### :pushpin: Tip 
 
 When all else fails, treat the dates as strings and use substitutions/regular expressions to manipulate the strings 
 into ISO 8601. 
 
 ::::::::::::::::::::
 
-# Matching your scientific names to WoRMS
+## Matching your scientific names to WoRMS
 OBIS uses the [World Register of Marine Species (WoRMS)](https://www.marinespecies.org/) as the taxonomic backbone for 
 its system. GBIF uses the [Catalog of Life](https://www.catalogueoflife.org/). Since WoRMS contributes to the Catalog of 
 Life and WoRMS is a requirement for OBIS we will teach you how to do your taxonomic lookups using WoRMS. The key Darwin 
@@ -329,7 +329,7 @@ The other way to get the taxonomic information you need is to use [worrms](https
 
 
 ::::::::::::::::::::::::::::::::: challenge
-## Examples
+### Examples
 
 Below are a few example tools that can be used to match scientific names to WoRMS.
 
@@ -337,7 +337,7 @@ Below are a few example tools that can be used to match scientific names to WoRM
 
 ::::::::::::::::: tab
 
-### Taxon Match Tool
+#### Taxon Match Tool
 1. Create a CSV (comma separated value) file with the scientific name of the species of interest. Here we are showing 
    some of the contents of the file [`species.csv`](data/species.csv).
 
@@ -364,7 +364,7 @@ Below are a few example tools that can be used to match scientific names to WoRM
    can be seen below:
    ![screenshot](fig/matched_species_screenshot.png)
 
-### worrms
+#### worrms
  
 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838) (White shark)
    ```r
@@ -378,7 +378,7 @@ Below are a few example tools that can be used to match scientific names to WoRM
    [1] "Animalia"
    ```
 
-### pyworms
+#### pyworms
 
 1. Bringing in [`species.csv`](data/species.csv) and collecting appropriate information from WoRMS using the pyworms package.
 
@@ -438,7 +438,7 @@ Below are a few example tools that can be used to match scientific names to WoRM
 :::::::::::::::::::::::::::::::::::::::::::
 
 
-# Getting lat/lon to decimal degrees
+## Getting lat/lon to decimal degrees
 
 Latitude (`decimalLatitude`) and longitude (`decimalLongitude`) are the geographic coordinates (in decimal degrees north and east, respectively), using the spatial reference system given in `geodeticDatum` of the geographic center of a location.
 * `decimalLatitude`, positive values are north of the Equator, negative values are south of it. All values lie between -90 and 90, inclusive. 
@@ -471,7 +471,7 @@ track which values are latitude and which are longitude.
 *Image credit: [xkcd](https://xkcd.com/)*
 
 ::::::::::::::::::::::::::::::::: challenge
-## Examples
+### Examples
 
 Below are a few examples in R and Python to convert some common coordinate pairs.
 
@@ -479,7 +479,7 @@ Below are a few examples in R and Python to convert some common coordinate pairs
 
 ::::::::::::::::: tab
 
-### Python
+#### Python
 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
    * This example assumes you have already split the two strings into discrete components (as shown in the table). An 
      example converting the full strings `17° 51' 57.96" S` `149° 39' 13.32" W` to decimal degrees can be found [here](https://github.com/MathewBiddle/misc/blob/07d643da831255069fd1f6e936ca0902e21c0d0c/data302_DON_Oxidation_working_hollibaugh_20190514_process.py#L24-L62).
@@ -544,7 +544,7 @@ Below are a few examples in R and Python to convert some common coordinate pairs
    0        33.382783       -117.588683
    ```
  
-### R
+#### R
 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
 
    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere

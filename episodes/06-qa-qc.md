@@ -16,13 +16,13 @@ exercises: 120
 
 :::::::::::::::::::::::
 
-# Data enhancement and quality control
+## Data enhancement and quality control
 
 OBIS performs a number of quality checks on the data it receives. Red quality flags are attached to occurrence records if errors are encountered, and records may also be rejected if they do not meet minimum requirements. The checks that OBIS performs are documented [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4309024/pdf/bau125.pdf) and a python implementation is available [here](https://github.com/iobis/obis-qc). Therefore, prior to publishing your data to OBIS and/or GBIF, it is important to perform quality control on your standardized data. This can help identify any outliers or "faulty" data. It will also help with ensuring that your data is compatible and interoperable with other datasets published to OBIS. There are numerous functions within the [obistools](https://github.com/iobis/obistools) R packages that can serve to identify outliers, inspect quality or ensure that the dataset structure fits the required format for both the Event and Occurrence tables. 
 
 :::::::::::: callout
 
-## :pushpin: Recommended initial checks on your data
+### :pushpin: Recommended initial checks on your data
 
 * Check that all the [required Darwin Core terms](01-introduction/index.html#what-are-the-required-darwin-core-terms-for-publishing-to-obis) are present and contain the correct information.
 * Make a map from your data to ensure the coordinates are valid and within your expected range.
@@ -39,7 +39,7 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 
 ::::::::::::::::: spoiler
 
-## Hmisc::describe
+### Hmisc::describe
 
 ```r
 # pull in the occurrence file from https://www.sciencebase.gov/catalog/item/53a887f4e4b075096c60cfdd
@@ -212,7 +212,7 @@ Proportion                     1
 
 ::::::::::::::::::::::::::::::::: challenge
 
-## Exercise 
+### Exercise 
 
 Perform the following minimal quality assurance and control checks: 
  
@@ -227,7 +227,7 @@ The event core data used in the checks below can be found in [this Excel file](d
 
 ::::::::::::::::: tab
 
-### R
+#### R
 
 Install [obistools](https://github.com/iobis/obistools) R packages. 
 Use [readxl](https://readxl.tidyverse.org/) package to read the Excel file.
@@ -289,7 +289,7 @@ Use [readxl](https://readxl.tidyverse.org/) package to read the Excel file.
     # ... with 5 more variables: maximumDepthInMeters <dbl>, samplingProtocol <chr>, locality <chr>, locationID <chr>, type <chr>    
     ```    
 
-### Python
+#### Python
 
 Install the [pandas](https://pandas.pydata.org/), 
 [cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html), and 
@@ -450,7 +450,7 @@ df['row'] = df.index.to_numpy()+1 # python starts at zero
 
 :::::::::::: callout
 
-## :pushpin: Tip
+### :pushpin: Tip
 
 * In some cases you'll want to ensure the values are representative of the entity you are reporting.
 * For example, [`individualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) should be an integer. So, checking that column for integer values would be good.

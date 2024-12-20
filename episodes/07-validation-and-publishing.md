@@ -19,7 +19,7 @@ exercises: 120
 
 ::::::::::::::::::::::
 
-# Data Publishing Pipeline
+## Data Publishing Pipeline
 
  After going through QAQC and being standardized to Darwin Core, the dataset are uploaded to an IPT.  
  Metadata is added in the form of EML and the dataset published as a Darwin Core Archive (DwC-A).  The data are then 
@@ -30,7 +30,7 @@ exercises: 120
 
 *Data publishing pipeline. Image credit: Enrique Montes*
 
-# Integrated Publishing Toolkit
+## Integrated Publishing Toolkit
 
 The [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is an open-source web application developed and 
 maintained by the Global Biodiversity Information Facility (GBIF) for publishing biodiversity data. The IPT makes it 
@@ -54,7 +54,7 @@ The requirements for publishing via an OBIS node IPT are that:
 2. the data follows Darwin Core (DwC) and Ecological Metadata Language (EML)
 3. includes the required Darwin Core and EML metadata elements
 
-# Ecological Metadata Language (EML) 
+## Ecological Metadata Language (EML) 
 
 Both OBIS and GBIF use [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard 
 associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should 
@@ -70,14 +70,14 @@ number of R packages for working with EML, reviewed
 
 :::::::::::: callout
 
-## :pushpin: Tip 
+### :pushpin: Tip 
 
 Try to collect as much of this information as possible before and during the Darwin Core alignment process. It will 
 significantly reduce the amount of time it takes to load the data into the IPT.
 
 ::::::::::::::::::::
 
-## Required EML metadata fields for sharing to OBIS
+### Required EML metadata fields for sharing to OBIS
 
 _Best practices for these fields are explained in detail in the [OBIS manual](https://manual.obis.org/eml)_
 
@@ -91,7 +91,7 @@ _Best practices for these fields are explained in detail in the [OBIS manual](ht
 | `Metadata Provider(s)` | the people and organizations responsible for producing the resource metadata. | |
 | `Citation` | The dataset citation allows users to properly cite the datasets in further publications or other uses of the data. The OBIS download function provides a list of the dataset citations packaged with the data in a zipped file. | |
 
-## Other EML fields to consider
+### Other EML fields to consider
 
 | EML Fields               | Definition | Comment |
 |--------------------------|------------|---------|

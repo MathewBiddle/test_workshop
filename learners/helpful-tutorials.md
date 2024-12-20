@@ -4,7 +4,7 @@ title: Helpful Tutorials
 permalink: /helpful-tutorials/
 ---
 
-# Searching NERC Vocabulary Server (NVS)
+## Searching NERC Vocabulary Server (NVS)
 **From the NERC Vocabulary Server [website](https://vocab.nerc.ac.uk/):** The NVS gives access to standardised and 
 hierarchically-organized vocabularies. It is managed by the British Oceanographic Data Centre at the National 
 Oceanography Centre (NOC) in Liverpool and Southampton, and receives funding from the Natural Environment Research 
@@ -23,12 +23,12 @@ The current content of the NVS is predominantly targeted at the oceanographic an
 marine science community in the UK ([MEDIN](https://www.medin.org.uk/)), Europe 
 ([SeaDataNet](https://www.seadatanet.org/)), and globally, by a variety of organisations and networks.
 
-## Using the NVS Vocab Search
+### Using the NVS Vocab Search
 The NERC vocabulary server can be found at [https://vocab.nerc.ac.uk/search_nvs/](https://vocab.nerc.ac.uk/search_nvs/).
 [![](../episodes/fig/nerc_search_page.png)](https://vocab.nerc.ac.uk/search_nvs/)
 
 ---
-# Using GBIF Validator
+## Using GBIF Validator
 
 [![](../episodes/fig/gbif_validator_homepage.png)](https://www.gbif.org/tools/data-validator)
 
@@ -51,7 +51,7 @@ and publish your dataset.
 
 ::::::::::::::::::::::::::::::::: challenge
 
-## Example : Using the GBIF DwC Validator
+### Example : Using the GBIF DwC Validator
 
 The GBIF data validator can be used to check a DwC archive `.zip`. 
 The validator will highlight issues with the archive like bad rows, missing columns, and much more.
@@ -61,7 +61,7 @@ You can try using the validator with
 
 ::::::::::::::::: solution
 
-## Solution
+### Solution
 
 The following are issues with the provided DwC archive reported by the GBIF validator (as of 2022-01):
 
