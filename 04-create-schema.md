@@ -20,7 +20,7 @@ exercises: 90
 
 ::::::::::::::::::::::
 
-### Darwin Core - Cores and Extensions
+## Darwin Core - Cores and Extensions
 Now that we have a firm basis for understanding the different terms in Darwin Core the next part to understand is how 
 data tables are organized and the difference between cores and extensions. You will always have a core table (Occurrence 
 core or Event core) with either no extensions or several. What you choose depends on the data you have and how to 
@@ -50,7 +50,7 @@ if you use this most simple form of data structuring. However, it is faster and 
 
 :::::::::::: callout
 
-## Thought Experiment 
+### Thought Experiment 
 Look at the 
 [minimum required fields example](https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv). 
 What is possible

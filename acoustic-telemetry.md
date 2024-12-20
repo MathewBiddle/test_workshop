@@ -20,11 +20,11 @@ tracking regimes. (Acoustic, Satellite, RFID, coded-wire)
 
 ::::::::::::::::::::::
 
-# Acoustic and Satellite Telemetry Data
+## Acoustic and Satellite Telemetry Data
 
-## Acoustic Telemetry
+### Acoustic Telemetry
 
-### How It Works
+#### How It Works
 
 Acoustic telemetry is a general term that describes the practice of implanting marine animals with electronic tags that 
 emit an identifiable coded set of 'pings' to transmit a unique identifier to any listening station that is near enough 
@@ -32,7 +32,7 @@ to record them. Many companies sell systems of coded transmitters (tags) and lis
 researchers to track the movements of underwater animals at sub-1km scales. Recent developments allow for many 
 listening stations to synchronize their detection of a 'ping' to allow for fine-scale triangulation of animal position.
 
-### Networks - getting more data for your tracked animals
+#### Networks - getting more data for your tracked animals
 
 Acoustic telemetry equipment is often intercompatible, allowing the listening stations of one project to detect the 
 tagged individuals from any number of other projects. To maximize the utility of their tag detection data and the 
@@ -46,7 +46,7 @@ https://members.oceantrack.org/statistics/
 
 ![screenshot](../episodes/fig/acoustic_telemetry_components.png)
 
-### Preparing to publish to OBIS - how we solve the many-fish vs. one-fish-many-times problem
+#### Preparing to publish to OBIS - how we solve the many-fish vs. one-fish-many-times problem
 
 Each of the telemetry networks produce for their investigators a data report that takes into account every compatible 
 listening device across all of the networks that has heard their tagged animals. This report is intended to be the best, 
@@ -70,7 +70,7 @@ but drop the other values that fall in that same hour.
 
 ::::::::::::::::: spoiler
 
-## Time binning example
+### Time binning example
 
 | time                 | dayhr         | Keep?   |
 |:---------------------|:--------------|:--------|
@@ -108,7 +108,7 @@ but drop the other values that fall in that same hour.
 
 :::::::::::::::::::::::::
 
-### Mapping example
+#### Mapping example
 
 OTN maintains this wiki entry example of how to populate each of the Darwin Core fields for an acoustic 
 telemetry-sourced data Darwin Core archive. 
@@ -117,13 +117,13 @@ telemetry-sourced data Darwin Core archive.
 
 The key features of this schema are:
 
-#### Metadata:
+##### Metadata:
 * Projects are organized around tagging efforts with the related research question and efforts included in the 
 * Abstract/Project Description/Sampling Methods fields of the EML.
 * Participants are those registered as participating in the tagging project, plus all PIs from the 'participating' 
 * projects that supplied additional detection events with the role Data Contributor.
 
-#### Data:
+##### Data:
 * Event records with associated Occurrence Extension for animal capture (for tagging purposes).
 * Event records for tag attachment.
 * Event records for receiver deployment (only for 'participating' receivers, who have contributed detections to the archive).
@@ -140,7 +140,7 @@ Nodes ) can produce these packages automatically based on currently-reported dat
 via OBIS, and OTN's OBIS Node at <https://members.oceantrack.org/ipt/>.
 
 
-## Satellite telemetry, light-level geolocation, etc.
+### Satellite telemetry, light-level geolocation, etc.
 
 Satellite telemetry presumes surfacing events, to allow an instrument to obtain a GPS or Argos network location of a 
 tagged individual. These surfacings are often monitored in near-realtime with a high degree of position error, and paths 
@@ -162,7 +162,7 @@ submitted to NCEI and the Darwin Core format is currently being discussed in thi
 [issue](https://github.com/ioos/bio_data_guide/issues/145).
 
 
-### Multiple-method tagging of animals
+#### Multiple-method tagging of animals
 
 Often, animals are tagged with multiple technologies to better capture their movement over smaller and larger distances. 
 The ability to combine both methods into a single file with the same data density and features described above is a very 
@@ -177,7 +177,7 @@ Sometimes, stranger setups like animals-as-listening-stations or animals collect
 your project. This extends the default schema with some extra components, but nothing is impossible within Event Core!
 
 
-### Providing your telemetry data and metadata to an OTN node
+#### Providing your telemetry data and metadata to an OTN node
 
 If you want to publish animal telemetry data to OBIS and GBIF, OTN is a thematic OBIS node for animal telemetry and we 
 are able to help you do that. Providing your data to OTN augments it with other potential detections that may have 
