@@ -206,12 +206,24 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         1. Introduction to Darwin Core
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#darwin-core---a-global-community-of-data-sharing-and-integration">Darwin Core - A global community of data sharing and
+integration</a></li>
+<li><a href="#darwin-core-mapping">Darwin Core Mapping</a></li>
+<li><a href="#what-are-the-required-darwin-core-terms-for-publishing-to-obis">What are the <strong>required</strong> Darwin Core terms for
+publishing to OBIS?</a></li>
+<li><a href="#what-other-terms-should-be-considered">What other terms should be considered?</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -377,10 +389,9 @@
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="darwin-core---a-global-community-of-data-sharing-and-integration">Darwin Core - A global community of data sharing and
-integration<a class="anchor" aria-label="anchor" href="#darwin-core---a-global-community-of-data-sharing-and-integration"></a></h3>
-<p>Darwin Core is a data standard to mobilize and share biodiversity
+<section><h2 class="section-heading" id="darwin-core---a-global-community-of-data-sharing-and-integration">Darwin Core - A global community of data sharing and
+integration<a class="anchor" aria-label="anchor" href="#darwin-core---a-global-community-of-data-sharing-and-integration"></a></h2>
+<hr class="half-width"><p>Darwin Core is a data standard to mobilize and share biodiversity
 data. Over the years, the Darwin Core standard has expanded to enable
 exchange and sharing of diverse types of biological observations from
 citizen scientists, ecological monitoring, eDNA, animal telemetry,
@@ -390,8 +401,8 @@ defining a species) at a particular place and time. In Darwin Core this
 is an <code>occurrence</code>. To learn more about the foundations of
 Darwin Core read <a href="https://doi.org/10.1371/journal.pone.0029715" class="external-link">Wieczorek et
 al. 2012</a>.</p>
-<div class="section level4">
-<h4 id="demonstrated-use-of-darwin-core">Demonstrated Use of Darwin Core<a class="anchor" aria-label="anchor" href="#demonstrated-use-of-darwin-core"></a></h4>
+<div class="section level3">
+<h3 id="demonstrated-use-of-darwin-core">Demonstrated Use of Darwin Core<a class="anchor" aria-label="anchor" href="#demonstrated-use-of-darwin-core"></a></h3>
 <p>The power of Darwin Core is most evident in the data aggregators that
 harvest data using that standard. The one we will refer to most
 frequently in this workshop is the <a href="https://obis.org/" class="external-link">Ocean
@@ -399,8 +410,8 @@ Biodiversity Information System</a> (learn more about <a href="https://youtu.be/
 the <a href="https://www.gbif.org/" class="external-link">Global Biodiversity Information
 Facility</a> (learn more about <a href="https://vimeo.com/434831655" class="external-link">GBIF</a>). It’s also used by the
 Atlas of Living Australia, iDigBio, among others.</p>
-<div class="section level5">
-<h5 id="darwin-core-archives">Darwin Core Archives<a class="anchor" aria-label="anchor" href="#darwin-core-archives"></a></h5>
+<div class="section level4">
+<h4 id="darwin-core-archives">Darwin Core Archives<a class="anchor" aria-label="anchor" href="#darwin-core-archives"></a></h4>
 <p>Darwin Core Archives are what OBIS and GBIF harvest into their
 systems. Fortunately the software created and maintained by GBIF, the <a href="https://www.gbif.org/ipt" class="external-link">Integrated Publishing Toolkit</a>,
 produces Darwin Core Archives for us. Darwin Core Archives are pretty
@@ -440,9 +451,8 @@ or that you don’t understand what it is?</p>
 </div>
 </div>
 </div>
-<div class="section level4">
-<h4 id="darwin-core-mapping">Darwin Core Mapping<a class="anchor" aria-label="anchor" href="#darwin-core-mapping"></a></h4>
-<p>Now that we understand a bit more about why Darwin Core was created
+</section><section><h2 class="section-heading" id="darwin-core-mapping">Darwin Core Mapping<a class="anchor" aria-label="anchor" href="#darwin-core-mapping"></a></h2>
+<hr class="half-width"><p>Now that we understand a bit more about why Darwin Core was created
 and how it is used today we can begin the work of mapping data to the
 standard. The key resource when mapping data to Darwin Core is the <a href="https://dwc.tdwg.org/terms/" class="external-link">Darwin Core Quick Reference
 Guide</a>. This document provides an easy-to-read reference of the
@@ -530,12 +540,9 @@ the appropriate Dawin Core term(s) in a second column. For example:</p>
 </tr></tbody></table></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="what-are-the-required-darwin-core-terms-for-publishing-to-obis">What are the <strong>required</strong> Darwin Core terms for
-publishing to OBIS?<a class="anchor" aria-label="anchor" href="#what-are-the-required-darwin-core-terms-for-publishing-to-obis"></a></h3>
-<p>When doing your mapping some required information may be missing.
+</section><section><h2 class="section-heading" id="what-are-the-required-darwin-core-terms-for-publishing-to-obis">What are the <strong>required</strong> Darwin Core terms for
+publishing to OBIS?<a class="anchor" aria-label="anchor" href="#what-are-the-required-darwin-core-terms-for-publishing-to-obis"></a></h2>
+<hr class="half-width"><p>When doing your mapping some required information may be missing.
 Below are the Darwin Core terms that are required to share your data to
 OBIS plus a few that are needed for GBIF.</p>
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
@@ -640,10 +647,8 @@ decimalLongitude as based.</td>
 <td>Must be <a href="https://epsg.io/4326" class="external-link">WGS84</a> for data shared to
 OBIS and GBIF but it’s best to state explicitly that it is.</td>
 <td>WGS84</td>
-</tr></tbody></table></div>
-<div class="section level3">
-<h3 id="what-other-terms-should-be-considered">What other terms should be considered?<a class="anchor" aria-label="anchor" href="#what-other-terms-should-be-considered"></a></h3>
-<p>While these terms are not required for publishing data to OBIS, they
+</tr></tbody></table></section><section><h2 class="section-heading" id="what-other-terms-should-be-considered">What other terms should be considered?<a class="anchor" aria-label="anchor" href="#what-other-terms-should-be-considered"></a></h2>
+<hr class="half-width"><p>While these terms are not required for publishing data to OBIS, they
 are extremely helpful for downstream users because without them the data
 are less useful for future analyses. For instance, <code>depth</code> is
 a crucial piece of information for marine observations, but it is not
@@ -761,11 +766,7 @@ matter where they work or are based.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/02-break.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
