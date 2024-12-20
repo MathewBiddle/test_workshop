@@ -72,6 +72,45 @@ your package of choice to translate the dates.
 
 ### Python
 
+When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
+datatype. Then, when writing your file(s) using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
+you can specify the format which your date will be written in using the `date_format` parameter. 
+
+The examples below show how to use the [pandas.to_datetime()](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html)
+function to read various date formats. The process can be applied to entire columns (or Series) within a DataFrame.
+
+1. `01/31/2021 17:00 GMT`
+ 
+   This date follows a typical date construct of `month`**/**`day`**/**`year` `24-hour`**:**`minute` `time-zone`. The 
+   pandas `.to_datetime()` function will correctly interpret these dates without the `format` parameter.
+ 
+   ```python
+   import pandas as pd
+   df = pd.DataFrame({'date':['01/31/2021 17:00 GMT']})
+   df['eventDate'] = pd.to_datetime(df['date'], format="%m/%d/%Y %H:%M %Z")
+   df
+   ```
+   ```output
+                       date                 eventDate
+       01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00
+   ``` 
+
+2. `31/01/2021 12:00 EST`
+
+   This date is similar to the first date but switches the `month` and `day` and identifies a different `time-zone`.
+   The construct looks like `day`**/**`month`**/**`year` `24-hour`**:**`minute` `time-zone`
+   ```python
+   import pandas as pd
+   df = pd.DataFrame({'date':['31/01/2021 12:00 EST']})
+   df['eventDate'] = pd.to_datetime(df['date'], format="%d/%m/%Y %H:%M %Z")
+   df
+   ```
+   ```output
+                      date                 eventDate
+      31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
+   ``` 
+
+
 ### R
 
 :::::::::::::::::::::
@@ -82,43 +121,13 @@ your package of choice to translate the dates.
 
 > ## Examples in Python
 > 
-> When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
-> datatype. Then, when writing your file(s) using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
-> you can specify the format which your date will be written in using the `date_format` parameter. 
+
 >
-> The examples below show how to use the [pandas.to_datetime()](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html)
-> function to read various date formats. The process can be applied to entire columns (or Series) within a DataFrame.
+
 > <br/>
-> 1. `01/31/2021 17:00 GMT`
-> 
->    This date follows a typical date construct of `month`**/**`day`**/**`year` `24-hour`**:**`minute` `time-zone`. The 
->    pandas `.to_datetime()` function will correctly interpret these dates without the `format` parameter.
-> 
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['01/31/2021 17:00 GMT']})
->    df['eventDate'] = pd.to_datetime(df['date'], format="%m/%d/%Y %H:%M %Z")
->    df
->    ```
->    ```output
->                       date                 eventDate
->       01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00
->    ``` 
+
 >    
-> 2. `31/01/2021 12:00 EST`
-> 
->    This date is similar to the first date but switches the `month` and `day` and identifies a different `time-zone`.
->    The construct looks like `day`**/**`month`**/**`year` `24-hour`**:**`minute` `time-zone`
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['31/01/2021 12:00 EST']})
->    df['eventDate'] = pd.to_datetime(df['date'], format="%d/%m/%Y %H:%M %Z")
->    df
->    ```
->    ```output
->                       date                 eventDate
->       31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
->    ``` 
+
 >    
 > 3. `January, 01 2021 5:00 PM GMT`
 >    
