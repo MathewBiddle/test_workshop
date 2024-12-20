@@ -227,22 +227,22 @@ The event core data used in the checks below can be found in [this Excel file](d
 
 ::::::::::::::::: tab
 
-## R
+### R
 
 Install [obistools](https://github.com/iobis/obistools) R packages. 
 Use [readxl](https://readxl.tidyverse.org/) package to read the Excel file.
 
 1. Run a diagnostics report for the data quality
-
-```r
-library(readxl)
-library(obistools)
-
-trawl_fish <- readxl::read_excel('data/trawl_fish.xlsx')
-report <- obistools::report(trawl_fish)
-report
-```
-![drawing](fig/screenshot_obistools_report.png)
+   ```r
+   library(readxl)
+   library(obistools)
+   
+   trawl_fish <- readxl::read_excel('data/trawl_fish.xlsx')
+   report <- obistools::report(trawl_fish)
+   report
+   ```
+   
+   ![drawing](fig/screenshot_obistools_report.png)
 
 1. Check to make sure `eventID` are unique
    ```r
@@ -289,7 +289,7 @@ report
     # ... with 5 more variables: maximumDepthInMeters <dbl>, samplingProtocol <chr>, locality <chr>, locationID <chr>, type <chr>    
     ```    
 
-## Python
+### Python
 
 Install the [pandas](https://pandas.pydata.org/), 
 [cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html), and 
@@ -352,7 +352,8 @@ df['row'] = df.index.to_numpy()+1 # python starts at zero
    axs[1].axis('off')
    plt.show()
    ```
-    <img src="fig/screenshot_python_report.png" alt="drawing" width="500"/>
+   
+    ![drawing](fig/screenshot_python_report.png)
     
 1. Check to make sure `eventID` are unique
    ```python
