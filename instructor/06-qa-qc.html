@@ -422,7 +422,7 @@ notebook</a> to see how it works.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Hmisc::describe </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -620,25 +620,27 @@ checks:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
-
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
+  R
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
+  Python
+  </h3>
+</button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
-
-</div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>Install <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R
 packages. Use <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> package
 to read the Excel file.</p>
-</div>
-<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
-<ol style="list-style-type: decimal"><li>Run a diagnostics report for the data quality</li>
-</ol></div>
-<div id="nav-tabpanel-1-4" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-4">
+<p>Run a diagnostics report for the data quality</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -650,14 +652,8 @@ to read the Excel file.</p>
 <span><span class="va">report</span> <span class="op">&lt;-</span> <span class="fu">obistools</span><span class="fu">::</span><span class="fu">report</span><span class="op">(</span><span class="va">trawl_fish</span><span class="op">)</span></span>
 <span><span class="va">report</span></span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-5" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-5">
 <figure><img src="../fig/screenshot_obistools_report.png" alt="drawing" class="figure mx-auto d-block"><div class="figcaption">drawing</div>
-</figure></div>
-<div id="nav-tabpanel-1-6" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-6">
-<p>Check to make sure <code>eventID</code> are unique</p>
-</div>
-<div id="nav-tabpanel-1-7" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-7">
+</figure><p>Check to make sure <code>eventID</code> are unique</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -665,8 +661,6 @@ to read the Excel file.</p>
 <code class="sourceCode R"><span><span class="va">eventid</span> <span class="op">&lt;-</span> <span class="fu">obistools</span><span class="fu">::</span><span class="fu">check_eventids</span><span class="op">(</span><span class="va">trawl_fish</span><span class="op">)</span></span>
 <span><span class="fu">head</span><span class="op">(</span><span class="va">eventid</span><span class="op">)</span></span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-8" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-8">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -680,24 +674,33 @@ to read the Excel file.</p>
  5 parentEventID error     3 parentEventID IYS:GoA2019:Stn3 has no corresponding eventID
  6 parentEventID error     4 parentEventID IYS:GoA2019:Stn4 has no corresponding eventID</code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-9" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-9">
 <p>Check for proper <code>eventDate</code> to ensure they follow ISO
 8601 standards:
 <code>r     eventDate &lt;- obistools::check_eventdate(trawl_fish)     print(eventDate)</code>
 <code>output     # A tibble: 3 x 4      level   row field     message                                                             &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                                                              1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date        2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date     3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date</code></p>
-</div>
-<div id="nav-tabpanel-1-10" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-10">
 <p>From the report generated under exercise 1, you can already see that
 there’s measurements made on land. This information can also be gathered
 by plotting the map separately or using the <code>check_onland()</code>
 or <code>check_depth()</code> functions in the <a href="https://iobis.github.io/obistools/" class="external-link">obistools</a> package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.                print(depth)</code>
 <code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p>
-</div>
-<div id="nav-tabpanel-1-11" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-11">
 <ol style="list-style-type: decimal"><li>
-<p>Check to make sure <code>eventID</code> are unique</p>
+<p>Run a diagnostics report for the data quality</p>
 <div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">readxl</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">obistools</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">trawl_fish</span> <span class="op">&lt;-</span> <span class="fu">readxl</span><span class="fu">::</span><span class="fu">read_excel</span><span class="op">(</span><span class="st">'data/trawl_fish.xlsx'</span><span class="op">)</span></span>
+<span><span class="va">report</span> <span class="op">&lt;-</span> <span class="fu">obistools</span><span class="fu">::</span><span class="fu">report</span><span class="op">(</span><span class="va">trawl_fish</span><span class="op">)</span></span>
+<span><span class="va">report</span></span></code></pre>
+</div>
+<figure><img src="../fig/screenshot_obistools_report.png" alt="drawing" class="figure mx-auto d-block"><div class="figcaption">drawing</div>
+</figure></li>
+<li>
+<p>Check to make sure <code>eventID</code> are unique</p>
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -730,93 +733,80 @@ the <a href="https://iobis.github.io/obistools/" class="external-link">obistools
 package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.                print(depth)</code>
 <code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p></li>
 </ol></div>
-<div id="nav-tabpanel-1-12" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-12">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <p>Install the <a href="https://pandas.pydata.org/" class="external-link">pandas</a>, <a href="https://scitools.org.uk/cartopy/docs/latest/installing.html" class="external-link">cartopy</a>,
 and <a href="https://geopandas.org/en/stable/" class="external-link">geopandas</a> Python
 packages. Use pandas to read the Excel file.</p>
-</div>
-<div id="nav-tabpanel-1-13" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-13">
-<div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://ioos.github.io/bio_mobilization_workshop/data/trawl_fish.xlsx'</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(url) <span class="co"># might need to install openpyxl</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>df[<span class="st">'row'</span>] <span class="op">=</span> df.index.to_numpy()<span class="op">+</span><span class="dv">1</span> <span class="co"># python starts at zero</span></span></code></pre>
-</div>
-</div>
-<div id="nav-tabpanel-1-14" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-14">
-<p>Run a diagnostics report for the data quality.</p>
-</div>
-<div id="nav-tabpanel-1-15" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-15">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="im">import</span> cartopy.io.shapereader <span class="im">as</span> shpreader</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="im">import</span> shapely.geometry <span class="im">as</span> sgeom</span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="im">from</span> shapely.ops <span class="im">import</span> unary_union</span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="im">from</span> shapely.prepared <span class="im">import</span> prep</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>gdf <span class="op">=</span> gpd.GeoDataFrame(df, geometry<span class="op">=</span>gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))</span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>land_shp_fname <span class="op">=</span> shpreader.natural_earth(resolution<span class="op">=</span><span class="st">'50m'</span>,</span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>                                       category<span class="op">=</span><span class="st">'physical'</span>, name<span class="op">=</span><span class="st">'land'</span>)</span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>land_geom <span class="op">=</span> unary_union(<span class="bu">list</span>(shpreader.Reader(land_shp_fname).geometries()))</span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>land <span class="op">=</span> prep(land_geom)</span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> gdf.iterrows():</span>
-<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a>    gdf.loc[index, <span class="st">'on_land'</span>] <span class="op">=</span> land.contains(row.geometry)</span>
-<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a></span>
-<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">1</span>,nrows<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a><span class="co"># Make a map:</span></span>
-<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a>xlim <span class="op">=</span> ([gdf.total_bounds[<span class="dv">0</span>]<span class="op">-</span><span class="dv">2</span>,  gdf.total_bounds[<span class="dv">2</span>]<span class="op">+</span><span class="dv">2</span>])</span>
-<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>ylim <span class="op">=</span> ([gdf.total_bounds[<span class="dv">1</span>]<span class="op">-</span><span class="dv">2</span>,  gdf.total_bounds[<span class="dv">3</span>]<span class="op">+</span><span class="dv">2</span>])</span>
-<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a></span>
-<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xlim(xlim)</span>
-<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylim(ylim)</span>
-<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a></span>
-<span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a>gpd.read_file(land_shp_fname).plot(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
-<span id="cb9-28"><a href="#cb9-28" tabindex="-1"></a></span>
-<span id="cb9-29"><a href="#cb9-29" tabindex="-1"></a>gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">False</span>].plot(ax<span class="op">=</span>axs[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'green'</span>, markersize<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb9-30"><a href="#cb9-30" tabindex="-1"></a>gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">True</span>].plot(ax<span class="op">=</span>axs[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'red'</span>, markersize<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb9-31"><a href="#cb9-31" tabindex="-1"></a></span>
-<span id="cb9-32"><a href="#cb9-32" tabindex="-1"></a><span class="co"># Collect some informational material about potential issues w/ data:</span></span>
-<span id="cb9-33"><a href="#cb9-33" tabindex="-1"></a>invalid_coord <span class="op">=</span> []</span>
-<span id="cb9-34"><a href="#cb9-34" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">True</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb9-35"><a href="#cb9-35" tabindex="-1"></a>   invalid_coord.append(<span class="st">'Row </span><span class="sc">{}</span><span class="st"> coordinates on land.'</span>.<span class="bu">format</span>(gdf.loc[gdf[<span class="st">'on_land'</span>] <span class="op">==</span> <span class="va">True</span>,<span class="st">'row'</span>].tolist()[<span class="dv">0</span>]))</span>
-<span id="cb9-36"><a href="#cb9-36" tabindex="-1"></a></span>
-<span id="cb9-37"><a href="#cb9-37" tabindex="-1"></a>req_cols <span class="op">=</span> [<span class="st">'eventDate'</span>, <span class="st">'decimalLongitude'</span>, <span class="st">'decimalLatitude'</span>, <span class="st">'scientificName'</span>, <span class="st">'scientificNameID'</span>, <span class="st">'occurrenceStatus'</span>, <span class="st">'basisOfRecord'</span>]</span>
-<span id="cb9-38"><a href="#cb9-38" tabindex="-1"></a>missing_cols <span class="op">=</span> []</span>
-<span id="cb9-39"><a href="#cb9-39" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> req_cols:</span>
-<span id="cb9-40"><a href="#cb9-40" tabindex="-1"></a> <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> gdf.columns:</span>
-<span id="cb9-41"><a href="#cb9-41" tabindex="-1"></a>   missing_cols.append(<span class="st">'Column </span><span class="sc">{}</span><span class="st"> is missing.'</span>.<span class="bu">format</span>(col))</span>
-<span id="cb9-42"><a href="#cb9-42" tabindex="-1"></a></span>
-<span id="cb9-43"><a href="#cb9-43" tabindex="-1"></a><span class="co"># Add the information to the figure</span></span>
-<span id="cb9-44"><a href="#cb9-44" tabindex="-1"></a>axs[<span class="dv">1</span>].text(<span class="fl">0.25</span>,<span class="fl">0.25</span>,<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(missing_cols),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(invalid_coord)]))</span>
-<span id="cb9-45"><a href="#cb9-45" tabindex="-1"></a>axs[<span class="dv">1</span>].axis(<span class="st">'off'</span>)</span>
-<span id="cb9-46"><a href="#cb9-46" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://ioos.github.io/bio_mobilization_workshop/data/trawl_fish.xlsx'</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(url) <span class="co"># might need to install openpyxl</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>df[<span class="st">'row'</span>] <span class="op">=</span> df.index.to_numpy()<span class="op">+</span><span class="dv">1</span> <span class="co"># python starts at zero</span></span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-16" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-16">
-<figure><img src="../fig/screenshot_python_report.png" alt="drawing" width="500" class="figure mx-auto d-block"></figure></div>
-<div id="nav-tabpanel-1-17" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-17">
-<p>Check to make sure <code>eventID</code> are unique</p>
-</div>
-<div id="nav-tabpanel-1-18" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-18">
+<p>Run a diagnostics report for the data quality.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>dup_events <span class="op">=</span> df.loc[df[<span class="st">'eventID'</span>].duplicated()]</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Duplicated eventID:</span><span class="ch">\n</span><span class="st">'</span>,dup_events[[<span class="st">'eventID'</span>,<span class="st">'row'</span>]])</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>parent_not_event <span class="op">=</span> df.loc[<span class="op">~</span>df[<span class="st">'eventID'</span>].isin(df[<span class="st">'parentEventID'</span>].unique())]</span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">parentEventID missing corresponding eventID:</span><span class="ch">\n</span><span class="st">'</span>, parent_not_event[[<span class="st">'parentEventID'</span>,<span class="st">'row'</span>]])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="im">import</span> cartopy.io.shapereader <span class="im">as</span> shpreader</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="im">import</span> shapely.geometry <span class="im">as</span> sgeom</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="im">from</span> shapely.ops <span class="im">import</span> unary_union</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="im">from</span> shapely.prepared <span class="im">import</span> prep</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>gdf <span class="op">=</span> gpd.GeoDataFrame(df, geometry<span class="op">=</span>gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>land_shp_fname <span class="op">=</span> shpreader.natural_earth(resolution<span class="op">=</span><span class="st">'50m'</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>                                       category<span class="op">=</span><span class="st">'physical'</span>, name<span class="op">=</span><span class="st">'land'</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>land_geom <span class="op">=</span> unary_union(<span class="bu">list</span>(shpreader.Reader(land_shp_fname).geometries()))</span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>land <span class="op">=</span> prep(land_geom)</span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> gdf.iterrows():</span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>    gdf.loc[index, <span class="st">'on_land'</span>] <span class="op">=</span> land.contains(row.geometry)</span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">1</span>,nrows<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="co"># Make a map:</span></span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a>xlim <span class="op">=</span> ([gdf.total_bounds[<span class="dv">0</span>]<span class="op">-</span><span class="dv">2</span>,  gdf.total_bounds[<span class="dv">2</span>]<span class="op">+</span><span class="dv">2</span>])</span>
+<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a>ylim <span class="op">=</span> ([gdf.total_bounds[<span class="dv">1</span>]<span class="op">-</span><span class="dv">2</span>,  gdf.total_bounds[<span class="dv">3</span>]<span class="op">+</span><span class="dv">2</span>])</span>
+<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xlim(xlim)</span>
+<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylim(ylim)</span>
+<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a></span>
+<span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a>gpd.read_file(land_shp_fname).plot(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
+<span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a></span>
+<span id="cb10-29"><a href="#cb10-29" tabindex="-1"></a>gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">False</span>].plot(ax<span class="op">=</span>axs[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'green'</span>, markersize<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-30"><a href="#cb10-30" tabindex="-1"></a>gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">True</span>].plot(ax<span class="op">=</span>axs[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'red'</span>, markersize<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-31"><a href="#cb10-31" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a><span class="co"># Collect some informational material about potential issues w/ data:</span></span>
+<span id="cb10-33"><a href="#cb10-33" tabindex="-1"></a>invalid_coord <span class="op">=</span> []</span>
+<span id="cb10-34"><a href="#cb10-34" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">True</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-35"><a href="#cb10-35" tabindex="-1"></a>   invalid_coord.append(<span class="st">'Row </span><span class="sc">{}</span><span class="st"> coordinates on land.'</span>.<span class="bu">format</span>(gdf.loc[gdf[<span class="st">'on_land'</span>] <span class="op">==</span> <span class="va">True</span>,<span class="st">'row'</span>].tolist()[<span class="dv">0</span>]))</span>
+<span id="cb10-36"><a href="#cb10-36" tabindex="-1"></a></span>
+<span id="cb10-37"><a href="#cb10-37" tabindex="-1"></a>req_cols <span class="op">=</span> [<span class="st">'eventDate'</span>, <span class="st">'decimalLongitude'</span>, <span class="st">'decimalLatitude'</span>, <span class="st">'scientificName'</span>, <span class="st">'scientificNameID'</span>, <span class="st">'occurrenceStatus'</span>, <span class="st">'basisOfRecord'</span>]</span>
+<span id="cb10-38"><a href="#cb10-38" tabindex="-1"></a>missing_cols <span class="op">=</span> []</span>
+<span id="cb10-39"><a href="#cb10-39" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> req_cols:</span>
+<span id="cb10-40"><a href="#cb10-40" tabindex="-1"></a> <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> gdf.columns:</span>
+<span id="cb10-41"><a href="#cb10-41" tabindex="-1"></a>   missing_cols.append(<span class="st">'Column </span><span class="sc">{}</span><span class="st"> is missing.'</span>.<span class="bu">format</span>(col))</span>
+<span id="cb10-42"><a href="#cb10-42" tabindex="-1"></a></span>
+<span id="cb10-43"><a href="#cb10-43" tabindex="-1"></a><span class="co"># Add the information to the figure</span></span>
+<span id="cb10-44"><a href="#cb10-44" tabindex="-1"></a>axs[<span class="dv">1</span>].text(<span class="fl">0.25</span>,<span class="fl">0.25</span>,<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(missing_cols),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(invalid_coord)]))</span>
+<span id="cb10-45"><a href="#cb10-45" tabindex="-1"></a>axs[<span class="dv">1</span>].axis(<span class="st">'off'</span>)</span>
+<span id="cb10-46"><a href="#cb10-46" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
+<figure><img src="../fig/screenshot_python_report.png" alt="drawing" class="figure mx-auto d-block"><div class="figcaption">drawing</div>
+</figure><p>Check to make sure <code>eventID</code> are unique</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>dup_events <span class="op">=</span> df.loc[df[<span class="st">'eventID'</span>].duplicated()]</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Duplicated eventID:</span><span class="ch">\n</span><span class="st">'</span>,dup_events[[<span class="st">'eventID'</span>,<span class="st">'row'</span>]])</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>parent_not_event <span class="op">=</span> df.loc[<span class="op">~</span>df[<span class="st">'eventID'</span>].isin(df[<span class="st">'parentEventID'</span>].unique())]</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">parentEventID missing corresponding eventID:</span><span class="ch">\n</span><span class="st">'</span>, parent_not_event[[<span class="st">'parentEventID'</span>,<span class="st">'row'</span>]])</span></code></pre>
 </div>
-<div id="nav-tabpanel-1-19" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-19">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -840,56 +830,46 @@ parentEventID missing corresponding eventID:
 63  IYS:GoA2019:Stn64   64
 [64 rows x 2 columns]</code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-20" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-20">
 <p>Check for proper <code>eventDate</code> to ensure they follow ISO
 8601 standards:</p>
-</div>
-<div id="nav-tabpanel-1-21" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-21">
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> df[<span class="st">'eventDate'</span>]:</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>        pd.to_datetime(date)</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Date"</span>,date,<span class="st">"might not follow ISO 8601"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> df[<span class="st">'eventDate'</span>]:</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>        pd.to_datetime(date)</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Date"</span>,date,<span class="st">"might not follow ISO 8601"</span>)</span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-22" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-22">
 <p>From the report generated under exercise 1, you can already see that
 there’s measurements made on land. Now let’s check the depths are within
 reason for the points. Let’s use the <a href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.html" class="external-link">GEBCO
 bathymetry dataset served in the coastwatch ERDDAP</a>.</p>
-</div>
-<div id="nav-tabpanel-1-23" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-23">
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>df[<span class="st">'bathy'</span>] <span class="op">=</span> np.nan <span class="co"># initialize column</span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> df.iterrows():</span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?'</span></span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>    query_url <span class="op">=</span> <span class="st">'elevation%5B(</span><span class="sc">{}</span><span class="st">)%5D%5B(</span><span class="sc">{}</span><span class="st">)%5D'</span>.<span class="bu">format</span>(row[<span class="st">'decimalLatitude'</span>],row[<span class="st">'decimalLongitude'</span>])</span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>    url <span class="op">=</span> base_url<span class="op">+</span>query_url</span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>    bathy <span class="op">=</span> pd.read_csv(url)</span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>    df.at[index,<span class="st">'bathy'</span>] <span class="op">=</span> bathy[<span class="st">'elevation (m)'</span>] <span class="co"># insert bathymetry value</span></span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>) <span class="co"># to not ping erddap too much</span></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co"># make new column for depth in meters as negative because GEBCO is Elevation relative to sea level</span></span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">*</span>df[<span class="st">'maximumDepthInMeters'</span>]</span>
-<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a></span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'maximumDepthInMeters deeper than GEBCO bathymetry:'</span>)</span>
-<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>( df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]] ) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a>   <span class="bu">print</span>(df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]].T)</span>
-<span id="cb13-20"><a href="#cb13-20" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb13-21"><a href="#cb13-21" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'None'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>df[<span class="st">'bathy'</span>] <span class="op">=</span> np.nan <span class="co"># initialize column</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?'</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>    query_url <span class="op">=</span> <span class="st">'elevation%5B(</span><span class="sc">{}</span><span class="st">)%5D%5B(</span><span class="sc">{}</span><span class="st">)%5D'</span>.<span class="bu">format</span>(row[<span class="st">'decimalLatitude'</span>],row[<span class="st">'decimalLongitude'</span>])</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>    url <span class="op">=</span> base_url<span class="op">+</span>query_url</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>    bathy <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>    df.at[index,<span class="st">'bathy'</span>] <span class="op">=</span> bathy[<span class="st">'elevation (m)'</span>] <span class="co"># insert bathymetry value</span></span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>) <span class="co"># to not ping erddap too much</span></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="co"># make new column for depth in meters as negative because GEBCO is Elevation relative to sea level</span></span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a>df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">*</span>df[<span class="st">'maximumDepthInMeters'</span>]</span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'maximumDepthInMeters deeper than GEBCO bathymetry:'</span>)</span>
+<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>( df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]] ) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a>   <span class="bu">print</span>(df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]].T)</span>
+<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'None'</span>)</span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-24" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-24">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -915,71 +895,70 @@ row                                                                           5
 bathy                                                                     306.0
 neg_maximumDepthInMeters                                                  -33.2</code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-25" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-25">
 <ol style="list-style-type: decimal"><li>
 <p>Run a diagnostics report for the data quality.</p>
-<div class="codewrapper sourceCode" id="cb15">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="im">import</span> cartopy.io.shapereader <span class="im">as</span> shpreader</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="im">import</span> shapely.geometry <span class="im">as</span> sgeom</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="im">from</span> shapely.ops <span class="im">import</span> unary_union</span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="im">from</span> shapely.prepared <span class="im">import</span> prep</span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>gdf <span class="op">=</span> gpd.GeoDataFrame(df, geometry<span class="op">=</span>gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))</span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>land_shp_fname <span class="op">=</span> shpreader.natural_earth(resolution<span class="op">=</span><span class="st">'50m'</span>,</span>
-<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a>                                       category<span class="op">=</span><span class="st">'physical'</span>, name<span class="op">=</span><span class="st">'land'</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a>land_geom <span class="op">=</span> unary_union(<span class="bu">list</span>(shpreader.Reader(land_shp_fname).geometries()))</span>
-<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a>land <span class="op">=</span> prep(land_geom)</span>
-<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> gdf.iterrows():</span>
-<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a>    gdf.loc[index, <span class="st">'on_land'</span>] <span class="op">=</span> land.contains(row.geometry)</span>
-<span id="cb15-18"><a href="#cb15-18" tabindex="-1"></a></span>
-<span id="cb15-19"><a href="#cb15-19" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">1</span>,nrows<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb15-20"><a href="#cb15-20" tabindex="-1"></a><span class="co"># Make a map:</span></span>
-<span id="cb15-21"><a href="#cb15-21" tabindex="-1"></a>xlim <span class="op">=</span> ([gdf.total_bounds[<span class="dv">0</span>]<span class="op">-</span><span class="dv">2</span>,  gdf.total_bounds[<span class="dv">2</span>]<span class="op">+</span><span class="dv">2</span>])</span>
-<span id="cb15-22"><a href="#cb15-22" tabindex="-1"></a>ylim <span class="op">=</span> ([gdf.total_bounds[<span class="dv">1</span>]<span class="op">-</span><span class="dv">2</span>,  gdf.total_bounds[<span class="dv">3</span>]<span class="op">+</span><span class="dv">2</span>])</span>
-<span id="cb15-23"><a href="#cb15-23" tabindex="-1"></a></span>
-<span id="cb15-24"><a href="#cb15-24" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xlim(xlim)</span>
-<span id="cb15-25"><a href="#cb15-25" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylim(ylim)</span>
-<span id="cb15-26"><a href="#cb15-26" tabindex="-1"></a></span>
-<span id="cb15-27"><a href="#cb15-27" tabindex="-1"></a>gpd.read_file(land_shp_fname).plot(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
-<span id="cb15-28"><a href="#cb15-28" tabindex="-1"></a></span>
-<span id="cb15-29"><a href="#cb15-29" tabindex="-1"></a>gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">False</span>].plot(ax<span class="op">=</span>axs[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'green'</span>, markersize<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb15-30"><a href="#cb15-30" tabindex="-1"></a>gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">True</span>].plot(ax<span class="op">=</span>axs[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'red'</span>, markersize<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb15-31"><a href="#cb15-31" tabindex="-1"></a></span>
-<span id="cb15-32"><a href="#cb15-32" tabindex="-1"></a><span class="co"># Collect some informational material about potential issues w/ data:</span></span>
-<span id="cb15-33"><a href="#cb15-33" tabindex="-1"></a>invalid_coord <span class="op">=</span> []</span>
-<span id="cb15-34"><a href="#cb15-34" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">True</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb15-35"><a href="#cb15-35" tabindex="-1"></a>   invalid_coord.append(<span class="st">'Row </span><span class="sc">{}</span><span class="st"> coordinates on land.'</span>.<span class="bu">format</span>(gdf.loc[gdf[<span class="st">'on_land'</span>] <span class="op">==</span> <span class="va">True</span>,<span class="st">'row'</span>].tolist()[<span class="dv">0</span>]))</span>
-<span id="cb15-36"><a href="#cb15-36" tabindex="-1"></a></span>
-<span id="cb15-37"><a href="#cb15-37" tabindex="-1"></a>req_cols <span class="op">=</span> [<span class="st">'eventDate'</span>, <span class="st">'decimalLongitude'</span>, <span class="st">'decimalLatitude'</span>, <span class="st">'scientificName'</span>, <span class="st">'scientificNameID'</span>, <span class="st">'occurrenceStatus'</span>, <span class="st">'basisOfRecord'</span>]</span>
-<span id="cb15-38"><a href="#cb15-38" tabindex="-1"></a>missing_cols <span class="op">=</span> []</span>
-<span id="cb15-39"><a href="#cb15-39" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> req_cols:</span>
-<span id="cb15-40"><a href="#cb15-40" tabindex="-1"></a> <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> gdf.columns:</span>
-<span id="cb15-41"><a href="#cb15-41" tabindex="-1"></a>   missing_cols.append(<span class="st">'Column </span><span class="sc">{}</span><span class="st"> is missing.'</span>.<span class="bu">format</span>(col))</span>
-<span id="cb15-42"><a href="#cb15-42" tabindex="-1"></a></span>
-<span id="cb15-43"><a href="#cb15-43" tabindex="-1"></a><span class="co"># Add the information to the figure</span></span>
-<span id="cb15-44"><a href="#cb15-44" tabindex="-1"></a>axs[<span class="dv">1</span>].text(<span class="fl">0.25</span>,<span class="fl">0.25</span>,<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(missing_cols),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(invalid_coord)]))</span>
-<span id="cb15-45"><a href="#cb15-45" tabindex="-1"></a>axs[<span class="dv">1</span>].axis(<span class="st">'off'</span>)</span>
-<span id="cb15-46"><a href="#cb15-46" tabindex="-1"></a>plt.show()</span></code></pre>
-</div>
-<figure><img src="../fig/screenshot_python_report.png" alt="drawing" width="500" class="figure mx-auto d-block"></figure></li>
-<li>
-<p>Check to make sure <code>eventID</code> are unique</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>dup_events <span class="op">=</span> df.loc[df[<span class="st">'eventID'</span>].duplicated()]</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Duplicated eventID:</span><span class="ch">\n</span><span class="st">'</span>,dup_events[[<span class="st">'eventID'</span>,<span class="st">'row'</span>]])</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>parent_not_event <span class="op">=</span> df.loc[<span class="op">~</span>df[<span class="st">'eventID'</span>].isin(df[<span class="st">'parentEventID'</span>].unique())]</span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">parentEventID missing corresponding eventID:</span><span class="ch">\n</span><span class="st">'</span>, parent_not_event[[<span class="st">'parentEventID'</span>,<span class="st">'row'</span>]])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="im">import</span> cartopy.io.shapereader <span class="im">as</span> shpreader</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="im">import</span> shapely.geometry <span class="im">as</span> sgeom</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="im">from</span> shapely.ops <span class="im">import</span> unary_union</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="im">from</span> shapely.prepared <span class="im">import</span> prep</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>gdf <span class="op">=</span> gpd.GeoDataFrame(df, geometry<span class="op">=</span>gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>land_shp_fname <span class="op">=</span> shpreader.natural_earth(resolution<span class="op">=</span><span class="st">'50m'</span>,</span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>                                       category<span class="op">=</span><span class="st">'physical'</span>, name<span class="op">=</span><span class="st">'land'</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a>land_geom <span class="op">=</span> unary_union(<span class="bu">list</span>(shpreader.Reader(land_shp_fname).geometries()))</span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a>land <span class="op">=</span> prep(land_geom)</span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> gdf.iterrows():</span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a>    gdf.loc[index, <span class="st">'on_land'</span>] <span class="op">=</span> land.contains(row.geometry)</span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">1</span>,nrows<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a><span class="co"># Make a map:</span></span>
+<span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a>xlim <span class="op">=</span> ([gdf.total_bounds[<span class="dv">0</span>]<span class="op">-</span><span class="dv">2</span>,  gdf.total_bounds[<span class="dv">2</span>]<span class="op">+</span><span class="dv">2</span>])</span>
+<span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a>ylim <span class="op">=</span> ([gdf.total_bounds[<span class="dv">1</span>]<span class="op">-</span><span class="dv">2</span>,  gdf.total_bounds[<span class="dv">3</span>]<span class="op">+</span><span class="dv">2</span>])</span>
+<span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" tabindex="-1"></a>axs[<span class="dv">0</span>].set_xlim(xlim)</span>
+<span id="cb16-25"><a href="#cb16-25" tabindex="-1"></a>axs[<span class="dv">0</span>].set_ylim(ylim)</span>
+<span id="cb16-26"><a href="#cb16-26" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" tabindex="-1"></a>gpd.read_file(land_shp_fname).plot(ax<span class="op">=</span>axs[<span class="dv">0</span>])</span>
+<span id="cb16-28"><a href="#cb16-28" tabindex="-1"></a></span>
+<span id="cb16-29"><a href="#cb16-29" tabindex="-1"></a>gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">False</span>].plot(ax<span class="op">=</span>axs[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'green'</span>, markersize<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb16-30"><a href="#cb16-30" tabindex="-1"></a>gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">True</span>].plot(ax<span class="op">=</span>axs[<span class="dv">0</span>], color<span class="op">=</span><span class="st">'red'</span>, markersize<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb16-31"><a href="#cb16-31" tabindex="-1"></a></span>
+<span id="cb16-32"><a href="#cb16-32" tabindex="-1"></a><span class="co"># Collect some informational material about potential issues w/ data:</span></span>
+<span id="cb16-33"><a href="#cb16-33" tabindex="-1"></a>invalid_coord <span class="op">=</span> []</span>
+<span id="cb16-34"><a href="#cb16-34" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(gdf.loc[gdf[<span class="st">'on_land'</span>]<span class="op">==</span><span class="va">True</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb16-35"><a href="#cb16-35" tabindex="-1"></a>   invalid_coord.append(<span class="st">'Row </span><span class="sc">{}</span><span class="st"> coordinates on land.'</span>.<span class="bu">format</span>(gdf.loc[gdf[<span class="st">'on_land'</span>] <span class="op">==</span> <span class="va">True</span>,<span class="st">'row'</span>].tolist()[<span class="dv">0</span>]))</span>
+<span id="cb16-36"><a href="#cb16-36" tabindex="-1"></a></span>
+<span id="cb16-37"><a href="#cb16-37" tabindex="-1"></a>req_cols <span class="op">=</span> [<span class="st">'eventDate'</span>, <span class="st">'decimalLongitude'</span>, <span class="st">'decimalLatitude'</span>, <span class="st">'scientificName'</span>, <span class="st">'scientificNameID'</span>, <span class="st">'occurrenceStatus'</span>, <span class="st">'basisOfRecord'</span>]</span>
+<span id="cb16-38"><a href="#cb16-38" tabindex="-1"></a>missing_cols <span class="op">=</span> []</span>
+<span id="cb16-39"><a href="#cb16-39" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> req_cols:</span>
+<span id="cb16-40"><a href="#cb16-40" tabindex="-1"></a> <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> gdf.columns:</span>
+<span id="cb16-41"><a href="#cb16-41" tabindex="-1"></a>   missing_cols.append(<span class="st">'Column </span><span class="sc">{}</span><span class="st"> is missing.'</span>.<span class="bu">format</span>(col))</span>
+<span id="cb16-42"><a href="#cb16-42" tabindex="-1"></a></span>
+<span id="cb16-43"><a href="#cb16-43" tabindex="-1"></a><span class="co"># Add the information to the figure</span></span>
+<span id="cb16-44"><a href="#cb16-44" tabindex="-1"></a>axs[<span class="dv">1</span>].text(<span class="fl">0.25</span>,<span class="fl">0.25</span>,<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(missing_cols),<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(invalid_coord)]))</span>
+<span id="cb16-45"><a href="#cb16-45" tabindex="-1"></a>axs[<span class="dv">1</span>].axis(<span class="st">'off'</span>)</span>
+<span id="cb16-46"><a href="#cb16-46" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+<figure><img src="../fig/screenshot_python_report.png" alt="drawing" class="figure mx-auto d-block"><div class="figcaption">drawing</div>
+</figure></li>
+<li>
+<p>Check to make sure <code>eventID</code> are unique</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>dup_events <span class="op">=</span> df.loc[df[<span class="st">'eventID'</span>].duplicated()]</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Duplicated eventID:</span><span class="ch">\n</span><span class="st">'</span>,dup_events[[<span class="st">'eventID'</span>,<span class="st">'row'</span>]])</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>parent_not_event <span class="op">=</span> df.loc[<span class="op">~</span>df[<span class="st">'eventID'</span>].isin(df[<span class="st">'parentEventID'</span>].unique())]</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">parentEventID missing corresponding eventID:</span><span class="ch">\n</span><span class="st">'</span>, parent_not_event[[<span class="st">'parentEventID'</span>,<span class="st">'row'</span>]])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1008,14 +987,14 @@ parentEventID missing corresponding eventID:
 <li>
 <p>Check for proper <code>eventDate</code> to ensure they follow ISO
 8601 standards:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> df[<span class="st">'eventDate'</span>]:</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>        pd.to_datetime(date)</span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Date"</span>,date,<span class="st">"might not follow ISO 8601"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> df[<span class="st">'eventDate'</span>]:</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>        pd.to_datetime(date)</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Date"</span>,date,<span class="st">"might not follow ISO 8601"</span>)</span></code></pre>
 </div>
 </li>
 <li>
@@ -1023,30 +1002,30 @@ parentEventID missing corresponding eventID:
 that there’s measurements made on land. Now let’s check the depths are
 within reason for the points. Let’s use the <a href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.html" class="external-link">GEBCO
 bathymetry dataset served in the coastwatch ERDDAP</a>.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>df[<span class="st">'bathy'</span>] <span class="op">=</span> np.nan <span class="co"># initialize column</span></span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> df.iterrows():</span>
-<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?'</span></span>
-<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a>    query_url <span class="op">=</span> <span class="st">'elevation%5B(</span><span class="sc">{}</span><span class="st">)%5D%5B(</span><span class="sc">{}</span><span class="st">)%5D'</span>.<span class="bu">format</span>(row[<span class="st">'decimalLatitude'</span>],row[<span class="st">'decimalLongitude'</span>])</span>
-<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>    url <span class="op">=</span> base_url<span class="op">+</span>query_url</span>
-<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>    bathy <span class="op">=</span> pd.read_csv(url)</span>
-<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>    df.at[index,<span class="st">'bathy'</span>] <span class="op">=</span> bathy[<span class="st">'elevation (m)'</span>] <span class="co"># insert bathymetry value</span></span>
-<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>) <span class="co"># to not ping erddap too much</span></span>
-<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a></span>
-<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a><span class="co"># make new column for depth in meters as negative because GEBCO is Elevation relative to sea level</span></span>
-<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a>df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">*</span>df[<span class="st">'maximumDepthInMeters'</span>]</span>
-<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a></span>
-<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'maximumDepthInMeters deeper than GEBCO bathymetry:'</span>)</span>
-<span id="cb19-18"><a href="#cb19-18" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>( df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]] ) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb19-19"><a href="#cb19-19" tabindex="-1"></a>   <span class="bu">print</span>(df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]].T)</span>
-<span id="cb19-20"><a href="#cb19-20" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'None'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>df[<span class="st">'bathy'</span>] <span class="op">=</span> np.nan <span class="co"># initialize column</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?'</span></span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>    query_url <span class="op">=</span> <span class="st">'elevation%5B(</span><span class="sc">{}</span><span class="st">)%5D%5B(</span><span class="sc">{}</span><span class="st">)%5D'</span>.<span class="bu">format</span>(row[<span class="st">'decimalLatitude'</span>],row[<span class="st">'decimalLongitude'</span>])</span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a>    url <span class="op">=</span> base_url<span class="op">+</span>query_url</span>
+<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>    bathy <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a>    df.at[index,<span class="st">'bathy'</span>] <span class="op">=</span> bathy[<span class="st">'elevation (m)'</span>] <span class="co"># insert bathymetry value</span></span>
+<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>) <span class="co"># to not ping erddap too much</span></span>
+<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a></span>
+<span id="cb20-14"><a href="#cb20-14" tabindex="-1"></a><span class="co"># make new column for depth in meters as negative because GEBCO is Elevation relative to sea level</span></span>
+<span id="cb20-15"><a href="#cb20-15" tabindex="-1"></a>df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">*</span>df[<span class="st">'maximumDepthInMeters'</span>]</span>
+<span id="cb20-16"><a href="#cb20-16" tabindex="-1"></a></span>
+<span id="cb20-17"><a href="#cb20-17" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'maximumDepthInMeters deeper than GEBCO bathymetry:'</span>)</span>
+<span id="cb20-18"><a href="#cb20-18" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>( df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]] ) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb20-19"><a href="#cb20-19" tabindex="-1"></a>   <span class="bu">print</span>(df.loc[df[<span class="st">'neg_maximumDepthInMeters'</span>] <span class="op">&lt;</span> df[<span class="st">'bathy'</span>]].T)</span>
+<span id="cb20-20"><a href="#cb20-20" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb20-21"><a href="#cb20-21" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'None'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
