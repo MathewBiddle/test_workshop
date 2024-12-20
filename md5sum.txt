@@ -17,6 +17,6 @@
 "learners/about.md" "c31e38a39d348d1583cf2dd5a1d5b765" "site/built/about.md" "2024-12-19"
 "learners/helpful-tutorials.md" "1dc16a68a7e7743c3892c182231ecc44" "site/built/helpful-tutorials.md" "2024-12-19"
 "learners/edna-extension.md" "6a1c336a3a8bbf71a92941966dd36aa4" "site/built/edna-extension.md" "2024-12-19"
-"learners/acoustic-telemetry.md" "a00830a86046d34dbb949b44c43aa952" "site/built/acoustic-telemetry.md" "2024-12-20"
+"learners/acoustic-telemetry.md" "728136c9fe76907779c6637f86ab54c6" "site/built/acoustic-telemetry.md" "2024-12-20"
 "learners/setup.md" "0a2af00e9e6b08035bf4c85c0c8522ca" "site/built/setup.md" "2024-12-19"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2022-04-22"

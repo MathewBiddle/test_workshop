@@ -44,7 +44,7 @@ network-of-networks has many thousands of listening stations and tracks tens of 
 globally. Details on what the Ocean Tracking Network and its partners are currently observing are available at 
 https://members.oceantrack.org/statistics/
 
-![screenshot](/fig/acoustic_telemetry_components.png)
+![screenshot](../episodes/fig/acoustic_telemetry_components.png)
 
 ### Preparing to publish to OBIS - how we solve the many-fish vs. one-fish-many-times problem
 
@@ -171,7 +171,7 @@ detecting animal position via the organismID field is how we produce a rational 
 through time, across many methods. Here, the Occurrence/Event detection pair retains and explains the 'how' an animal 
 was detected at each point while preserving a complete history for the organism in the Occurrence records.
 
-![screenshot](fig/tagged_seal.png)
+![screenshot](../episodes/fig/tagged_seal.png)
 
 Sometimes, stranger setups like animals-as-listening-stations or animals collecting oceanographic data can be part of 
 your project. This extends the default schema with some extra components, but nothing is impossible within Event Core!
