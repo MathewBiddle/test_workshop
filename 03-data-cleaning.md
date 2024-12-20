@@ -2,20 +2,24 @@
 title: "Data Cleaning"
 teaching: 0
 exercises: 120
-questions:
-- "How to convert dates to ISO?"
-- "How to match scientific names to WoRMS?"
-- "How to convert latitudes and longitudes to decimal degrees?"
-objectives:
-- "Aligning dates to the ISO 8601 standard."
-- "Matching scientific names to WoRMS."
-- "Converting latitude and longitude variations to decimal degrees North and East."
-keypoints:
-- "When doing conversions it's best to break out your data into it's component pieces."
-- "Dates are messy to deal with. Some packages have easy solutions, otherwise use regular expressions to align date strings to ISO 8601."
-- "WoRMS LSIDs are a requirement for OBIS."
-- "Latitude and longitudes are like dates, they can be messy to deal with. Take a similar approach."
+
 ---
+
+:::::::::::: questions
+
+- How to convert dates to ISO?
+- How to match scientific names to WoRMS?
+- How to convert latitudes and longitudes to decimal degrees?
+
+:::::::::::::::::::::::
+
+::::::::::: objectives
+
+- Aligning dates to the ISO 8601 standard.
+- Matching scientific names to WoRMS.
+- Converting latitude and longitude variations to decimal degrees North and East.
+
+::::::::::::::::::::::
 
 Now that you know what the mapping is between your raw data and the Darwin Core standard, it's time to start cleaning up 
 the data to align with the conventions described in the standard. The following activities are the three most common 
@@ -45,15 +49,32 @@ for them.
 
 ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use "/" as a separator. Date and time are separated by "T". Timestamps can have a time zone indicator at the end. If not, then they are assumed to be local time. When a time is UTC, the letter "Z" is added at the end (e.g. 2009-02-20T08:40Z, which is the equivalent of 2009-02-20T08:40+00:00). 
 
-> ## Tip 
-> Focus on getting your package of choice to read the dates appropriately. While you can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
-> to replace and substitute strings to align with the ISO convention, it will typically save you time if you work in 
-> your package of choice to translate the dates.
-{: .callout}
+:::::::::::: callout
+## :pushpin: Tip 
+
+Focus on getting your package of choice to read the dates appropriately. While you can use 
+[regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
+to replace and substitute strings to align with the ISO convention, it will typically save you time if you work in 
+your package of choice to translate the dates.
+
+:::::::::::::::::::::
  
 | Darwin Core Term | Description | Example   |
 |------------------|-------------|-----------|
 | [eventDate](https://dwc.tdwg.org/list/#dwc_eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC).<br/>`2009-02-20T08:40Z` (20 February 2009 8:40am UTC).<br/>`2018-08-29T15:19` (3:19pm local time on 29 August 2018).<br/>`1809-02-12` (some time during 12 February 1809).<br/>`1906-06` (some time in June 1906).<br/>`1971` (some time in the year 1971).<br/>`2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC).<br/>`1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909).<br/>`2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007). |
+
+::::::::::::::::::::::::::::::::: challenge
+## Examples
+
+::::::::::::::::: tab
+
+### Python
+
+### R
+
+:::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::
 
 > ## Examples in Python
 > 
@@ -579,5 +600,11 @@ Helpful packages for managing CRS and geodetic datum:
 >   ```
 {: .solution}
 
+::::::::::::: keypoints
 
-  
+- When doing conversions it's best to break out your data into it's component pieces.
+- Dates are messy to deal with. Some packages have easy solutions, otherwise use regular expressions to align date strings to ISO 8601.
+- WoRMS LSIDs are a requirement for OBIS.
+- Latitude and longitudes are like dates, they can be messy to deal with. Take a similar approach.
+
+:::::::::::::::::::::::
