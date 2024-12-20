@@ -110,6 +110,65 @@ function to read various date formats. The process can be applied to entire colu
       31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
    ``` 
 
+3. `January, 01 2021 5:00 PM GMT`
+   
+   ```python
+   import pandas as pd
+   df = pd.DataFrame({'date':['January, 01 2021 5:00 PM GMT']})
+   df['eventDate'] = pd.to_datetime(df['date'],format='%B, %d %Y %I:%M %p %Z')
+   df
+   ```
+   ```output
+                              date                 eventDate
+      January, 01 2021 5:00 PM GMT 2021-01-01 17:00:00+00:00
+   ```
+
+4. `1612112400` in seconds since 1970
+   
+   This uses the units of `seconds since 1970` which is common when working with data in [netCDF](https://www.unidata.ucar.edu/software/netcdf/).
+   ```python
+   import pandas as pd
+   df = pd.DataFrame({'date':['1612112400']})
+   df['eventDate'] = pd.to_datetime(df['date'], unit='s', origin='unix')
+   df
+   ```
+   ```output
+            date           eventDate
+      1612112400 2021-01-31 17:00:00
+   ```
+   
+5. `44227.708333333333`
+   
+   This is the numerical value for dates in Excel because Excel stores dates as sequential serial numbers so that they 
+   can be used in calculations. In some cases, when you export an Excel spreadsheet to CSV, the 
+   dates are preserved as a floating point number.
+   ```python
+   import pandas as pd
+   df = pd.DataFrame({'date':['44227.708333333333']})
+   df['eventDate'] = pd.to_datetime(df['date'].astype(float), unit='D', origin='1899-12-30')
+   df
+   ```
+   ```output
+                    date                     eventDate
+      44227.708333333333 2021-01-31 17:00:00.000000256
+   ```
+   
+6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
+
+   Here we store the date as a duration following the ISO 8601 convention. In some cases, it is easier to use a regular 
+   expression or simply paste strings together:
+   ```python
+   import pandas as pd
+   df = pd.DataFrame({'start_date':['2021-01-30'],
+                      'end_date':['2021-01-31']})
+   df['eventDate'] = df['start_date']+'/'+df['end_date']
+   df
+   ```
+   ```output
+      start_time    end_time              eventDate
+      2021-01-30  2021-01-31  2021-01-30/2021-01-31
+   ```
+
 
 ### R
 
@@ -118,75 +177,6 @@ function to read various date formats. The process can be applied to entire colu
 ::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::
-
-> ## Examples in Python
-> 
-
->
-
-> <br/>
-
->    
-
->    
-> 3. `January, 01 2021 5:00 PM GMT`
->    
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['January, 01 2021 5:00 PM GMT']})
->    df['eventDate'] = pd.to_datetime(df['date'],format='%B, %d %Y %I:%M %p %Z')
->    df
->    ```
->    ```output
->                               date                 eventDate
->       January, 01 2021 5:00 PM GMT 2021-01-01 17:00:00+00:00
->    ```
->    
-> 4. `1612112400` in seconds since 1970
->    
->    This uses the units of `seconds since 1970` which is common when working with data in [netCDF](https://www.unidata.ucar.edu/software/netcdf/).
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['1612112400']})
->    df['eventDate'] = pd.to_datetime(df['date'], unit='s', origin='unix')
->    df
->    ```
->    ```output
->             date           eventDate
->       1612112400 2021-01-31 17:00:00
->    ```
-> 5. `44227.708333333333`
->    
->    This is the numerical value for dates in Excel because Excel stores dates as sequential serial numbers so that they 
->    can be used in calculations. In some cases, when you export an Excel spreadsheet to CSV, the 
->    dates are preserved as a floating point number.
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['44227.708333333333']})
->    df['eventDate'] = pd.to_datetime(df['date'].astype(float), unit='D', origin='1899-12-30')
->    df
->    ```
->    ```output
->                     date                     eventDate
->       44227.708333333333 2021-01-31 17:00:00.000000256
->    ```
-> 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
-> 
->    Here we store the date as a duration following the ISO 8601 convention. In some cases, it is easier to use a regular 
->    expression or simply paste strings together:
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'start_date':['2021-01-30'],
->                       'end_date':['2021-01-31']})
->    df['eventDate'] = df['start_date']+'/'+df['end_date']
->    df
->    ```
->    ```output
->       start_time    end_time              eventDate
->       2021-01-30  2021-01-31  2021-01-30/2021-01-31
->    ```
->
-{: .solution}
 
 > ## Examples in R
 >
