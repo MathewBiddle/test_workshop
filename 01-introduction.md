@@ -22,7 +22,7 @@ exercises: 90
 
 ::::::::::::::::::::::
 
-# Darwin Core - A global community of data sharing and integration
+### Darwin Core - A global community of data sharing and integration
 Darwin Core is a data standard to mobilize and share biodiversity data. Over the years, the Darwin Core standard has 
 expanded to enable exchange and sharing of diverse types of biological observations from citizen scientists, ecological 
 monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. Darwin Core is applicable to any observation 
@@ -30,25 +30,25 @@ of an organism (scientific name, OTU, or other methods of defining a species) at
 Core this is an `occurrence`. To learn more about the foundations of Darwin Core read 
 [Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
 
-## Demonstrated Use of Darwin Core
+#### Demonstrated Use of Darwin Core
 The power of Darwin Core is most evident in the data aggregators that harvest data using that standard. 
 The one we will refer to most frequently in this workshop is the [Ocean Biodiversity Information System](https://obis.org/) 
 (learn more about [OBIS](https://youtu.be/E6NblAC-1uE)). Another prominent one is the 
 [Global Biodiversity Information Facility](https://www.gbif.org/) (learn more about [GBIF](https://vimeo.com/434831655)). 
 It's also used by the Atlas of Living Australia, iDigBio, among others. 
 
-### Darwin Core Archives
+##### Darwin Core Archives
 Darwin Core Archives are what OBIS and GBIF harvest into their systems. Fortunately the software created and maintained by GBIF, the [Integrated Publishing Toolkit](https://www.gbif.org/ipt), produces Darwin Core Archives for us. Darwin Core Archives are pretty simple. It's a zipped folder containing the data (one or several files depending on how many extensions you use), an Ecological Metadata Language (EML) XML file, and a meta.xml file that describes what's in the zipped folder.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+#### Challenge
 
 Download this [Darwin Core Archive](https://ipt-obis.gbif.us/archive.do?r=tpwd_harc_texasaransasbay_bagseine&v=2.3) and examine what's in it. Did you find anything unusual or that you don't understand what it is?
 
 :::::::::::::::::::::::: solution 
 
-## Solution
+#### Solution
 
 ```Folder
 dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
@@ -62,12 +62,12 @@ dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
 
 :::::::::::::::::::::::::::::::::::::
 
-## Darwin Core Mapping
+#### Darwin Core Mapping
 Now that we understand a bit more about why Darwin Core was created and how it is used today we can begin the work of mapping data to the standard. The key resource when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). This document provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. There are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset) but as you apply the standard to more datasets you'll become more familiar with the terms.
 
 :::::::::::: callout
 
-## :pushpin: Tip 
+#### :pushpin: Tip 
 
 If your raw column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data collection use the standard DwC term headers!
 
@@ -75,7 +75,7 @@ If your raw column headers are Darwin Core terms verbatim then you can skip this
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+#### Challenge
 
 Find the matching Darwin Core term for these column headers.
  
@@ -88,7 +88,7 @@ Find the matching Darwin Core term for these column headers.
 
 :::::::::::::::::::::::: solution 
 
-## Solution
+#### Solution
 1. [`eventDate`](https://dwc.tdwg.org/terms/#dwc:eventDate)
 2. [`decimalLatitude`](https://dwc.tdwg.org/terms/#dwc:decimalLatitude)
 3. [`minimumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:minimumDepthInMeters) and [`maximumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters)
@@ -101,7 +101,7 @@ Find the matching Darwin Core term for these column headers.
 :::::::::::::::::::::::::::::::::::::
 
 :::::::::::: callout
-## :pushpin: Tip 
+### :pushpin: Tip 
 
 To make the mapping step easier on yourself, we recommend starting a mapping document/spreadsheet (or document it as a comment in your script). List out all of your column headers in one column and document the appropriate Dawin Core term(s) in a second column. For example:
  
@@ -114,7 +114,7 @@ To make the mapping step easier on yourself, we recommend starting a mapping doc
 ::::::::::::
 
 
-## What are the **required** Darwin Core terms for publishing to OBIS?
+### What are the **required** Darwin Core terms for publishing to OBIS?
 When doing your mapping some required information may be missing. Below are the Darwin Core terms that are required to share your data to OBIS plus a few that are needed for GBIF.
 
 | Darwin Core Term | Definition | Comment | Example |
@@ -131,7 +131,7 @@ When doing your mapping some required information may be missing. Below are the 
 | [`kingdom`](https://dwc.tdwg.org/terms/#dwc:kingdom) | The full scientific name of the kingdom in which the taxon is classified.| Not required for OBIS but GBIF needs this to disambiguate scientific names that are the same but in different kingdoms. | Animalia |
 | [`geodeticDatum`](https://dwc.tdwg.org/terms/#dwciri:geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | Must be [WGS84](https://epsg.io/4326) for data shared to OBIS and GBIF but it's best to state explicitly that it is. | WGS84 |
 
-## What other terms should be considered?
+### What other terms should be considered?
 While these terms are not required for publishing data to OBIS, they are extremely helpful for downstream users because without them the data are less useful for future analyses. For instance, `depth` is a crucial piece of information for marine observations, but it is not always included. For the most part the ones listed below are not going to be sitting there in the data, so you'll have to determine what the values should be and add them in. Really try your hardest to include them if you can.
 
 | Darwin Core Term | Definition | Comment | Example |
@@ -152,7 +152,7 @@ Other than these specific terms, work through the data that you have and try to 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Exercise
+### Exercise
  
 Create some crosswalk notes for your dataset.
  
