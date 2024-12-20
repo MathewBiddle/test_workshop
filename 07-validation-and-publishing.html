@@ -260,12 +260,21 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         7. Metadata and publishing
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#data-publishing-pipeline">Data Publishing Pipeline</a></li>
+<li><a href="#integrated-publishing-toolkit">Integrated Publishing Toolkit</a></li>
+<li><a href="#ecological-metadata-language-eml">Ecological Metadata Language (EML)</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -373,9 +382,8 @@
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="data-publishing-pipeline">Data Publishing Pipeline<a class="anchor" aria-label="anchor" href="#data-publishing-pipeline"></a></h1>
-<p>After going through QAQC and being standardized to Darwin Core, the
+<section><h2 class="section-heading" id="data-publishing-pipeline">Data Publishing Pipeline<a class="anchor" aria-label="anchor" href="#data-publishing-pipeline"></a></h2>
+<hr class="half-width"><p>After going through QAQC and being standardized to Darwin Core, the
 dataset are uploaded to an IPT.<br>
 Metadata is added in the form of EML and the dataset published as a
 Darwin Core Archive (DwC-A). The data are then pushed to central OBIS.
@@ -383,10 +391,8 @@ Each dataset also has the option of being pushed to GBIF by registering
 the resource with GBIF in the IPT.</p>
 <figure><img src="fig/DwC_workflow.jpg" alt="Image by Enrique Montes" class="figure mx-auto d-block"><div class="figcaption">Image by Enrique Montes</div>
 </figure><p><em>Data publishing pipeline. Image credit: Enrique Montes</em></p>
-</div>
-<div class="section level1">
-<h1 id="integrated-publishing-toolkit">Integrated Publishing Toolkit<a class="anchor" aria-label="anchor" href="#integrated-publishing-toolkit"></a></h1>
-<p>The <a href="https://www.gbif.org/ipt" class="external-link">Integrated Publishing Toolkit
+</section><section><h2 class="section-heading" id="integrated-publishing-toolkit">Integrated Publishing Toolkit<a class="anchor" aria-label="anchor" href="#integrated-publishing-toolkit"></a></h2>
+<hr class="half-width"><p>The <a href="https://www.gbif.org/ipt" class="external-link">Integrated Publishing Toolkit
 (IPT)</a> is an open-source web application developed and maintained by
 the Global Biodiversity Information Facility (GBIF) for publishing
 biodiversity data. The IPT makes it easy to share four types of
@@ -410,10 +416,8 @@ that node</li>
 <li>the data follows Darwin Core (DwC) and Ecological Metadata Language
 (EML)</li>
 <li>includes the required Darwin Core and EML metadata elements</li>
-</ol></div>
-<div class="section level1">
-<h1 id="ecological-metadata-language-eml">Ecological Metadata Language (EML)<a class="anchor" aria-label="anchor" href="#ecological-metadata-language-eml"></a></h1>
-<p>Both OBIS and GBIF use <a href="https://eml.ecoinformatics.org/" class="external-link">Ecological Metadata Language
+</ol></section><section><h2 class="section-heading" id="ecological-metadata-language-eml">Ecological Metadata Language (EML)<a class="anchor" aria-label="anchor" href="#ecological-metadata-language-eml"></a></h2>
+<hr class="half-width"><p>Both OBIS and GBIF use <a href="https://eml.ecoinformatics.org/" class="external-link">Ecological Metadata Language
 (EML)</a> as the metadata standard associated with the data. For the
 purposes of this workshop we will not dive into the world of EML.
 However, we should note that when publishing your data through the IPT,
@@ -441,8 +445,8 @@ the amount of time it takes to load the data into the IPT.</p>
 </div>
 </div>
 </div>
-<div class="section level2">
-<h2 id="required-eml-metadata-fields-for-sharing-to-obis">Required EML metadata fields for sharing to OBIS<a class="anchor" aria-label="anchor" href="#required-eml-metadata-fields-for-sharing-to-obis"></a></h2>
+<div class="section level3">
+<h3 id="required-eml-metadata-fields-for-sharing-to-obis">Required EML metadata fields for sharing to OBIS<a class="anchor" aria-label="anchor" href="#required-eml-metadata-fields-for-sharing-to-obis"></a></h3>
 <p><em>Best practices for these fields are explained in detail in the <a href="https://manual.obis.org/eml" class="external-link">OBIS manual</a></em></p>
 <table class="table"><colgroup><col width="37%"><col width="37%"><col width="25%"></colgroup><thead><tr class="header"><th>EML Fields</th>
 <th>Definition</th>
@@ -487,8 +491,8 @@ function provides a list of the dataset citations packaged with the data
 in a zipped file.</td>
 <td></td>
 </tr></tbody></table></div>
-<div class="section level2">
-<h2 id="other-eml-fields-to-consider">Other EML fields to consider<a class="anchor" aria-label="anchor" href="#other-eml-fields-to-consider"></a></h2>
+<div class="section level3">
+<h3 id="other-eml-fields-to-consider">Other EML fields to consider<a class="anchor" aria-label="anchor" href="#other-eml-fields-to-consider"></a></h3>
 <table class="table"><colgroup><col width="55%"><col width="25%"><col width="19%"></colgroup><thead><tr class="header"><th>EML Fields</th>
 <th>Definition</th>
 <th>Comment</th>
@@ -541,11 +545,7 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="06-qa-qc.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="08-post-workshop.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
