@@ -2,37 +2,51 @@
 title: "Metadata and publishing"
 teaching: 0
 exercises: 120
-questions:
-- "How are my data published?"
-- "What metadata are required for publishing?"
-objectives:
-- "Showing data publishing pipeline"
-- "Introducing the IPT"
-- "Introduction to EML"
-
-keypoints:
-- "The IPT is a well-documented and flexible system for publishing data to OBIS"
-- "Some Darwin Core and Ecological Metadata Language fields are required for publishing to OBIS."
-- "Strive to write more than the minimal metadata"
 ---
+
+:::::::::::: questions
+
+- How are my data published?
+- What metadata are required for publishing?
+
+::::::::::::::::::::::
+
+::::::::::: objectives
+
+- Showing data publishing pipeline
+- Introducing the IPT
+- Introduction to EML
+
+::::::::::::::::::::::
 
 # Data Publishing Pipeline
 
- After going through QAQC and being standardized to Darwin Core, the dataset are uploaded to an IPT.  Metadata is added in the form of EML and the dataset published as a Darwin Core Archive (DwC-A).  The data are then pushed to central OBIS.  Each dataset also has the option of being pushed to GBIF by registering the resource with GBIF in the IPT.  
+ After going through QAQC and being standardized to Darwin Core, the dataset are uploaded to an IPT.  
+ Metadata is added in the form of EML and the dataset published as a Darwin Core Archive (DwC-A).  The data are then 
+ pushed to central OBIS.  Each dataset also has the option of being pushed to GBIF by registering the resource with 
+ GBIF in the IPT.  
 
-![Image by Enrique Montes]({{ page.root }}/fig/DwC_workflow.jpg){: .image-with-shadow }
+![Image by Enrique Montes](fig/DwC_workflow.jpg)
+
 *Data publishing pipeline. Image credit: Enrique Montes*
 
 # Integrated Publishing Toolkit
 
-The [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is an open-source web application developed and maintained by the Global Biodiversity Information Facility (GBIF) for publishing biodiversity data. The IPT makes it easy to share four types of biodiversity-related information:
+The [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is an open-source web application developed and 
+maintained by the Global Biodiversity Information Facility (GBIF) for publishing biodiversity data. The IPT makes it 
+easy to share four types of biodiversity-related information:
 
 - primary taxon occurrence data
 - sampling event data
 - general metadata about data sources
 - taxon checklists
 
-GBIF maintains a very detailed [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/) and the [OBIS Manual](https://manual.obis.org/data_publication.html) offers OBIS-specific details on publishing through the IPT. You can choose to download and install your own instance of the IPT but it might be complicated to register it with OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. [OBIS nodes](https://obis.org/contact/) publish data that are logical for their region or theme. After publishing the data through their IPT the data are harvested by central OBIS.
+GBIF maintains a very detailed [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/) and the 
+[OBIS Manual](https://manual.obis.org/data_publication.html) offers OBIS-specific details on publishing through the IPT. 
+You can choose to download and install your own instance of the IPT but it might be complicated to register it with 
+OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. 
+[OBIS nodes](https://obis.org/contact/) publish data that are logical for their region or theme. After publishing the 
+data through their IPT the data are harvested by central OBIS.
 
 The requirements for publishing via an OBIS node IPT are that:
 
@@ -42,14 +56,26 @@ The requirements for publishing via an OBIS node IPT are that:
 
 # Ecological Metadata Language (EML) 
 
-Both OBIS and GBIF use [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the DwC-A. As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. But there are a minimum required number of fields that would need to be filled out in the IPT: `title`, `abstract`, `citation`, and several `contacts`. 
+Both OBIS and GBIF use [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard 
+associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should 
+note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the DwC-A. As such, 
+if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. But there are a 
+minimum required number of fields that would need to be filled out in the IPT: `title`, `abstract`, `citation`, and 
+several `contacts`. 
 
-More information on EML can be found at the [EML standard page](https://eml.ecoinformatics.org/), and in the [bio data guide](https://ioos.github.io/bio_data_guide/extras.html#ecological-metadata-language-eml). There are also a number of R packages for working with EML, reviewed [here](https://livingnorway.github.io/LivingNorwayR/articles/EML_R_packages_overview.html).
+More information on EML can be found at the [EML standard page](https://eml.ecoinformatics.org/), and in the 
+[bio data guide](https://ioos.github.io/bio_data_guide/extras.html#ecological-metadata-language-eml). There are also a 
+number of R packages for working with EML, reviewed 
+[here](https://livingnorway.github.io/LivingNorwayR/articles/EML_R_packages_overview.html).
 
-> ## Tip 
-> Try to collect as much of this information as possible before and during the Darwin Core alignment process. It will 
-> significantly reduce the amount of time it takes to load the data into the IPT.
-{: .callout}
+:::::::::::: callout
+
+## :pushpin: Tip 
+
+Try to collect as much of this information as possible before and during the Darwin Core alignment process. It will 
+significantly reduce the amount of time it takes to load the data into the IPT.
+
+::::::::::::::::::::
 
 ## Required EML metadata fields for sharing to OBIS
 
@@ -76,4 +102,10 @@ _Best practices for these fields are explained in detail in the [OBIS manual](ht
 | `Sampling Description`   | This field allows for a text-based/human readable description of the sampling procedures used in the research project. | The content of this element would be similar to a description of sampling procedures found in the methods section of a journal article.  |
 | `Step Description`       | This field allows for repeated sets of elements that document a series of methods and procedures used in the study, and the processing steps leading to the production of the data files. These include e.g. text descriptions of the procedures, relevant literature, software, instrumentation and any quality control measurements taken. | Each method should be described in enough detail to allow other researchers to interpret and repeat the study, if required. |
 
+::::::::::::: keypoints
 
+- The IPT is a well-documented and flexible system for publishing data to OBIS
+- Some Darwin Core and Ecological Metadata Language fields are required for publishing to OBIS.
+- Strive to write more than the minimal metadata
+
+:::::::::::::::::::::::
