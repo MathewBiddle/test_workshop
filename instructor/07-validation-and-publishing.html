@@ -337,7 +337,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Metadata and publishing</h1>
-        <p>Last updated on 2024-12-19 |
+        <p>Last updated on 2024-12-20 |
 
         <a href="https://github.com/MathewBiddle/test_workshop/edit/main/episodes/07-validation-and-publishing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -351,15 +351,40 @@
 
         
 
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul><li>How are my data published?</li>
+<li>What metadata are required for publishing?</li>
+</ul></div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul><li>Showing data publishing pipeline</li>
+<li>Introducing the IPT</li>
+<li>Introduction to EML</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section level1">
 <h1 id="data-publishing-pipeline">Data Publishing Pipeline<a class="anchor" aria-label="anchor" href="#data-publishing-pipeline"></a></h1>
 <p>After going through QAQC and being standardized to Darwin Core, the
-dataset are uploaded to an IPT. Metadata is added in the form of EML and
-the dataset published as a Darwin Core Archive (DwC-A). The data are
-then pushed to central OBIS. Each dataset also has the option of being
-pushed to GBIF by registering the resource with GBIF in the IPT.</p>
-<p><img src="../%7B%7B%20page.root%20%7D%7D/fig/DwC_workflow.jpg" alt="Image by Enrique Montes" class="figure">{: .image-with-shadow } <em>Data
-publishing pipeline. Image credit: Enrique Montes</em></p>
+dataset are uploaded to an IPT.<br>
+Metadata is added in the form of EML and the dataset published as a
+Darwin Core Archive (DwC-A). The data are then pushed to central OBIS.
+Each dataset also has the option of being pushed to GBIF by registering
+the resource with GBIF in the IPT.</p>
+<figure><img src="../fig/DwC_workflow.jpg" alt="Image by Enrique Montes" class="figure mx-auto d-block"><div class="figcaption">Image by Enrique Montes</div>
+</figure><p><em>Data publishing pipeline. Image credit: Enrique Montes</em></p>
 </div>
 <div class="section level1">
 <h1 id="integrated-publishing-toolkit">Integrated Publishing Toolkit<a class="anchor" aria-label="anchor" href="#integrated-publishing-toolkit"></a></h1>
@@ -404,13 +429,20 @@ fields that would need to be filled out in the IPT: <code>title</code>,
 <a href="https://ioos.github.io/bio_data_guide/extras.html#ecological-metadata-language-eml" class="external-link">bio
 data guide</a>. There are also a number of R packages for working with
 EML, reviewed <a href="https://livingnorway.github.io/LivingNorwayR/articles/EML_R_packages_overview.html" class="external-link">here</a>.</p>
-<blockquote>
-<h2 id="tip">Tip</h2>
+<div id="tip" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="tip" class="callout-inner">
+<h3 class="callout-title">
+<span class="emoji" data-emoji="pushpin">📌</span> Tip</h3>
+<div class="callout-content">
 <p>Try to collect as much of this information as possible before and
 during the Darwin Core alignment process. It will significantly reduce
-the amount of time it takes to load the data into the IPT. {:
-.callout}</p>
-</blockquote>
+the amount of time it takes to load the data into the IPT.</p>
+</div>
+</div>
+</div>
 <div class="section level2">
 <h2 id="required-eml-metadata-fields-for-sharing-to-obis">Required EML metadata fields for sharing to OBIS<a class="anchor" aria-label="anchor" href="#required-eml-metadata-fields-for-sharing-to-obis"></a></h2>
 <p><em>Best practices for these fields are explained in detail in the <a href="https://manual.obis.org/eml" class="external-link">OBIS manual</a></em></p>
@@ -491,10 +523,26 @@ e.g. text descriptions of the procedures, relevant literature, software,
 instrumentation and any quality control measurements taken.</td>
 <td>Each method should be described in enough detail to allow other
 researchers to interpret and repeat the study, if required.</td>
-</tr></tbody></table><!--
+</tr></tbody></table><div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li>The IPT is a well-documented and flexible system for publishing data
+to OBIS</li>
+<li>Some Darwin Core and Ecological Metadata Language fields are
+required for publishing to OBIS.</li>
+<li>Strive to write more than the minimal metadata</li>
+</ul></div>
+</div>
+</div>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></div>
+ -->
+</div>
 </div>
 
 
@@ -557,7 +605,7 @@ any links that you are not going to use.
   "url": "https://MathewBiddle.github.io/test_workshop/instructor/07-validation-and-publishing.html",
   "identifier": "https://MathewBiddle.github.io/test_workshop/instructor/07-validation-and-publishing.html",
   "dateCreated": "2024-04-19",
-  "dateModified": "2024-12-19",
+  "dateModified": "2024-12-20",
   "datePublished": "2024-12-20"
 }
 
