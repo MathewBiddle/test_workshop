@@ -465,6 +465,7 @@ track which values are latitude and which are longitude.
 | [geodeticDatum](https://dwc.tdwg.org/list/#dwc_geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | `WGS84` |
 
 ![coordinate_precision](https://imgs.xkcd.com/comics/coordinate_precision.png)
+
 *Image credit: [xkcd](https://xkcd.com/)*
 
 ::::::::::::::::::::::::::::::::: challenge
@@ -477,13 +478,12 @@ Below are a few examples in R and Python to convert some common coordinate pairs
 ::::::::::::::::: tab
 
 ### Python
- 
 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
    * This example assumes you have already split the two strings into discrete components (as shown in the table). An 
      example converting the full strings `17° 51' 57.96" S` `149° 39' 13.32" W` to decimal degrees can be found [here](https://github.com/MathewBiddle/misc/blob/07d643da831255069fd1f6e936ca0902e21c0d0c/data302_DON_Oxidation_working_hollibaugh_20190514_process.py#L24-L62).
 
    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
-   ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
+   ------------|-------------|-------------|----------------|-------------|-------------|-------------|---------------
    17 | 51 | 57.96 | S | 149 | 39 | 13.32 | W
 
    ```python
@@ -546,7 +546,7 @@ Below are a few examples in R and Python to convert some common coordinate pairs
 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
 
    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
-   ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
+   ------------|-------------|-------------|----------------|-------------|-------------|-------------|---------------
    17 | 51 | 57.96 | S | 149 | 39 | 13.32 | W
 
    ```r
@@ -572,8 +572,7 @@ Below are a few examples in R and Python to convert some common coordinate pairs
    > tbl$decimalLongitude
    [1] -149.6537
   ```
-   
-   
+
 2. `33° 22.967' N` `117° 35.321' W` 
 
    lat_degrees | lat_dec_minutes | lat_hemisphere | lon_degrees | lon_dec_minutes | lon_hemisphere
