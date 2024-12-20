@@ -337,7 +337,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data Cleaning</h1>
-        <p>Last updated on 2024-12-18 |
+        <p>Last updated on 2024-12-20 |
 
         <a href="https://github.com/MathewBiddle/test_workshop/edit/main/episodes/03-data-cleaning.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -351,6 +351,32 @@
 
         
 
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul><li>How to convert dates to ISO?</li>
+<li>How to match scientific names to WoRMS?</li>
+<li>How to convert latitudes and longitudes to decimal degrees?</li>
+</ul></div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul><li>Aligning dates to the ISO 8601 standard.</li>
+<li>Matching scientific names to WoRMS.</li>
+<li>Converting latitude and longitude variations to decimal degrees
+North and East.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
 <p>Now that you know what the mapping is between your raw data and the
 Darwin Core standard, it’s time to start cleaning up the data to align
 with the conventions described in the standard. The following activities
@@ -391,14 +417,22 @@ indicator at the end. If not, then they are assumed to be local time.
 When a time is UTC, the letter “Z” is added at the end
 (e.g. 2009-02-20T08:40Z, which is the equivalent of
 2009-02-20T08:40+00:00).</p>
-<blockquote>
-<h2 id="tip">Tip</h2>
+<div id="tip" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="tip" class="callout-inner">
+<h3 class="callout-title">
+<span class="emoji" data-emoji="pushpin">📌</span> Tip</h3>
+<div class="callout-content">
 <p>Focus on getting your package of choice to read the dates
 appropriately. While you can use <a href="https://en.wikipedia.org/wiki/Regular_expression" class="external-link">regular
 expressions</a> to replace and substitute strings to align with the ISO
 convention, it will typically save you time if you work in your package
-of choice to translate the dates. {: .callout}</p>
-</blockquote>
+of choice to translate the dates.</p>
+</div>
+</div>
+</div>
 <table class="table"><colgroup><col width="42%"><col width="30%"><col width="26%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
@@ -419,7 +453,36 @@ time during the interval between 1 March 2007 1pm UTC and 11 May 2008
 between the beginning of the year 1900 and the end of the year
 1909).<br><code>2007-11-13/15</code> (some time in the interval between
 13 November 2007 and 15 November 2007).</td>
-</tr></tbody></table><blockquote>
+</tr></tbody></table><div id="examples" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="examples" class="callout-inner">
+<h3 class="callout-title">Examples</h3>
+<div class="callout-content">
+<div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
+  Python
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
+  R
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<blockquote>
 <h2 id="examples-in-python">Examples in Python</h2>
 <p>When dealing with dates using pandas in Python it is best to create a
 Series as your time column with the appropriate datatype. Then, when
@@ -1163,6 +1226,24 @@ strings for coordinates.</li>
 </div>
 <p>{: .solution}</p>
 </blockquote>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li>When doing conversions it’s best to break out your data into it’s
+component pieces.</li>
+<li>Dates are messy to deal with. Some packages have easy solutions,
+otherwise use regular expressions to align date strings to ISO
+8601.</li>
+<li>WoRMS LSIDs are a requirement for OBIS.</li>
+<li>Latitude and longitudes are like dates, they can be messy to deal
+with. Take a similar approach.</li>
+</ul></div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -1229,8 +1310,8 @@ any links that you are not going to use.
   "url": "https://MathewBiddle.github.io/test_workshop/instructor/03-data-cleaning.html",
   "identifier": "https://MathewBiddle.github.io/test_workshop/instructor/03-data-cleaning.html",
   "dateCreated": "2024-04-19",
-  "dateModified": "2024-12-18",
-  "datePublished": "2024-12-19"
+  "dateModified": "2024-12-20",
+  "datePublished": "2024-12-20"
 }
 
   </script><script>
