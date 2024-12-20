@@ -2,17 +2,22 @@
 layout: page
 title: DNA-derived Data Extension
 permalink: /edna-extension/
-questions:
-- "How should people use the DNA-derived data extension?"
-- "Why should people the DNA-derived data extension?"
-- "What are the required or highly recommended Darwin Core terms for sharing to OBIS?"
-objectives:
-- "Understand the purpose of the DNA-derived data extension."
-- "Understand required or (highly) recommended fields needed in the extension, depending on analytical approach taken."
-keypoints:
-- "Ensure you know the objective of your study."
-- "Define whether you have used metabarcoding or qPCR to determine (highly) recommended fields in the DNA-derived data extension."
 ---
+
+:::::::::::: questions
+
+- How should people use the DNA-derived data extension?
+- Why should people the DNA-derived data extension?
+- What are the required or highly recommended Darwin Core terms for sharing to OBIS?
+
+::::::::::::::::::::::
+
+::::::::::: objectives
+
+- Understand the purpose of the DNA-derived data extension.
+- Understand required or (highly) recommended fields needed in the extension, depending on analytical approach taken.
+
+::::::::::::::::::::::
 
 <figure>
   <img align = "center"
@@ -21,9 +26,6 @@ keypoints:
   <figcaption class="figure-caption text-center">Source: GBIF DNA-derived Data Extension Manual</figcaption>
  </figure>
  
-* Table of contents
-{:toc}
-
 ## Introduction
 
 DNA-derived biological occurrence data allow us to observe inconspicuous and cryptic taxa. DNA-derived data may come from sampling the environment (e.g. water, sediment), bulk organisms, or individual organisms. The derived data may be backed by preserved physical material or not, and may result from genetic sequencing or other DNA detection methods, such as qPCR. 
@@ -94,37 +96,41 @@ The DNA-derived data extension will have different requirements based on the ana
 
 After populating the Occurrence Core or extension with the (additional) required or highly recommended fields, additional information related to either your metabarcoding or qPCR data is to be included in the DNA-derived data extension. The (highly) recommended fields to include in this extension depend on whether your output is the result of metabarcode or qPCR analysis. The tables below only indicate the highly recommended or required fields - additional field should be included if applicable (see [GBIF DNA-derived Data Extension Manual](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/)).
 
-> ## DNA-derived Data Extension Terms for Metabarcoding Data
->
-> | Darwin Core Term | Description | Required | 
-> |------------------|------------------------------------|--------------------------------------- |
-> | [`DNA_sequence`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#DNA_sequence) | The DNA sequence (ASV). | Highly recommended | 
-> | [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences (e.g. through protocols.io) | Recommended | 
-> | [`target_gene`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene) | Targeted gene or marker name for marker-based studies | Highly recommended | 
-> | [`target_subfragment`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene) | Name of subfragment of a gene or markerImportant to e.g. identify special regions on marker genes like the hypervariable V6 region of the 16S rRNA gene | Highly recommended | 
-> | [`pcr_primer_forward`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_forward) | Forward PCR primer that was used to amplify the sequence of the targeted gene, locus or subfragment. | Highly recommended | 
-> | [`pcr_primer_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reverse) | Reverse PCR primer that was used to amplify the sequence of the targeted gene, locus or subfragment.  | Highly recommended | 
-> | [`pcr_primer_name_forward`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_forward) | Name of the forward PCR primer | Highly recommended |
-> | [`pcr_primer_name_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_reverse) | Name of the reverse PCR primer | Highly recommended |
-> | [`pcr_primer_reference`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference) | Reference for the primers | Highly recommended |
->
-{: .solution}
+::::::::::::::::: spoiler
 
-> ## DNA-derived Data Extension Terms for qPCR Data
->
-> | Darwin Core Term | Description | Required | 
-> |------------------|------------------------------------|--------------------------------------- |
-> | [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences. A reference to a well documented protocol, e.g. using protocols.io | Highly recommended | 
-> | [`annealingTemp`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTemp) | The reaction temperature during the annealing phase of PCR. | Required if annealingTemp was supplied | 
-> | [`annealinTempUnit`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTempUnit) |  | Highly recommended | 
-> | [`pcr_cond`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_cond) | Description of reaction conditions and components of PCR in the form of "initial denaturation:94degC_1.5min; annealing=…" | Highly recommended | 
-> | [`probeReporter`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeReporter) | Type of fluorophore (reporter) used. Probe anneals within amplified target DNA. Polymerase activity degrades the probe that has annealed to the template, and the probe releases the fluorophore from it and breaks the proximity to the quencher, thus allowing fluorescence of the fluorophore. | Highly recommended | 
-> | [`probeQuencher`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeQuencher) | Type of quencher used. The quencher molecule quenches the fluorescence emitted by the fluorophore when excited by the cycler’s light source as long as fluorophore and the quencher are in proximity, quenching inhibits any fluorescence signals.  | Highly recommended | 
-> | [`ampliconSize`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#ampliconSize) | The length of the amplicon in basepairs | Highly recommended |
-> | [`thresholdQuantificationCycle`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#thresholdQuantificationCycle) | Threshold for change in fluorescence signal between cycles | qPCR: Highly recommended |
-> | [`baselineValue`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#baselineValue) | The number of cycles when fluorescence signal from the target amplification is below background fluorescence not originated from the real target amplification. | qPCR: Highly recommended |
->
-{: .solution}
+## DNA-derived Data Extension Terms for Metabarcoding Data
+
+| Darwin Core Term | Description | Required | 
+|------------------|------------------------------------|--------------------------------------- |
+| [`DNA_sequence`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#DNA_sequence) | The DNA sequence (ASV). | Highly recommended | 
+| [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences (e.g. through protocols.io) | Recommended | 
+| [`target_gene`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene) | Targeted gene or marker name for marker-based studies | Highly recommended | 
+| [`target_subfragment`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene) | Name of subfragment of a gene or markerImportant to e.g. identify special regions on marker genes like the hypervariable V6 region of the 16S rRNA gene | Highly recommended | 
+| [`pcr_primer_forward`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_forward) | Forward PCR primer that was used to amplify the sequence of the targeted gene, locus or subfragment. | Highly recommended | 
+| [`pcr_primer_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reverse) | Reverse PCR primer that was used to amplify the sequence of the targeted gene, locus or subfragment.  | Highly recommended | 
+| [`pcr_primer_name_forward`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_forward) | Name of the forward PCR primer | Highly recommended |
+| [`pcr_primer_name_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_reverse) | Name of the reverse PCR primer | Highly recommended |
+| [`pcr_primer_reference`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference) | Reference for the primers | Highly recommended |
+
+:::::::::::::::::::::::::
+
+::::::::::::::::: spoiler
+
+## DNA-derived Data Extension Terms for qPCR Data
+
+| Darwin Core Term | Description | Required | 
+|------------------|------------------------------------|--------------------------------------- |
+| [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences. A reference to a well documented protocol, e.g. using protocols.io | Highly recommended | 
+| [`annealingTemp`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTemp) | The reaction temperature during the annealing phase of PCR. | Required if annealingTemp was supplied | 
+| [`annealinTempUnit`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTempUnit) |  | Highly recommended | 
+| [`pcr_cond`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_cond) | Description of reaction conditions and components of PCR in the form of "initial denaturation:94degC_1.5min; annealing=…" | Highly recommended | 
+| [`probeReporter`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeReporter) | Type of fluorophore (reporter) used. Probe anneals within amplified target DNA. Polymerase activity degrades the probe that has annealed to the template, and the probe releases the fluorophore from it and breaks the proximity to the quencher, thus allowing fluorescence of the fluorophore. | Highly recommended | 
+| [`probeQuencher`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeQuencher) | Type of quencher used. The quencher molecule quenches the fluorescence emitted by the fluorophore when excited by the cycler’s light source as long as fluorophore and the quencher are in proximity, quenching inhibits any fluorescence signals.  | Highly recommended | 
+| [`ampliconSize`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#ampliconSize) | The length of the amplicon in basepairs | Highly recommended |
+| [`thresholdQuantificationCycle`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#thresholdQuantificationCycle) | Threshold for change in fluorescence signal between cycles | qPCR: Highly recommended |
+| [`baselineValue`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#baselineValue) | The number of cycles when fluorescence signal from the target amplification is below background fluorescence not originated from the real target amplification. | qPCR: Highly recommended |
+
+:::::::::::::::::::::::::
 
 It is recommended that if ASVs are provided, MD5s should be generated by the biodiversity discovery platforms. If ASVs are not provided, the MD5s need to be mandatory. This will help data platform index actual sequences, or at the very minimum a MD5 checksum of these to facilitate searches for ASVs across datasets. 
 
@@ -147,4 +153,9 @@ Python:
   - https://github.com/biocore/biom-format 
   - https://entrezpy.readthedocs.io/en/master/ 
 
+::::::::::::: keypoints
 
+- "Ensure you know the objective of your study."
+- "Define whether you have used metabarcoding or qPCR to determine (highly) recommended fields in the DNA-derived data extension."
+
+:::::::::::::::::::::::
