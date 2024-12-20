@@ -488,7 +488,7 @@ or that you don’t understand what it is?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre class="folder"><code>dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
  |-- eml.xml
@@ -551,7 +551,7 @@ DwC term headers!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></li>
@@ -1062,7 +1062,7 @@ between the beginning of the year 1900 and the end of the year
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
@@ -1079,16 +1079,6 @@ between the beginning of the year 1900 and the end of the year
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
 <div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<blockquote>
-<h2 id="examples-in-python">Examples in Python</h2>
 <p>When dealing with dates using pandas in Python it is best to create a
 Series as your time column with the appropriate datatype. Then, when
 writing your file(s) using <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html" class="external-link">.to_csv()</a>
@@ -1096,8 +1086,8 @@ you can specify the format which your date will be written in using the
 <code>date_format</code> parameter.</p>
 <p>The examples below show how to use the <a href="https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html" class="external-link">pandas.to_datetime()</a>
 function to read various date formats. The process can be applied to
-entire columns (or Series) within a DataFrame. <br> 1.
-<code>01/31/2021 17:00 GMT</code></p>
+entire columns (or Series) within a DataFrame.</p>
+<p><code>01/31/2021 17:00 GMT</code></p>
 <p>This date follows a typical date construct of
 <code>month</code><strong>/</strong><code>day</code><strong>/</strong><code>year</code>
 <code>24-hour</code><strong>:</strong><code>minute</code>
@@ -1115,11 +1105,9 @@ parameter.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>                   date                 eventDate
-   01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00</code></pre>
+<pre class="output" tabindex="0"><code>                    date                 eventDate
+    01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00</code></pre>
 </div>
-<ol start="2" style="list-style-type: decimal">
-<li>
 <p><code>31/01/2021 12:00 EST</code></p>
 <p>This date is similar to the first date but switches the
 <code>month</code> and <code>day</code> and identifies a different
@@ -1141,16 +1129,84 @@ parameter.</p>
 <pre class="output" tabindex="0"><code>                   date                 eventDate
    31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00</code></pre>
 </div>
-</li>
+<ol style="list-style-type: decimal">
 <li>
-<p><code>January, 01 2021 5:00 PM GMT</code></p>
+<p><code>01/31/2021 17:00 GMT</code></p>
+<p>This date follows a typical date construct of
+<code>month</code><strong>/</strong><code>day</code><strong>/</strong><code>year</code>
+<code>24-hour</code><strong>:</strong><code>minute</code>
+<code>time-zone</code>. The pandas <code>.to_datetime()</code> function
+will correctly interpret these dates without the <code>format</code>
+parameter.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'date'</span>:[<span class="st">'January, 01 2021 5:00 PM GMT'</span>]})</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>],<span class="bu">format</span><span class="op">=</span><span class="st">'%B, </span><span class="sc">%d</span><span class="st"> %Y %I:%M %p %Z'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'date'</span>:[<span class="st">'01/31/2021 17:00 GMT'</span>]})</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">"%m/</span><span class="sc">%d</span><span class="st">/%Y %H:%M %Z"</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>df</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>                    date                 eventDate
+    01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00</code></pre>
+</div>
+</li>
+<li>
+<p><code>31/01/2021 12:00 EST</code></p>
+<p>This date is similar to the first date but switches the
+<code>month</code> and <code>day</code> and identifies a different
+<code>time-zone</code>. The construct looks like
+<code>day</code><strong>/</strong><code>month</code><strong>/</strong><code>year</code>
+<code>24-hour</code><strong>:</strong><code>minute</code>
+<code>time-zone</code></p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'date'</span>:[<span class="st">'31/01/2021 12:00 EST'</span>]})</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%d</span><span class="st">/%m/%Y %H:%M %Z"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>df</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>                   date                 eventDate
+   31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00</code></pre>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<blockquote>
+<h2 id="examples-in-python">Examples in Python</h2>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<p><br></p>
+</blockquote>
+<blockquote>
+
+</blockquote>
+<blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li>
+<p><code>January, 01 2021 5:00 PM GMT</code></p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'date'</span>:[<span class="st">'January, 01 2021 5:00 PM GMT'</span>]})</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>],<span class="bu">format</span><span class="op">=</span><span class="st">'%B, </span><span class="sc">%d</span><span class="st"> %Y %I:%M %p %Z'</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>df</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1163,13 +1219,13 @@ parameter.</p>
 <p><code>1612112400</code> in seconds since 1970</p>
 <p>This uses the units of <code>seconds since 1970</code> which is
 common when working with data in <a href="https://www.unidata.ucar.edu/software/netcdf/" class="external-link">netCDF</a>.</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'date'</span>:[<span class="st">'1612112400'</span>]})</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>], unit<span class="op">=</span><span class="st">'s'</span>, origin<span class="op">=</span><span class="st">'unix'</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>df</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'date'</span>:[<span class="st">'1612112400'</span>]})</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>], unit<span class="op">=</span><span class="st">'s'</span>, origin<span class="op">=</span><span class="st">'unix'</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>df</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1184,13 +1240,13 @@ common when working with data in <a href="https://www.unidata.ucar.edu/software/
 dates as sequential serial numbers so that they can be used in
 calculations. In some cases, when you export an Excel spreadsheet to
 CSV, the dates are preserved as a floating point number.</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'date'</span>:[<span class="st">'44227.708333333333'</span>]})</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>].astype(<span class="bu">float</span>), unit<span class="op">=</span><span class="st">'D'</span>, origin<span class="op">=</span><span class="st">'1899-12-30'</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>df</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'date'</span>:[<span class="st">'44227.708333333333'</span>]})</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>].astype(<span class="bu">float</span>), unit<span class="op">=</span><span class="st">'D'</span>, origin<span class="op">=</span><span class="st">'1899-12-30'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>df</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1205,14 +1261,14 @@ end date of <code>2021-01-31</code>.</p>
 <p>Here we store the date as a duration following the ISO 8601
 convention. In some cases, it is easier to use a regular expression or
 simply paste strings together:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'start_date'</span>:[<span class="st">'2021-01-30'</span>],</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>                   <span class="st">'end_date'</span>:[<span class="st">'2021-01-31'</span>]})</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> df[<span class="st">'start_date'</span>]<span class="op">+</span><span class="st">'/'</span><span class="op">+</span>df[<span class="st">'end_date'</span>]</span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>df</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'start_date'</span>:[<span class="st">'2021-01-30'</span>],</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>                   <span class="st">'end_date'</span>:[<span class="st">'2021-01-31'</span>]})</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>df[<span class="st">'eventDate'</span>] <span class="op">=</span> df[<span class="st">'start_date'</span>]<span class="op">+</span><span class="st">'/'</span><span class="op">+</span>df[<span class="st">'end_date'</span>]</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>df</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1235,7 +1291,7 @@ cheatsheet</a>.</p>
 <p>The examples below show how to use the <code>lubridate</code> package
 and format your data to the ISO-8601 standard. <br> 1.
 <code>01/31/2021 17:00 GMT</code></p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1254,7 +1310,7 @@ and format your data to the ISO-8601 standard. <br> 1.
 <ol start="2" style="list-style-type: decimal">
 <li>
 <p><code>31/01/2021 12:00 EST</code></p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1274,7 +1330,7 @@ and format your data to the ISO-8601 standard. <br> 1.
 </li>
 <li>
 <p><code>January, 01 2021 5:00 PM GMT</code></p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1296,7 +1352,7 @@ and format your data to the ISO-8601 standard. <br> 1.
 <p><code>1612112400</code> in seconds since 1970</p>
 <p>This uses the units of <code>seconds since 1970</code> which is
 common when working with data in <a href="https://www.unidata.ucar.edu/software/netcdf/" class="external-link">netCDF</a>.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1320,7 +1376,7 @@ common when working with data in <a href="https://www.unidata.ucar.edu/software/
 dates as sequential serial numbers so that they can be used in
 calculations. In some cases, when you export an Excel spreadsheet to
 CSV, the dates are preserved as a floating point number.</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1348,27 +1404,27 @@ adding in a 4-digit deployment and retrieval time.</p>
 <p>Here we store the date as a duration following the ISO 8601
 convention. In some cases, it is easier to use a regular expression or
 simply paste strings together:</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>event_start <span class="ot">&lt;-</span> <span class="st">'2021-01-30'</span></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>event_finish <span class="ot">&lt;-</span> <span class="st">'2021-01-31'</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>deployment_time <span class="ot">&lt;-</span> <span class="dv">1002</span></span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>retrieval_time <span class="ot">&lt;-</span> <span class="dv">1102</span></span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="co"># Time is recorded numerically (1037 instead of 10:37), so need to change these columns:</span></span>
-<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a>deployment_time <span class="ot">&lt;-</span> <span class="fu">substr</span>(<span class="fu">as.POSIXct</span>(<span class="fu">sprintf</span>(<span class="st">"%04.0f"</span>, deployment_time), <span class="at">format =</span> <span class="st">"%H%M"</span>), <span class="dv">12</span>, <span class="dv">16</span>)</span>
-<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a>retrieval_time <span class="ot">&lt;-</span> <span class="fu">substr</span>(<span class="fu">as.POSIXct</span>(<span class="fu">sprintf</span>(<span class="st">"%04.0f"</span>, retrieval_time, <span class="at">format =</span> <span class="st">"%H%M"</span>), <span class="dv">12</span>, <span class="dv">16</span>)</span>
-<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a><span class="co"># If you're interested in just pasting the event dates together:</span></span>
-<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a>eventDate <span class="ot">&lt;-</span> <span class="fu">paste</span>(event_start, event_finish, <span class="at">sep =</span> <span class="st">"/"</span>) </span>
-<span id="cb23-11"><a href="#cb23-11" tabindex="-1"></a><span class="co"># If you're interested in including the deployment and retrieval times in the eventDate:</span></span>
-<span id="cb23-12"><a href="#cb23-12" tabindex="-1"></a>eventDateTime_start <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">format_ISO8601</span>(<span class="fu">as.POSIXct</span>(<span class="fu">paste</span>(event_start, deployment_time), <span class="at">tz =</span> <span class="st">"UTC"</span>))</span>
-<span id="cb23-13"><a href="#cb23-13" tabindex="-1"></a>eventDateTime_start <span class="ot">&lt;-</span> <span class="fu">paste0</span>(eventDateTime_start, <span class="st">"Z"</span>)</span>
-<span id="cb23-14"><a href="#cb23-14" tabindex="-1"></a>eventDateTime_finish <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">format_ISO8601</span>(<span class="fu">as.POSIXct</span>(<span class="fu">paste</span>(event_finish, retrieval_time), <span class="at">tz =</span> <span class="st">"UTC"</span>))</span>
-<span id="cb23-15"><a href="#cb23-15" tabindex="-1"></a>eventDateTime_finish <span class="ot">&lt;-</span> <span class="fu">paste0</span>(eventDateTime_finish, <span class="st">"Z"</span>)</span>
-<span id="cb23-16"><a href="#cb23-16" tabindex="-1"></a>eventDateTime <span class="ot">&lt;-</span> <span class="fu">paste</span>(eventDateTime_start, eventDateTime_finish, <span class="at">sep =</span> <span class="st">"/"</span>) </span>
-<span id="cb23-17"><a href="#cb23-17" tabindex="-1"></a><span class="fu">print</span>(eventDate)</span>
-<span id="cb23-18"><a href="#cb23-18" tabindex="-1"></a><span class="fu">print</span>(eventDateTime)</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>event_start <span class="ot">&lt;-</span> <span class="st">'2021-01-30'</span></span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>event_finish <span class="ot">&lt;-</span> <span class="st">'2021-01-31'</span></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>deployment_time <span class="ot">&lt;-</span> <span class="dv">1002</span></span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>retrieval_time <span class="ot">&lt;-</span> <span class="dv">1102</span></span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a><span class="co"># Time is recorded numerically (1037 instead of 10:37), so need to change these columns:</span></span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a>deployment_time <span class="ot">&lt;-</span> <span class="fu">substr</span>(<span class="fu">as.POSIXct</span>(<span class="fu">sprintf</span>(<span class="st">"%04.0f"</span>, deployment_time), <span class="at">format =</span> <span class="st">"%H%M"</span>), <span class="dv">12</span>, <span class="dv">16</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a>retrieval_time <span class="ot">&lt;-</span> <span class="fu">substr</span>(<span class="fu">as.POSIXct</span>(<span class="fu">sprintf</span>(<span class="st">"%04.0f"</span>, retrieval_time, <span class="at">format =</span> <span class="st">"%H%M"</span>), <span class="dv">12</span>, <span class="dv">16</span>)</span>
+<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a><span class="co"># If you're interested in just pasting the event dates together:</span></span>
+<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a>eventDate <span class="ot">&lt;-</span> <span class="fu">paste</span>(event_start, event_finish, <span class="at">sep =</span> <span class="st">"/"</span>) </span>
+<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a><span class="co"># If you're interested in including the deployment and retrieval times in the eventDate:</span></span>
+<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a>eventDateTime_start <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">format_ISO8601</span>(<span class="fu">as.POSIXct</span>(<span class="fu">paste</span>(event_start, deployment_time), <span class="at">tz =</span> <span class="st">"UTC"</span>))</span>
+<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a>eventDateTime_start <span class="ot">&lt;-</span> <span class="fu">paste0</span>(eventDateTime_start, <span class="st">"Z"</span>)</span>
+<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a>eventDateTime_finish <span class="ot">&lt;-</span> lubridate<span class="sc">::</span><span class="fu">format_ISO8601</span>(<span class="fu">as.POSIXct</span>(<span class="fu">paste</span>(event_finish, retrieval_time), <span class="at">tz =</span> <span class="st">"UTC"</span>))</span>
+<span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a>eventDateTime_finish <span class="ot">&lt;-</span> <span class="fu">paste0</span>(eventDateTime_finish, <span class="st">"Z"</span>)</span>
+<span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a>eventDateTime <span class="ot">&lt;-</span> <span class="fu">paste</span>(eventDateTime_start, eventDateTime_finish, <span class="at">sep =</span> <span class="st">"/"</span>) </span>
+<span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a><span class="fu">print</span>(eventDate)</span>
+<span id="cb27-18"><a href="#cb27-18" tabindex="-1"></a><span class="fu">print</span>(eventDateTime)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1493,7 +1549,7 @@ screenshot of the file can be seen below: <img src="%7B%7B%20page.root%20%7D%7D/
 <li>
 <p><a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=105838" class="external-link"><em>Carcharodon
 carcharias</em></a> (White shark)</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1522,42 +1578,42 @@ and collecting appropriate information from WoRMS using the pyworms
 package.</p>
 <p><strong>Note</strong> some of the responses have multiple matches, so
 the user needs to evaluate which match is appropriate.</p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="im">import</span> pyworms</span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="im">import</span> pprint</span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>fname <span class="op">=</span> <span class="st">'https://ioos.github.io/bio_mobilization_workshop/data/species.csv'</span></span>
-<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a><span class="co"># Read in the csv data to data frame</span></span>
-<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(fname)</span>
-<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a><span class="co"># Iterate row by row through the data frame and query worms for each ScientificName term.</span></span>
-<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> df.iterrows():</span>
-<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a>   resp <span class="op">=</span> pyworms.aphiaRecordsByMatchNames(row[<span class="st">'ORIGINAL_NAME'</span>], marine_only<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a></span>
-<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a>   <span class="co"># When no matches are found, print the non-matching name and move on</span></span>
-<span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a>   <span class="cf">if</span> <span class="bu">len</span>(resp[<span class="dv">0</span>]) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">No match for name "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(row[<span class="st">'ORIGINAL_NAME'</span>]))</span>
-<span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a>      <span class="cf">continue</span></span>
-<span id="cb27-18"><a href="#cb27-18" tabindex="-1"></a></span>
-<span id="cb27-19"><a href="#cb27-19" tabindex="-1"></a>   <span class="co"># When more than 1 match is found, the user needs to take a look. But tell the user which one has multiple matches</span></span>
-<span id="cb27-20"><a href="#cb27-20" tabindex="-1"></a>   <span class="cf">elif</span> <span class="bu">len</span>(resp[<span class="dv">0</span>]) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
-<span id="cb27-21"><a href="#cb27-21" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Multiple matches for name "</span><span class="sc">{}</span><span class="st">":'</span>.<span class="bu">format</span>(row[<span class="st">'ORIGINAL_NAME'</span>]))</span>
-<span id="cb27-22"><a href="#cb27-22" tabindex="-1"></a>      pprint.pprint(resp[<span class="dv">0</span>], indent<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb27-23"><a href="#cb27-23" tabindex="-1"></a>      <span class="cf">continue</span></span>
-<span id="cb27-24"><a href="#cb27-24" tabindex="-1"></a></span>
-<span id="cb27-25"><a href="#cb27-25" tabindex="-1"></a>   <span class="co"># When only 1 match is found, put the appropriate information into the appropriate row and column</span></span>
-<span id="cb27-26"><a href="#cb27-26" tabindex="-1"></a>   <span class="cf">else</span>:</span>
-<span id="cb27-27"><a href="#cb27-27" tabindex="-1"></a>      worms <span class="op">=</span> resp[<span class="dv">0</span>][<span class="dv">0</span>]</span>
-<span id="cb27-28"><a href="#cb27-28" tabindex="-1"></a>      df.loc[index, <span class="st">'scientificNameID'</span>] <span class="op">=</span> worms[<span class="st">'lsid'</span>]</span>
-<span id="cb27-29"><a href="#cb27-29" tabindex="-1"></a>      df.loc[index, <span class="st">'taxonRank'</span>] <span class="op">=</span> worms[<span class="st">'rank'</span>]</span>
-<span id="cb27-30"><a href="#cb27-30" tabindex="-1"></a>      df.loc[index, <span class="st">'kingdom'</span>] <span class="op">=</span> worms[<span class="st">'kingdom'</span>]</span>
-<span id="cb27-31"><a href="#cb27-31" tabindex="-1"></a></span>
-<span id="cb27-32"><a href="#cb27-32" tabindex="-1"></a><span class="co"># print the first 10 rows</span></span>
-<span id="cb27-33"><a href="#cb27-33" tabindex="-1"></a>df.head()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="im">import</span> pyworms</span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="im">import</span> pprint</span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>fname <span class="op">=</span> <span class="st">'https://ioos.github.io/bio_mobilization_workshop/data/species.csv'</span></span>
+<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" tabindex="-1"></a><span class="co"># Read in the csv data to data frame</span></span>
+<span id="cb31-8"><a href="#cb31-8" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(fname)</span>
+<span id="cb31-9"><a href="#cb31-9" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" tabindex="-1"></a><span class="co"># Iterate row by row through the data frame and query worms for each ScientificName term.</span></span>
+<span id="cb31-11"><a href="#cb31-11" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> df.iterrows():</span>
+<span id="cb31-12"><a href="#cb31-12" tabindex="-1"></a>   resp <span class="op">=</span> pyworms.aphiaRecordsByMatchNames(row[<span class="st">'ORIGINAL_NAME'</span>], marine_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb31-13"><a href="#cb31-13" tabindex="-1"></a></span>
+<span id="cb31-14"><a href="#cb31-14" tabindex="-1"></a>   <span class="co"># When no matches are found, print the non-matching name and move on</span></span>
+<span id="cb31-15"><a href="#cb31-15" tabindex="-1"></a>   <span class="cf">if</span> <span class="bu">len</span>(resp[<span class="dv">0</span>]) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb31-16"><a href="#cb31-16" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">No match for name "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(row[<span class="st">'ORIGINAL_NAME'</span>]))</span>
+<span id="cb31-17"><a href="#cb31-17" tabindex="-1"></a>      <span class="cf">continue</span></span>
+<span id="cb31-18"><a href="#cb31-18" tabindex="-1"></a></span>
+<span id="cb31-19"><a href="#cb31-19" tabindex="-1"></a>   <span class="co"># When more than 1 match is found, the user needs to take a look. But tell the user which one has multiple matches</span></span>
+<span id="cb31-20"><a href="#cb31-20" tabindex="-1"></a>   <span class="cf">elif</span> <span class="bu">len</span>(resp[<span class="dv">0</span>]) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb31-21"><a href="#cb31-21" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Multiple matches for name "</span><span class="sc">{}</span><span class="st">":'</span>.<span class="bu">format</span>(row[<span class="st">'ORIGINAL_NAME'</span>]))</span>
+<span id="cb31-22"><a href="#cb31-22" tabindex="-1"></a>      pprint.pprint(resp[<span class="dv">0</span>], indent<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb31-23"><a href="#cb31-23" tabindex="-1"></a>      <span class="cf">continue</span></span>
+<span id="cb31-24"><a href="#cb31-24" tabindex="-1"></a></span>
+<span id="cb31-25"><a href="#cb31-25" tabindex="-1"></a>   <span class="co"># When only 1 match is found, put the appropriate information into the appropriate row and column</span></span>
+<span id="cb31-26"><a href="#cb31-26" tabindex="-1"></a>   <span class="cf">else</span>:</span>
+<span id="cb31-27"><a href="#cb31-27" tabindex="-1"></a>      worms <span class="op">=</span> resp[<span class="dv">0</span>][<span class="dv">0</span>]</span>
+<span id="cb31-28"><a href="#cb31-28" tabindex="-1"></a>      df.loc[index, <span class="st">'scientificNameID'</span>] <span class="op">=</span> worms[<span class="st">'lsid'</span>]</span>
+<span id="cb31-29"><a href="#cb31-29" tabindex="-1"></a>      df.loc[index, <span class="st">'taxonRank'</span>] <span class="op">=</span> worms[<span class="st">'rank'</span>]</span>
+<span id="cb31-30"><a href="#cb31-30" tabindex="-1"></a>      df.loc[index, <span class="st">'kingdom'</span>] <span class="op">=</span> worms[<span class="st">'kingdom'</span>]</span>
+<span id="cb31-31"><a href="#cb31-31" tabindex="-1"></a></span>
+<span id="cb31-32"><a href="#cb31-32" tabindex="-1"></a><span class="co"># print the first 10 rows</span></span>
+<span id="cb31-33"><a href="#cb31-33" tabindex="-1"></a>df.head()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1699,27 +1755,27 @@ full strings <code>17° 51' 57.96" S</code>
 <td>W</td>
 </tr></tbody>
 </table>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'lat_degrees'</span>:[<span class="dv">17</span>],</span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>                   <span class="st">'lat_minutes'</span>:[<span class="dv">51</span>],</span>
-<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>                   <span class="st">'lat_seconds'</span>:[<span class="fl">57.96</span>],</span>
-<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>                   <span class="st">'lat_hemisphere'</span>:[<span class="st">'S'</span>],</span>
-<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>                   <span class="st">'lon_degrees'</span>: [<span class="dv">149</span>], </span>
-<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>                   <span class="st">'lon_minutes'</span>: [<span class="dv">39</span>], </span>
-<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>                   <span class="st">'lon_seconds'</span>:[<span class="fl">13.32</span>], </span>
-<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a>                   <span class="st">'lon_hemisphere'</span>: [<span class="st">'W'</span>],</span>
-<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a>                  })</span>
-<span id="cb29-10"><a href="#cb29-10" tabindex="-1"></a></span>
-<span id="cb29-11"><a href="#cb29-11" tabindex="-1"></a>df[<span class="st">'decimalLatitude'</span>] <span class="op">=</span> df[<span class="st">'lat_degrees'</span>] <span class="op">+</span> ( (df[<span class="st">'lat_minutes'</span>] <span class="op">+</span> (df[<span class="st">'lat_seconds'</span>]<span class="op">/</span><span class="dv">60</span>) )<span class="op">/</span><span class="dv">60</span>)</span>
-<span id="cb29-12"><a href="#cb29-12" tabindex="-1"></a>df[<span class="st">'decimalLongitude'</span>] <span class="op">=</span> df[<span class="st">'lon_degrees'</span>] <span class="op">+</span> ( (df[<span class="st">'lon_minutes'</span>] <span class="op">+</span> (df[<span class="st">'lon_seconds'</span>]<span class="op">/</span><span class="dv">60</span>) )<span class="op">/</span><span class="dv">60</span>)</span>
-<span id="cb29-13"><a href="#cb29-13" tabindex="-1"></a></span>
-<span id="cb29-14"><a href="#cb29-14" tabindex="-1"></a><span class="co"># Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`</span></span>
-<span id="cb29-15"><a href="#cb29-15" tabindex="-1"></a>df.loc[df[<span class="st">'lat_hemisphere'</span>]<span class="op">==</span><span class="st">'S'</span>,<span class="st">'decimalLatitude'</span>] <span class="op">=</span> df.loc[df[<span class="st">'lat_hemisphere'</span>]<span class="op">==</span><span class="st">'S'</span>,<span class="st">'decimalLatitude'</span>]<span class="op">*-</span><span class="dv">1</span></span>
-<span id="cb29-16"><a href="#cb29-16" tabindex="-1"></a>df.loc[df[<span class="st">'lon_hemisphere'</span>]<span class="op">==</span><span class="st">'W'</span>,<span class="st">'decimalLongitude'</span>] <span class="op">=</span> df.loc[df[<span class="st">'lon_hemisphere'</span>]<span class="op">==</span><span class="st">'W'</span>,<span class="st">'decimalLongitude'</span>]<span class="op">*-</span><span class="dv">1</span></span>
-<span id="cb29-17"><a href="#cb29-17" tabindex="-1"></a></span>
-<span id="cb29-18"><a href="#cb29-18" tabindex="-1"></a>df[[<span class="st">'decimalLatitude'</span>,<span class="st">'decimalLongitude'</span>]]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'lat_degrees'</span>:[<span class="dv">17</span>],</span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>                   <span class="st">'lat_minutes'</span>:[<span class="dv">51</span>],</span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>                   <span class="st">'lat_seconds'</span>:[<span class="fl">57.96</span>],</span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>                   <span class="st">'lat_hemisphere'</span>:[<span class="st">'S'</span>],</span>
+<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a>                   <span class="st">'lon_degrees'</span>: [<span class="dv">149</span>], </span>
+<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a>                   <span class="st">'lon_minutes'</span>: [<span class="dv">39</span>], </span>
+<span id="cb33-7"><a href="#cb33-7" tabindex="-1"></a>                   <span class="st">'lon_seconds'</span>:[<span class="fl">13.32</span>], </span>
+<span id="cb33-8"><a href="#cb33-8" tabindex="-1"></a>                   <span class="st">'lon_hemisphere'</span>: [<span class="st">'W'</span>],</span>
+<span id="cb33-9"><a href="#cb33-9" tabindex="-1"></a>                  })</span>
+<span id="cb33-10"><a href="#cb33-10" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" tabindex="-1"></a>df[<span class="st">'decimalLatitude'</span>] <span class="op">=</span> df[<span class="st">'lat_degrees'</span>] <span class="op">+</span> ( (df[<span class="st">'lat_minutes'</span>] <span class="op">+</span> (df[<span class="st">'lat_seconds'</span>]<span class="op">/</span><span class="dv">60</span>) )<span class="op">/</span><span class="dv">60</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" tabindex="-1"></a>df[<span class="st">'decimalLongitude'</span>] <span class="op">=</span> df[<span class="st">'lon_degrees'</span>] <span class="op">+</span> ( (df[<span class="st">'lon_minutes'</span>] <span class="op">+</span> (df[<span class="st">'lon_seconds'</span>]<span class="op">/</span><span class="dv">60</span>) )<span class="op">/</span><span class="dv">60</span>)</span>
+<span id="cb33-13"><a href="#cb33-13" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" tabindex="-1"></a><span class="co"># Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`</span></span>
+<span id="cb33-15"><a href="#cb33-15" tabindex="-1"></a>df.loc[df[<span class="st">'lat_hemisphere'</span>]<span class="op">==</span><span class="st">'S'</span>,<span class="st">'decimalLatitude'</span>] <span class="op">=</span> df.loc[df[<span class="st">'lat_hemisphere'</span>]<span class="op">==</span><span class="st">'S'</span>,<span class="st">'decimalLatitude'</span>]<span class="op">*-</span><span class="dv">1</span></span>
+<span id="cb33-16"><a href="#cb33-16" tabindex="-1"></a>df.loc[df[<span class="st">'lon_hemisphere'</span>]<span class="op">==</span><span class="st">'W'</span>,<span class="st">'decimalLongitude'</span>] <span class="op">=</span> df.loc[df[<span class="st">'lon_hemisphere'</span>]<span class="op">==</span><span class="st">'W'</span>,<span class="st">'decimalLongitude'</span>]<span class="op">*-</span><span class="dv">1</span></span>
+<span id="cb33-17"><a href="#cb33-17" tabindex="-1"></a></span>
+<span id="cb33-18"><a href="#cb33-18" tabindex="-1"></a>df[[<span class="st">'decimalLatitude'</span>,<span class="st">'decimalLongitude'</span>]]</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1760,25 +1816,25 @@ two strings into discrete components (as shown in the table).</li>
 <td>W</td>
 </tr></tbody>
 </table>
-<div class="codewrapper sourceCode" id="cb31">
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'lat_degrees'</span>:[<span class="dv">33</span>],</span>
-<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>                   <span class="st">'lat_dec_minutes'</span>:[<span class="fl">22.967</span>],</span>
-<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>                   <span class="st">'lat_hemisphere'</span>:[<span class="st">'N'</span>],</span>
-<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>                   <span class="st">'lon_degrees'</span>: [<span class="dv">117</span>], </span>
-<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>                   <span class="st">'lon_dec_minutes'</span>: [<span class="fl">35.321</span>], </span>
-<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a>                   <span class="st">'lon_hemisphere'</span>: [<span class="st">'W'</span>],</span>
-<span id="cb31-7"><a href="#cb31-7" tabindex="-1"></a>                  })</span>
-<span id="cb31-8"><a href="#cb31-8" tabindex="-1"></a></span>
-<span id="cb31-9"><a href="#cb31-9" tabindex="-1"></a>df[<span class="st">'decimalLatitude'</span>] <span class="op">=</span> df[<span class="st">'lat_degrees'</span>] <span class="op">+</span> (df[<span class="st">'lat_dec_minutes'</span>]<span class="op">/</span><span class="dv">60</span>)</span>
-<span id="cb31-10"><a href="#cb31-10" tabindex="-1"></a>df[<span class="st">'decimalLongitude'</span>] <span class="op">=</span> df[<span class="st">'lon_degrees'</span>] <span class="op">+</span> (df[<span class="st">'lon_dec_minutes'</span>]<span class="op">/</span><span class="dv">60</span>)</span>
-<span id="cb31-11"><a href="#cb31-11" tabindex="-1"></a></span>
-<span id="cb31-12"><a href="#cb31-12" tabindex="-1"></a><span class="co"># Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`</span></span>
-<span id="cb31-13"><a href="#cb31-13" tabindex="-1"></a>df.loc[df[<span class="st">'lat_hemisphere'</span>]<span class="op">==</span><span class="st">'S'</span>,<span class="st">'decimalLatitude'</span>] <span class="op">=</span> df.loc[df[<span class="st">'lat_hemisphere'</span>]<span class="op">==</span><span class="st">'S'</span>,<span class="st">'decimalLatitude'</span>]<span class="op">*-</span><span class="dv">1</span></span>
-<span id="cb31-14"><a href="#cb31-14" tabindex="-1"></a>df.loc[df[<span class="st">'lon_hemisphere'</span>]<span class="op">==</span><span class="st">'W'</span>,<span class="st">'decimalLongitude'</span>] <span class="op">=</span> df.loc[df[<span class="st">'lon_hemisphere'</span>]<span class="op">==</span><span class="st">'W'</span>,<span class="st">'decimalLongitude'</span>]<span class="op">*-</span><span class="dv">1</span></span>
-<span id="cb31-15"><a href="#cb31-15" tabindex="-1"></a></span>
-<span id="cb31-16"><a href="#cb31-16" tabindex="-1"></a>df[[<span class="st">'decimalLatitude'</span>,<span class="st">'decimalLongitude'</span>]]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'lat_degrees'</span>:[<span class="dv">33</span>],</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>                   <span class="st">'lat_dec_minutes'</span>:[<span class="fl">22.967</span>],</span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a>                   <span class="st">'lat_hemisphere'</span>:[<span class="st">'N'</span>],</span>
+<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a>                   <span class="st">'lon_degrees'</span>: [<span class="dv">117</span>], </span>
+<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a>                   <span class="st">'lon_dec_minutes'</span>: [<span class="fl">35.321</span>], </span>
+<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a>                   <span class="st">'lon_hemisphere'</span>: [<span class="st">'W'</span>],</span>
+<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a>                  })</span>
+<span id="cb35-8"><a href="#cb35-8" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" tabindex="-1"></a>df[<span class="st">'decimalLatitude'</span>] <span class="op">=</span> df[<span class="st">'lat_degrees'</span>] <span class="op">+</span> (df[<span class="st">'lat_dec_minutes'</span>]<span class="op">/</span><span class="dv">60</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" tabindex="-1"></a>df[<span class="st">'decimalLongitude'</span>] <span class="op">=</span> df[<span class="st">'lon_degrees'</span>] <span class="op">+</span> (df[<span class="st">'lon_dec_minutes'</span>]<span class="op">/</span><span class="dv">60</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="#cb35-12" tabindex="-1"></a><span class="co"># Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`</span></span>
+<span id="cb35-13"><a href="#cb35-13" tabindex="-1"></a>df.loc[df[<span class="st">'lat_hemisphere'</span>]<span class="op">==</span><span class="st">'S'</span>,<span class="st">'decimalLatitude'</span>] <span class="op">=</span> df.loc[df[<span class="st">'lat_hemisphere'</span>]<span class="op">==</span><span class="st">'S'</span>,<span class="st">'decimalLatitude'</span>]<span class="op">*-</span><span class="dv">1</span></span>
+<span id="cb35-14"><a href="#cb35-14" tabindex="-1"></a>df.loc[df[<span class="st">'lon_hemisphere'</span>]<span class="op">==</span><span class="st">'W'</span>,<span class="st">'decimalLongitude'</span>] <span class="op">=</span> df.loc[df[<span class="st">'lon_hemisphere'</span>]<span class="op">==</span><span class="st">'W'</span>,<span class="st">'decimalLongitude'</span>]<span class="op">*-</span><span class="dv">1</span></span>
+<span id="cb35-15"><a href="#cb35-15" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" tabindex="-1"></a>df[[<span class="st">'decimalLatitude'</span>,<span class="st">'decimalLongitude'</span>]]</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1827,7 +1883,7 @@ two strings into discrete components (as shown in the table).</li>
 <td>W</td>
 </tr></tbody>
 </table>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1884,7 +1940,7 @@ two strings into discrete components (as shown in the table).</li>
 <td>W</td>
 </tr></tbody>
 </table>
-<div class="codewrapper sourceCode" id="cb35">
+<div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1933,7 +1989,7 @@ strings for coordinates.</li>
 </table>
 </li>
 </ol>
-<div class="codewrapper sourceCode" id="cb37">
+<div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
