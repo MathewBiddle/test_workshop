@@ -244,6 +244,9 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#darwin-core---cores-and-extensions">Darwin Core - Cores and Extensions</a></li>
+<li><a href="#occurrence-core-extensions">Occurrence Core + extensions</a></li>
+<li><a href="#event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension</a></li>
+<li><a href="#whats-in-an-id">What’s in an ID?</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -435,9 +438,9 @@ information about depth or the uncertainty of the coordinates.</p>
 <p>For more examples check out the <a href="https://github.com/ioos/bio_data_guide/tree/main/datasets" class="external-link">Datasets
 folder</a> in the IOOS Bio Data Guide.</p>
 </div>
-<div class="section level4">
-<h4 id="occurrence-core-extensions">Occurrence Core + extensions<a class="anchor" aria-label="anchor" href="#occurrence-core-extensions"></a></h4>
-<p>Using the Occurrence core plus <a href="https://rs.gbif.org/extensions.html" class="external-link">relevant extensions</a> means
+</div>
+</section><section><h2 class="section-heading" id="occurrence-core-extensions">Occurrence Core + extensions<a class="anchor" aria-label="anchor" href="#occurrence-core-extensions"></a></h2>
+<hr class="half-width"><p>Using the Occurrence core plus <a href="https://rs.gbif.org/extensions.html" class="external-link">relevant extensions</a> means
 that you can capture more of the data that’s been recorded. Let’s
 consider an environmental DNA dataset. eDNA datasets have information
 that is unique to that method and will not be represented well using
@@ -457,10 +460,8 @@ or Facts extension</a>, or the <a href="https://rs.gbif.org/extension/obis/exten
 Measurement or Fact extension</a> (we elaborate on this extension
 below). Note again here we do not have information on <em>how</em> the
 organisms were sampled.</p>
-</div>
-<div class="section level4">
-<h4 id="event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension<a class="anchor" aria-label="anchor" href="#event-core-with-extended-measurement-or-fact-extension"></a></h4>
-<p>As we have indicated earlier, the Event core is for datasets that
+</section><section><h2 class="section-heading" id="event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension<a class="anchor" aria-label="anchor" href="#event-core-with-extended-measurement-or-fact-extension"></a></h2>
+<hr class="half-width"><p>As we have indicated earlier, the Event core is for datasets that
 include known sampling events - details are known about how, when, and
 where samples were taken.</p>
 <p>An innovation that OBIS made was introducing the Extended Measurement
@@ -519,11 +520,8 @@ data.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="whats-in-an-id">What’s in an ID?<a class="anchor" aria-label="anchor" href="#whats-in-an-id"></a></h3>
-<table class="table"><colgroup><col width="42%"><col width="30%"><col width="26%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+</section><section><h2 class="section-heading" id="whats-in-an-id">What’s in an ID?<a class="anchor" aria-label="anchor" href="#whats-in-an-id"></a></h2>
+<hr class="half-width"><table class="table"><colgroup><col width="42%"><col width="30%"><col width="26%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
 </tr></thead><tbody><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:eventID" class="external-link">eventID</a></td>
@@ -594,7 +592,7 @@ identifiers. Image credit: <a href="https://manual.obis.org/" class="external-li
   Event Core
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Definition</th>
@@ -667,7 +665,7 @@ OBIS and GBIF but it’s best to state explicitly that it is.</td>
   Occurrence extension
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Definition</th>
@@ -745,7 +743,7 @@ Location.</td>
   Extended Measurement or Fact Extension
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Nothing is <em>required</em> from the OBIS perspective but if you are
 using this extension then <code>eventID</code> is required to be able to
@@ -843,7 +841,6 @@ them from the information in your data.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/03-data-cleaning.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
