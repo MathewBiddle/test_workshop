@@ -62,7 +62,7 @@ uncertainty of the coordinates.
 For more examples check out the [Datasets folder](https://github.com/ioos/bio_data_guide/tree/main/datasets) in the IOOS 
 Bio Data Guide.
 
-#### Occurrence Core + extensions
+## Occurrence Core + extensions
 Using the Occurrence core plus [relevant extensions](https://rs.gbif.org/extensions.html) means that you can capture 
 more of the data that's been recorded. Let's consider an environmental DNA dataset. eDNA datasets have information that 
 is unique to that method and will not be represented well using Occurrence core only. To document eDNA using Darwin 
@@ -79,7 +79,7 @@ accuracy, etc.) by using either the
 [Extended Measurement or Fact extension](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) (we 
 elaborate on this extension below). Note again here we do not have information on *how* the organisms were sampled. 
 
-#### Event Core with Extended Measurement or Fact extension
+## Event Core with Extended Measurement or Fact extension
 As we have indicated earlier, the Event core is for datasets that include known sampling events - details are known 
 about how, when, and where samples were taken.
 
@@ -123,7 +123,7 @@ definition in the URI matches exactly your measurement type if you want to reuse
 
 ::::::::::::::::::::
 
-### What's in an ID?
+## What's in an ID?
 
 | Darwin Core Term | Description | Example   |
 |------------------|-------------|-----------|
