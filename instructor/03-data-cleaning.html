@@ -469,7 +469,7 @@ between the beginning of the year 1900 and the end of the year
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
@@ -1074,7 +1074,8 @@ scientificName.</td>
 <div id="examples-1" class="callout-inner">
 <h3 class="callout-title">Examples</h3>
 <div class="callout-content">
-
+<p>Below are a few example tools that can be used to match scientific
+names to WoRMS.</p>
 </div>
 </div>
 </div>
@@ -1083,23 +1084,23 @@ scientificName.</td>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-2" class="nav nav-tabs" role="tablist">
 <button class="nav-link active" id="nav-tab-2-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-2-1" type="button" role="tab" aria-controls="nav-tabpanel-2-1" aria-selected="true">
   <h3 class="tab-header" id="nav-tab-heading-2-1">
-  Using the WoRMS Taxon Match Tool
+  Taxon Match Tool
   </h3>
 </button>
 <button class="nav-link" id="nav-tab-2-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-2-2" type="button" role="tab" aria-controls="nav-tabpanel-2-2" aria-selected="false">
   <h3 class="tab-header" id="nav-tab-heading-2-2">
-  Using the worrms R package
+  worrms
   </h3>
 </button>
 <button class="nav-link" id="nav-tab-2-3" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-2-3" type="button" role="tab" aria-controls="nav-tabpanel-2-3" aria-selected="false">
   <h3 class="tab-header" id="nav-tab-heading-2-3">
-  Using the pyworms python package
+  pyworms
   </h3>
 </button>
 </div>
@@ -1107,39 +1108,37 @@ scientificName.</td>
 <div id="nav-tabpanel-2-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-1">
 <p>Create a CSV (comma separated value) file with the scientific name of
 the species of interest. Here we are showing some of the contents of the
-file <a href="../%7B%7B%20page.root%20%7D%7D/data/species.csv"><code>species.csv</code></a>.
-<img src="../%7B%7B%20page.root%20%7D%7D/fig/species_file_screenshot.png" alt="screenshot" class="figure">{: .image-with-shadow }</p>
+file <a href="../data/species.csv"><code>species.csv</code></a>. <img src="../fig/species_file_screenshot.png" alt="screenshot" class="figure"></p>
 <p>Upload that file to the <a href="https://www.marinespecies.org/aphia.php?p=match" class="external-link">WoRMS Taxon match
 service</a></p>
 <ul><li><strong>make sure the option LSID is checked</strong></li>
 <li>
 <strong>for the example file, make sure you select LineFeed as the
-row delimiter and Tab as the column delimiter</strong> <img src="../%7B%7B%20page.root%20%7D%7D/fig/WoRMS_upload.png" alt="screenshot" class="figure">{: .image-with-shadow }</li>
-</ul><p>Identify which columns to match to which WoRMS term. <img src="../%7B%7B%20page.root%20%7D%7D/fig/WoRMS_TaxonMatch_Preview.PNG" alt="screenshot" class="figure">{: .image-with-shadow }</p>
+row delimiter and Tab as the column delimiter</strong> <img src="../fig/WoRMS_upload.png" alt="screenshot" class="figure"></li>
+</ul><p>Identify which columns to match to which WoRMS term. <img src="../fig/WoRMS_TaxonMatch_Preview.PNG" alt="screenshot" class="figure"></p>
 <p>Click <code>Match</code></p>
 <p>Hopefully, a WoRMS exact match will return</p>
 <ol style="list-style-type: decimal"><li>In some cases you will have ambiguous matches. Resolve these rows by
 using the pull down menu to select the appropriate match.</li>
 <li>Non-matched taxa will appear in red. You will have to go back to
 your source file and determine what the appropriate text should
-be.<br><img src="../%7B%7B%20page.root%20%7D%7D/fig/WoRMS_TaxonMatch_MatchOutput.PNG" alt="screenshot" class="figure">{: .image-with-shadow }</li>
+be.<br><img src="../fig/WoRMS_TaxonMatch_MatchOutput.PNG" alt="screenshot" class="figure"></li>
 </ol><p>Download the response as an XLS, XLSX, or text file and use the
 information when building the Darwin Core file(s). The response from the
-example linked above can be found <a href="../%7B%7B%20page.root%20%7D%7D/data/species_matched.xlsx">here</a>. A
-screenshot of the file can be seen below: <img src="../%7B%7B%20page.root%20%7D%7D/fig/matched_species_screenshot.png" alt="screenshot" class="figure">{: .image-with-shadow }</p>
+example linked above can be found <a href="../data/species_matched.xlsx">here</a>. A screenshot of the file can
+be seen below: <img src="../fig/matched_species_screenshot.png" alt="screenshot" class="figure"></p>
 <ol style="list-style-type: decimal"><li><p>Create a CSV (comma separated value) file with the scientific
 name of the species of interest. Here we are showing some of the
-contents of the file <a href="../%7B%7B%20page.root%20%7D%7D/data/species.csv"><code>species.csv</code></a>.
-<img src="../%7B%7B%20page.root%20%7D%7D/fig/species_file_screenshot.png" alt="screenshot" class="figure">{: .image-with-shadow }</p></li>
+contents of the file <a href="../data/species.csv"><code>species.csv</code></a>. <img src="../fig/species_file_screenshot.png" alt="screenshot" class="figure"></p></li>
 <li>
 <p>Upload that file to the <a href="https://www.marinespecies.org/aphia.php?p=match" class="external-link">WoRMS Taxon match
 service</a></p>
 <ul><li><strong>make sure the option LSID is checked</strong></li>
 <li>
 <strong>for the example file, make sure you select LineFeed as the
-row delimiter and Tab as the column delimiter</strong> <img src="../%7B%7B%20page.root%20%7D%7D/fig/WoRMS_upload.png" alt="screenshot" class="figure">{: .image-with-shadow }</li>
+row delimiter and Tab as the column delimiter</strong> <img src="../fig/WoRMS_upload.png" alt="screenshot" class="figure"></li>
 </ul></li>
-<li><p>Identify which columns to match to which WoRMS term. <img src="../%7B%7B%20page.root%20%7D%7D/fig/WoRMS_TaxonMatch_Preview.PNG" alt="screenshot" class="figure">{: .image-with-shadow }</p></li>
+<li><p>Identify which columns to match to which WoRMS term. <img src="../fig/WoRMS_TaxonMatch_Preview.PNG" alt="screenshot" class="figure"></p></li>
 <li><p>Click <code>Match</code></p></li>
 <li>
 <p>Hopefully, a WoRMS exact match will return</p>
@@ -1147,12 +1146,12 @@ row delimiter and Tab as the column delimiter</strong> <img src="../%7B%7B%20pag
 using the pull down menu to select the appropriate match.</li>
 <li>Non-matched taxa will appear in red. You will have to go back to
 your source file and determine what the appropriate text should
-be.<br><img src="../%7B%7B%20page.root%20%7D%7D/fig/WoRMS_TaxonMatch_MatchOutput.PNG" alt="screenshot" class="figure">{: .image-with-shadow }</li>
+be.<br><img src="../fig/WoRMS_TaxonMatch_MatchOutput.PNG" alt="screenshot" class="figure"></li>
 </ol></li>
 <li><p>Download the response as an XLS, XLSX, or text file and use the
 information when building the Darwin Core file(s). The response from the
-example linked above can be found <a href="../%7B%7B%20page.root%20%7D%7D/data/species_matched.xlsx">here</a>. A
-screenshot of the file can be seen below: <img src="../%7B%7B%20page.root%20%7D%7D/fig/matched_species_screenshot.png" alt="screenshot" class="figure">{: .image-with-shadow }</p></li>
+example linked above can be found <a href="../data/species_matched.xlsx">here</a>. A screenshot of the file can
+be seen below: <img src="../fig/matched_species_screenshot.png" alt="screenshot" class="figure"></p></li>
 </ol></div>
 <div id="nav-tabpanel-2-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-2">
 <p><a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=105838" class="external-link"><em>Carcharodon
@@ -1193,7 +1192,7 @@ carcharias</em></a> (White shark)</p>
 </li>
 </ol></div>
 <div id="nav-tabpanel-2-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-3">
-<p>Bringing in <a href="../%7B%7B%20page.root%20%7D%7D/data/species.csv"><code>species.csv</code></a>
+<p>Bringing in <a href="../data/species.csv"><code>species.csv</code></a>
 and collecting appropriate information from WoRMS using the pyworms
 package.</p>
 <p><strong>Note</strong> some of the responses have multiple matches, so
@@ -1250,9 +1249,8 @@ Multiple matches for scientific name "Acanthephyra brevirostris Smith, 1885"
 4        Acanthephyra brevirostris Smith, 1885                                        NaN       NaN       NaN</code></pre>
 </div>
 <ol style="list-style-type: decimal"><li>
-<p>Bringing in <a href="../%7B%7B%20page.root%20%7D%7D/data/species.csv"><code>species.csv</code></a>
-and collecting appropriate information from WoRMS using the pyworms
-package.</p>
+<p>Bringing in <a href="../data/species.csv"><code>species.csv</code></a> and collecting
+appropriate information from WoRMS using the pyworms package.</p>
 <p><strong>Note</strong> some of the responses have multiple matches, so
 the user needs to evaluate which match is appropriate.</p>
 <div class="codewrapper sourceCode" id="cb53">
@@ -1373,8 +1371,7 @@ inclusive.</td>
 upon which the geographic coordinates given in decimalLatitude and
 decimalLongitude as based.</td>
 <td><code>WGS84</code></td>
-</tr></tbody></table><p><img src="https://imgs.xkcd.com/comics/coordinate_precision.png" alt="coordinate_precision" class="figure">{: .image-with-shadow } <em>Image credit:
-<a href="https://xkcd.com/" class="external-link">xkcd</a></em></p>
+</tr></tbody></table><p><img src="https://imgs.xkcd.com/comics/coordinate_precision.png" alt="coordinate_precision" class="figure"><em>Image credit: <a href="https://xkcd.com/" class="external-link">xkcd</a></em></p>
 <blockquote>
 <h2 id="examples-in-python">Examples in Python</h2>
 <ol style="list-style-type: decimal"><li>
