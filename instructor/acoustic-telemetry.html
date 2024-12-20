@@ -333,7 +333,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Acoustic (and Satellite) Telemetry</h1>
-        <p>Last updated on 2024-12-19 |
+        <p>Last updated on 2024-12-20 |
 
         <a href="https://github.com/MathewBiddle/test_workshop/edit/main/learners/acoustic-telemetry.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -346,6 +346,34 @@
         </div>
 
         
+
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul><li>How does acoustic telemetry data convert to Darwin Core?</li>
+<li>How do I contribute my acoustic telemetry data to OBIS?</li>
+</ul></div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul><li>Collaborating with a network</li>
+<li>Understanding the mappings and what metadata and data are important
+to converting acoustic telemetry to Darwin Core</li>
+<li>Contributing tracking data for animals that are monitored with
+multiple methods of electronic or mark-recapture tracking regimes.
+(Acoustic, Satellite, RFID, coded-wire)</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section level1">
 <h1 id="acoustic-and-satellite-telemetry-data">Acoustic and Satellite Telemetry Data<a class="anchor" aria-label="anchor" href="#acoustic-and-satellite-telemetry-data"></a></h1>
 <div class="section level2">
@@ -378,8 +406,8 @@ network-of-networks has many thousands of listening stations and tracks
 tens of thousands of active acoustic tags globally. Details on what the
 Ocean Tracking Network and its partners are currently observing are
 available at <a href="https://members.oceantrack.org/statistics/" class="external-link uri">https://members.oceantrack.org/statistics/</a></p>
-<p><img src="../fig/acoustic_telemetry_components.png" alt="screenshot" class="figure">{: .image-with-shadow }</p>
-</div>
+<figure><img src="../fig/acoustic_telemetry_components.png" alt="screenshot" class="figure mx-auto d-block"><div class="figcaption">screenshot</div>
+</figure></div>
 <div class="section level3">
 <h3 id="preparing-to-publish-to-obis---how-we-solve-the-many-fish-vs--one-fish-many-times-problem">Preparing to publish to OBIS - how we solve the many-fish
 vs. one-fish-many-times problem<a class="anchor" aria-label="anchor" href="#preparing-to-publish-to-obis---how-we-solve-the-many-fish-vs--one-fish-many-times-problem"></a></h3>
@@ -411,8 +439,16 @@ summary of observations. In this example, we truncate the date-times
 down to the day+hour, then see if there are duplicate values. If so, we
 keep the first value but drop the other values that fall in that same
 hour.</p>
-<blockquote>
-<h2 id="time-binning-example">Time binning example</h2>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Time binning example
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
 <table class="table"><thead><tr class="header"><th align="left">time</th>
 <th align="left">dayhr</th>
 <th align="left">Keep?</th>
@@ -509,8 +545,10 @@ hour.</p>
 </tr><tr class="odd"><td align="left">2009-11-23T05:12:00Z</td>
 <td align="left">2009-11-23T05</td>
 <td align="left">True</td>
-</tr></tbody></table><p>{: .solution}</p>
-</blockquote>
+</tr></tbody></table></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="mapping-example">Mapping example<a class="anchor" aria-label="anchor" href="#mapping-example"></a></h3>
@@ -522,11 +560,13 @@ archive.</p>
 <div class="section level4">
 <h4 id="metadata">Metadata:<a class="anchor" aria-label="anchor" href="#metadata"></a></h4>
 <ul><li>Projects are organized around tagging efforts with the related
-research question and efforts included in the Abstract/Project
-Description/Sampling Methods fields of the EML.</li>
+research question and efforts included in the</li>
+<li>Abstract/Project Description/Sampling Methods fields of the
+EML.</li>
 <li>Participants are those registered as participating in the tagging
-project, plus all PIs from the ‘participating’ projects that supplied
-additional detection events with the role Data Contributor.</li>
+project, plus all PIs from the ‘participating’</li>
+<li>projects that supplied additional detection events with the role
+Data Contributor.</li>
 </ul></div>
 <div class="section level4">
 <h4 id="data">Data:<a class="anchor" aria-label="anchor" href="#data"></a></h4>
@@ -595,8 +635,8 @@ time, across many methods. Here, the Occurrence/Event detection pair
 retains and explains the ‘how’ an animal was detected at each point
 while preserving a complete history for the organism in the Occurrence
 records.</p>
-<p><img src="../%7B%7B%20page.root%20%7D%7D/fig/tagged_seal.png" alt="screenshot" class="figure">{: .image-with-shadow }</p>
-<p>Sometimes, stranger setups like animals-as-listening-stations or
+<figure><img src="../fig/tagged_seal.png" alt="screenshot" class="figure mx-auto d-block"><div class="figcaption">screenshot</div>
+</figure><p>Sometimes, stranger setups like animals-as-listening-stations or
 animals collecting oceanographic data can be part of your project. This
 extends the default schema with some extra components, but nothing is
 impossible within Event Core!</p>
@@ -621,6 +661,21 @@ detection files are the sources of the DwC archive’s Event and
 Occurrence and eMoF data.</p>
 <p>Telemetry for satellite tagged animals can be provided as-is, with an
 indication of whether it is raw or post-processed.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li>The Ocean Tracking Network is the thematic OBIS node for animal
+telemetry data.</li>
+<li>Mature pipelines exist to take acoustic telemetry data from projects
+contributing to OTN or to its regional nodes and publish standard,
+summarized datasets to OBIS.</li>
+</ul></div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -628,6 +683,7 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
+
 
 
       </div> <!-- / div.lesson-content -->
@@ -688,7 +744,7 @@ any links that you are not going to use.
   "url": "https://MathewBiddle.github.io/test_workshop/instructor/acoustic-telemetry.html",
   "identifier": "https://MathewBiddle.github.io/test_workshop/instructor/acoustic-telemetry.html",
   "dateCreated": "2024-04-19",
-  "dateModified": "2024-12-19",
+  "dateModified": "2024-12-20",
   "datePublished": "2024-12-20"
 }
 
